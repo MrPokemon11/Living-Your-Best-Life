@@ -1,0 +1,47 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
+  m_Name: Story
+  m_EditorClassIdentifier: 
+  _playerName: Player
+  _NPCName: Azukie
+  _dialogueType: 1
+  _startDialogue: 0
+  linear:
+    _pharases:
+    - Hi! It's a linear dialogue!
+    - You can change the type of dialogue in Scriptable object named "Story"
+    - Bye
+    _responses:
+    - Cool
+    - Ok
+    - Bye
+    _haveResponses: 1
+  branching:
+  - _Question:
+    - Hi! Who are you?
+    - What are you doing?
+    - Bye
+    _NpcResponses:
+    - Im a Azukie
+    - creating assets
+    - Bye
+    nextStepIndices: 0000000001000000ffffffff
+  - _Question:
+    - Do you have inventory system?
+    - Ok
+    - Bye
+    _NpcResponses:
+    - Yes, you can find it on my itch.io page, and i have a NPC system! Check it!
+    - ...
+    - Bye
+    nextStepIndices: 0000000000000000ffffffff

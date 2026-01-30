@@ -1,0 +1,112 @@
+StoryFLow - Dialogue System for Unity
+A flexible and beginner-friendly dialogue system that supports both linear and branching conversations. Easily customizable and great for a wide variety of games, from story-driven RPGs to simple NPC interactions.
+
+Features
+Two dialogue modes:
+
+Linear – NPC speaks, player listens.
+
+Branching – Player selects responses, NPC replies based on choice.
+
+ScriptableObject-based structure
+
+Typewriter text effect
+
+Dialogue navigation buttons
+
+Dialogue panel auto control
+
+Return to previous branches supported
+
+Easy to integrate into any project
+
+How to Set Up
+Import the asset into your Unity project.
+
+Create a Story asset by right-clicking in your Project window → Create → Dialogue → Story.
+
+In the Story asset, fill in the basic information:
+
+Player Name
+
+NPC Name
+
+Choose Dialogue Type: Linear or Branching
+
+Assign the Story asset to the DialogueManager in the scene.
+
+Add your dialogue UI panel and link it to the manager (UI Texts, Buttons, etc.).
+
+1.Linear Dialogue: How to Fill It
+Create elements in the Phrases and Responses arrays.
+
+If your dialogue includes player responses, make sure to check the Have Responses box.
+
+Fill the arrays in strict matching order. Each phrase should correspond to a response in the same index.
+
+Example:
+Phrases:
+
+"Hi, my name is Bill. What's yours?"
+
+"What are you doing here?"
+
+Responses:
+
+"My name is Harry."
+
+"Just passing through."
+
+Keep the order consistent. If the arrays are not synchronized correctly, the dialogue will not display as intended.
+
+2.Branching Dialogue: How to Fill It
+Each branching dialogue consists of elements. Every element contains:
+
+Questions – Player's choices.
+
+NPC Responses – What NPC says for each question.
+
+Next Step Indices – Where the dialogue goes after that response.
+
+Step-by-step:
+Add a new element to the Branching Elements array.
+
+Fill out the three arrays for that element:
+
+Questions – Write what the player can say.
+
+NPC Responses – Write how the NPC will respond to each.
+
+Next Step Indices – Define what happens next:
+
+-1 = end dialogue
+
+0 = return to first element
+
+1, 2, etc. = go to another branching element index
+
+Example:
+Element 0
+
+Questions:
+
+"Hi, what's your name?"
+
+"What do you do here?"
+
+NPC Responses:
+
+"Hello, my name is Bill."
+
+"I'm the local merchant."
+
+Next Step Indices:
+
+0 – return to same questions
+
+-1 – end the dialogue
+
+Make sure all three arrays have the same number of entries and that each entry corresponds to the correct one in the other arrays.
+
+3.Enjoy using it)
+
