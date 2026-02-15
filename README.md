@@ -8,5 +8,5 @@ Asset attributions:
 
 Gradients: https://github.com/mitay-walle/com.mitay-walle.gradient-texture.git
 
-https://azukie.itch.io/universal-dialogue-system
+Dialogue system: https://azukie.itch.io/universal-dialogue-system
 

@@ -4,6 +4,8 @@ using TMPro;
 using System.Collections;
 using Dialogue;
 
+// Code by Azukie on Itch; Edits/additions by me (Devon) are labeled
+
 public class DialogueSystem : MonoBehaviour
 {
     public Story currentStory;
