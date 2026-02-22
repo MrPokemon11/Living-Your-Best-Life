@@ -9,15 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
-  m_Name: Act 1
+  m_Script: {fileID: 11500000, guid: 3a189bb168d8d90478a09ea08c2f3d72, type: 3}
+  m_Name: DefaultObject
   m_EditorClassIdentifier: 
-  _playerName: You
-  _NPCName: LYBL
-  _dialogueType: 0
-  _startDialogue: 0
-  linear:
-    _pharases: []
-    _responses: []
-    _haveResponses: 0
-  branching: []
+  m_AddressableAssetSettingsGuid: 9c79aec14d93bcc46a5fab9430e1490a

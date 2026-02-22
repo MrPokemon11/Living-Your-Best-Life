@@ -16,6 +16,5 @@ namespace Dialogue
                 dialogueManager.StartDialogue(storyToPlay);
             }
         }
-
     }
 }
