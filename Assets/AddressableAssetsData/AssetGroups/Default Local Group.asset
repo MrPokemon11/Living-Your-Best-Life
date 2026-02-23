@@ -16,7 +16,7 @@ MonoBehaviour:
   m_GUID: 8535ef3f9a17469438a3ee8f12031292
   m_SerializeEntries:
   - m_GUID: 0935309e7c42d964a9cf13ec6e0b0d3e
-    m_Address: Assets/Dialogue/Act 1/Intro/Act1_Intro_Player.asset
+    m_Address: Assets/Dialogue/Act 1/Intro/Act 1_Intro_Player.asset
     m_ReadOnly: 0
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
