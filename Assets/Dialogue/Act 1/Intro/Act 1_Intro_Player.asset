@@ -12,12 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
   m_Name: Act 1_Intro_Player
   m_EditorClassIdentifier: 
-  _playerName: You
-  _NPCName: LYBL
+  _playerName: N/A
+  _NPCName: You
   _dialogueType: 0
   _startDialogue: 0
   linear:
-    _pharases: []
+    _pharases:
+    - Ugh, I have so much stuff I need to do... I need some help.
+    - (Click to continue)
+    - (Click to continue)
     _responses: []
     _haveResponses: 0
   branching: []

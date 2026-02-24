@@ -47,7 +47,6 @@ public class DialogueSystem : MonoBehaviour
         else
         {
             ShowBranchingDialogue();
-            dialogueText.text = "Hi!";
         }
     }
 

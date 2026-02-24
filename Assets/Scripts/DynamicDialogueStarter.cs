@@ -40,8 +40,11 @@ public class DynamicDialogueStarter : MonoBehaviour
         AsyncOperationHandle<Story> playerStory = Addressables.LoadAssetAsync<Story>(filePathPlayer);
         AsyncOperationHandle<Story> lyblStory = Addressables.LoadAssetAsync<Story>(filePathLybl);
         
+        Story playerTempStory = playerStory.Result;
+        Story lyblTempStory = lyblStory.Result;
+        
         //start the dialogue
-        playerDialogueSystem.StartDialogue(playerStory.Result);
-        lyblDialogueSystem.StartDialogue(lyblStory.Result);
+        playerDialogueSystem.StartDialogue(playerTempStory);
+        lyblDialogueSystem.StartDialogue(lyblTempStory);
     }
 }

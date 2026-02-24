@@ -13,12 +13,12 @@ public class TaskManager : MonoBehaviour
     //task 3 variables
     bool isTaskThreeDone = false;
     
-    ActDirctor actDirctor;
+    ActDirector actDirector;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        actDirctor = GetComponent<ActDirctor>();
+        actDirector = GetComponent<ActDirector>();
     }
 
     // Update is called once per frame
@@ -26,7 +26,7 @@ public class TaskManager : MonoBehaviour
     {
         if (isTaskOneDone && isTaskTwoDone && isTaskThreeDone)
         {
-            actDirctor.AllTasksComplete();
+            actDirector.AllTasksComplete();
         }
     }
 
