@@ -3,6 +3,7 @@ using UnityEngine.UI;
 using TMPro;
 using System.Collections;
 using Dialogue;
+using UnityEngine.Events; // added by me
 
 // Code by Azukie on Itch; Edits/additions by me (Devon) are labeled
 
@@ -24,11 +25,25 @@ public class DialogueSystem : MonoBehaviour
     private int dialogueIndex = 0;
     private bool isTyping = false;
     private int currentBranchingStep = 0;
+    
+    // unity events for returning dialogue data to listeners; added by me
+    public UnityEvent DialogueEndEvent;
+    public UnityEvent<int> DialogueImpactfulChoiceEvent;
 
     private void Start()
     {
         dialoguePanel.SetActive(false);
         responsePanel.SetActive(false);
+
+        // ensure that the events exist
+        if (DialogueEndEvent == null)
+        {
+            DialogueEndEvent = new UnityEvent();
+        }
+        if (DialogueImpactfulChoiceEvent == null)
+        {
+            DialogueImpactfulChoiceEvent = new UnityEvent<int>();
+        }
     }
 
     public void StartDialogue(Story story)
@@ -47,6 +62,8 @@ public class DialogueSystem : MonoBehaviour
         else
         {
             ShowBranchingDialogue();
+            //extremely hacky solution, but it's not like the player name is used for anything else -Devon
+            dialogueText.text = currentStory._playerName;
         }
     }
 
@@ -124,7 +141,13 @@ public class DialogueSystem : MonoBehaviour
                 responseButtons[i].onClick.AddListener(() =>
                 {
                     responsePanel.SetActive(false);
-                    ReportDialogueChoice(index);
+                    
+                    // this is my solution to "branching" dialogue where the player only has one choice (since there's no point in reporting it)
+                    if (step._Question.Length > 1)
+                    {
+                        ReportDialogueChoice(index);                        
+                    }
+
                     StopAllCoroutines();
                     StartCoroutine(ShowNpcResponseThenNext(step._NpcResponses[index], step.nextStepIndices[index]));
                 });
@@ -177,15 +200,15 @@ public class DialogueSystem : MonoBehaviour
 
     // report the player's choice to anything listening
     // code by me
-    public int ReportDialogueChoice(int choice)
+    public void ReportDialogueChoice(int choice)
     {
-        return choice;
+        DialogueImpactfulChoiceEvent.Invoke(choice);
     }
     
     // report that dialogue has finished, and the result (if any)
     // code by me
     public void ReportDialogueFinished()
     {
-        
+        DialogueEndEvent.Invoke();
     }
 }

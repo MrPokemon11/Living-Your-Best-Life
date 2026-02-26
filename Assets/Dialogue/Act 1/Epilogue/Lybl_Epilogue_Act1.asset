@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
   m_Name: Lybl_Epilogue_Act1
   m_EditorClassIdentifier: 
-  _playerName: 
-  _NPCName: 
-  _dialogueType: 0
+  _playerName: You
+  _NPCName: LYBL
+  _dialogueType: 1
   _startDialogue: 0
   linear:
-    _pharases: []
+    _pharases:
+    - And that's all your tasks done!
+    - Is there anything else you need help with?
+    - 
+    - If there's nothing else you need to do, you should go and rest.
+    - Based on that selfie, you need it!
     _responses: []
     _haveResponses: 0
   branching: []

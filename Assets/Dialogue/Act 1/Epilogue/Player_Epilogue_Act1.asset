@@ -12,12 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
   m_Name: Player_Epilogue_Act1
   m_EditorClassIdentifier: 
-  _playerName: 
-  _NPCName: 
+  _playerName: n/a
+  _NPCName: You
   _dialogueType: 0
   _startDialogue: 0
   linear:
-    _pharases: []
+    _pharases:
+    - (Click to continue)
+    - (Click to continue)
+    - Not at this time.
+    - (Click to continue)
+    - (Click to continue)
     _responses: []
     _haveResponses: 0
   branching: []
