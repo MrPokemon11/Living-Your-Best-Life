@@ -14,7 +14,11 @@ public class ZoomCamera : MonoBehaviour
     {
         cam = GetComponent<Camera>();
         currentFoV = cam.fieldOfView;
-        Invoke (nameof(ZoomIn), waitTime);
+    }
+
+    public void StartGameZoom()
+    {
+        Invoke (nameof(ZoomIn), waitTime);        
     }
     
     // Update is called once per frame

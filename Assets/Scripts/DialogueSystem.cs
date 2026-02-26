@@ -124,6 +124,7 @@ public class DialogueSystem : MonoBehaviour
                 responseButtons[i].onClick.AddListener(() =>
                 {
                     responsePanel.SetActive(false);
+                    ReportDialogueChoice(index);
                     StopAllCoroutines();
                     StartCoroutine(ShowNpcResponseThenNext(step._NpcResponses[index], step.nextStepIndices[index]));
                 });
@@ -172,5 +173,19 @@ public class DialogueSystem : MonoBehaviour
         dialoguePanel.SetActive(false);
         responsePanel.SetActive(false);
         dialogueIndex = 0;
+    }
+
+    // report the player's choice to anything listening
+    // code by me
+    public int ReportDialogueChoice(int choice)
+    {
+        return choice;
+    }
+    
+    // report that dialogue has finished, and the result (if any)
+    // code by me
+    public void ReportDialogueFinished()
+    {
+        
     }
 }

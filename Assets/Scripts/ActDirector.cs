@@ -1,17 +1,23 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class ActDirector : MonoBehaviour
 {
+    [Header("Dialogue Managers")]
     [SerializeField] private GameObject[] dialogueManagers;
     private DialogueSystem lyblDialogueSystem;
     private DialogueSystem playerDialogueSystem;
-
+    
+    [Header("Dialogue Starters")]
+    // the act director needs two DynamicDialogueStarters, one for the intro of each act and one for when all 3 tasks are complete
     [SerializeField] private GameObject dynamicDialogueStarterObject;
+    [SerializeField] private GameObject actFinisherObject;
     private DynamicDialogueStarter dynamicDialogueStarter;
+    private DynamicDialogueStarter actFinisher;
     
-    private int currentAct = 1;
-    private int tasksComplete = 0;
-    
+    private int currentAct = 0;
+    private List<string> tasksCompleted;
+    private bool actFinished = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,29 +25,37 @@ public class ActDirector : MonoBehaviour
         lyblDialogueSystem = dialogueManagers[0].GetComponent<DialogueSystem>();
         playerDialogueSystem = dialogueManagers[1].GetComponent<DialogueSystem>();
         dynamicDialogueStarter = dynamicDialogueStarterObject.GetComponent<DynamicDialogueStarter>();
-        
-        StartAct();
+        actFinisher = actFinisherObject.GetComponent<DynamicDialogueStarter>();
+        tasksCompleted = new List<string>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (tasksCompleted.Count == 3 && !actFinished)
+        {
+            AllTasksComplete();
+        }
     }
 
     public void AllTasksComplete()
     {
+        Debug.Log("All Tasks Complete");
         
+        //mark the act as finished
+        actFinished = true;
+        
+        actFinisher.StartDialogueByAct();
+    }
+
+    public void StartAct()
+    {
         //add 1 to the act number
         currentAct++;
         
-
-    }
-
-    private void StartAct()
-    {
         //reset the number of completed tasks
-        tasksComplete = 0;
+        tasksCompleted.Clear();
+        actFinished = false;
 
         dynamicDialogueStarter.StartDialogueByAct();
     }
@@ -54,5 +68,17 @@ public class ActDirector : MonoBehaviour
     public int GetCurrentAct()
     {
         return currentAct;
+    }
+
+    public void MarkTaskAsDone(string task)
+    {
+        foreach (var t in tasksCompleted)
+        {
+            if (t == task)
+            {
+                return;
+            }
+        }
+        tasksCompleted.Add(task);
     }
 }
