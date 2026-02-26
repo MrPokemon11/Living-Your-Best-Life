@@ -42,12 +42,17 @@ public class ActDirector : MonoBehaviour
     {
         //reset the number of completed tasks
         tasksComplete = 0;
-        
-        ShowDialogue("Intro");
+
+        dynamicDialogueStarter.StartDialogueByAct();
     }
     
     public void ShowDialogue(string context)
     {
         dynamicDialogueStarter.StartDialogueThroughContext(currentAct.ToString(), context);
+    }
+
+    public int GetCurrentAct()
+    {
+        return currentAct;
     }
 }
