@@ -37,4 +37,14 @@ MonoBehaviour:
     _NpcResponses:
     - Alright, just give me a moment... and done!
     - Really? If you say so...
-    nextStepIndices: 0300000003000000
+    nextStepIndices: 0300000004000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Much better, don't you think?
+    nextStepIndices: 04000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - I'll send the photo to your girlfriend for you, and let you know what she says!
+    nextStepIndices: 05000000
