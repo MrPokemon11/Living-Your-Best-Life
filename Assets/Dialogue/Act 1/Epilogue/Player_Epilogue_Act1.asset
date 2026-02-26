@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _playerName: n/a
   _NPCName: You
-  _dialogueType: 0
+  _dialogueType: 1
   _startDialogue: 0
   linear:
     _pharases:

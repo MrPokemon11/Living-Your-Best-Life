@@ -77,6 +77,7 @@ public class DialogueSystem : MonoBehaviour
             }
             else
             {
+                ReportDialogueFinished();
                 EndDialogue();
             }
         }
@@ -186,6 +187,7 @@ public class DialogueSystem : MonoBehaviour
         }
         else
         {
+            ReportDialogueFinished();
             EndDialogue();
         }
     }

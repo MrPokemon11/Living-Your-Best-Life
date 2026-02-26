@@ -20,7 +20,7 @@ MonoBehaviour:
     _pharases:
     - And that's all your tasks done!
     - Is there anything else you need help with?
-    - 
+    - ...
     - If there's nothing else you need to do, you should go and rest.
     - Based on that selfie, you need it!
     _responses: []

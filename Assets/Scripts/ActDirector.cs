@@ -32,7 +32,11 @@ public class ActDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (tasksCompleted.Count == 3 && !actFinished)
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Debug.Log(tasksCompleted.Count);
+        }
+        if (tasksCompleted.Count >= 3 && !actFinished)
         {
             AllTasksComplete();
         }
