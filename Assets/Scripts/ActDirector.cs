@@ -12,6 +12,7 @@ public class ActDirector : MonoBehaviour
     // the act director needs two DynamicDialogueStarters, one for the intro of each act and one for when all 3 tasks are complete
     [SerializeField] private GameObject dynamicDialogueStarterObject;
     [SerializeField] private GameObject actFinisherObject;
+    [SerializeField] private GameObject TransitionManager;
     private DynamicDialogueStarter dynamicDialogueStarter;
     private DynamicDialogueStarter actFinisher;
     
@@ -50,6 +51,7 @@ public class ActDirector : MonoBehaviour
         actFinished = true;
         
         actFinisher.StartDialogueByAct();
+        TransitionManager.GetComponent<EndOfActListener>().ActivateListeners();
     }
 
     public void StartAct()
