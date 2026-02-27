@@ -2524,11 +2524,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueManager: {fileID: 927347896}
   ActManager: {fileID: 633431629}
-  EssayStory: {fileID: 0}
-  TransitionScreen: {fileID: 0}
-  EssayText: {fileID: 0}
+  EmailStory: {fileID: 0}
+  TransitionScreen: {fileID: 1771987761}
+  EmailText: {fileID: 0}
   ContinueButton: {fileID: 0}
-  SubmissionIncompleteButton: {fileID: 0}
   TaskText: {fileID: 1060280602}
 --- !u!1 &342324438
 GameObject:
@@ -2910,6 +2909,18 @@ MonoBehaviour:
       - m_Target: {fileID: 974402307}
         m_TargetAssemblyTypeName: DynamicDialogueStarter, Assembly-CSharp
         m_MethodName: StartDialogueByAct
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 966344259}
+        m_TargetAssemblyTypeName: EssayListener, Assembly-CSharp
+        m_MethodName: MarkTaskDone
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6376,6 +6387,18 @@ MonoBehaviour:
           m_StringArgument: Geggle Mail traversing to Geggle Mail Email!
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 340755051}
+        m_TargetAssemblyTypeName: EmailListener, Assembly-CSharp
+        m_MethodName: ActivateListeners
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &763684095
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7725,7 +7748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &874361755
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8470,7 +8493,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '3 Hours Later...
+  m_text: '15 Minutes Later...
 
     (Click to Continue)'
   m_isRightToLeft: 0
@@ -11735,7 +11758,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1332561913
 RectTransform:
   m_ObjectHideFlags: 0

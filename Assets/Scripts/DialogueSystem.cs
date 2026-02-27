@@ -70,6 +70,7 @@ public class DialogueSystem : MonoBehaviour
     {
         currentStory = story;
         dialogueIndex = 0;
+        currentBranchingStep = 0;
 
         dialoguePanel.SetActive(true);
         responsePanel.SetActive(false);
@@ -222,6 +223,7 @@ public class DialogueSystem : MonoBehaviour
         dialoguePanel.SetActive(false);
         responsePanel.SetActive(false);
         dialogueIndex = 0;
+        currentBranchingStep = 0;
     }
 
     /*****************************************************

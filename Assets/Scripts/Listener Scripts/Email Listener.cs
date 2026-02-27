@@ -9,16 +9,15 @@ public class EmailListener : MonoBehaviour
     [Header("Dialogue")]
     [SerializeField] private GameObject DialogueManager;
     [SerializeField] private GameObject ActManager;
-    [SerializeField] private Story EssayStory;
+    [SerializeField] private Story EmailStory;
 
     DialogueSystem dialogueSystem;
     ActDirector actDirector;   
     
     [Header("Relevant Game Objects")] 
     [SerializeField] private GameObject TransitionScreen;
-    [SerializeField] private GameObject EssayText;
+    [SerializeField] private GameObject EmailText;
     [SerializeField] private GameObject ContinueButton;
-    [SerializeField] private GameObject SubmissionIncompleteButton;
     private Button continueButton;
 
     [Header("Task Text")]
@@ -60,14 +59,14 @@ public class EmailListener : MonoBehaviour
     {
         if (isManual == 1)
         {
-            //script for manually writing the essay
+            //script for manually writing the Emails
             dialogueSystem.AddGhostListener("Email");
             dialogueSystem.GhostListeners.AddListener(transitionScreen);
         }
         else
         {
-            // script for LYBL writing the essay
-            EssayText.SetActive(true);
+            // script for LYBL writing the Email
+            EmailText.SetActive(true);
         }
     }
 
@@ -91,7 +90,7 @@ public class EmailListener : MonoBehaviour
     void EssayDialogue()
     {
         Debug.Log("Email Dialogue");
-        dialogueSystem.StartDialogue(EssayStory);
+        dialogueSystem.StartDialogue(EmailStory);
     }
 
     public void MarkTaskDone()
