@@ -290,6 +290,7 @@ public class DialogueSystem : MonoBehaviour
     {
         GhostListeners.RemoveAllListeners();
         activeGhosts.Clear();
+        isAlertingGhosts = false;
         Debug.Log("Ghosts busted.");
     }
 
@@ -300,6 +301,6 @@ public class DialogueSystem : MonoBehaviour
         isTyping = false;
         currentBranchingStep = 0;
         lastImpactfulChoice = -1;
-        isAlertingGhosts = false; // this should never be true when ResetDialogueSystem is called, but better safe than sorry.
+        isAlertingGhosts = false; 
     }
 }

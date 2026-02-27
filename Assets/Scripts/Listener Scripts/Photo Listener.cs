@@ -24,6 +24,7 @@ public class PhotoListener : MonoBehaviour
     {
         dialogueSystem = DialogueManager.GetComponent<DialogueSystem>();
         actDirector = ActManager.GetComponent<ActDirector>();
+        Initialize();
     }
 
     // Update is called once per frame
@@ -32,6 +33,14 @@ public class PhotoListener : MonoBehaviour
         
     }
 
+    public void Initialize()
+    {
+        TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Normal;
+        //gameObject.transform.parent.gameObject.SetActive(false);
+        photo.SetActive(false);
+        photo2.SetActive(false);
+    }
+    
     public void ActivateListeners()
     {
         dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(SwapPhotos);

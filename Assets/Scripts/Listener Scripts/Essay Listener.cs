@@ -31,6 +31,7 @@ public class EssayListener : MonoBehaviour
         dialogueSystem = DialogueManager.GetComponent<DialogueSystem>();
         actDirector = ActManager.GetComponent<ActDirector>();
         continueButton = ContinueButton.GetComponent<Button>();
+        Initialize();
     }
 
     // Update is called once per frame
@@ -56,6 +57,14 @@ public class EssayListener : MonoBehaviour
         dialogueSystem.DialogueEndEvent.RemoveListener(MarkComplete);
     }
 
+    public void Initialize()
+    {
+        TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Normal;
+        hasDialogueBeenSeen = false;
+        EssayText.SetActive(false);
+        TransitionScreen.SetActive(false);
+    }
+    
     void WriteEmail(int isManual)
     {
         if (isManual == 1)

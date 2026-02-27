@@ -4997,6 +4997,9 @@ MonoBehaviour:
   dynamicDialogueStarterObject: {fileID: 1655102112}
   actFinisherObject: {fileID: 1743376655}
   TransitionManager: {fileID: 1783277307}
+  emailListener: {fileID: 340755049}
+  essayListener: {fileID: 966344257}
+  photoListener: {fileID: 494771491}
 --- !u!4 &633431632
 Transform:
   m_ObjectHideFlags: 0
@@ -14756,7 +14759,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 181704414}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: 
+        m_MethodName: SetActive
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -16557,6 +16560,30 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 1559362189}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1064816145}
+        m_TargetAssemblyTypeName: DialogueSystem, Assembly-CSharp
+        m_MethodName: ResetDialogueSystem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 927347897}
+        m_TargetAssemblyTypeName: DialogueSystem, Assembly-CSharp
+        m_MethodName: ResetDialogueSystem
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 

@@ -20,6 +20,11 @@ public class ActDirector : MonoBehaviour
     private List<string> tasksCompleted;
     private bool actFinished = false;
     
+    [Header("Initializable Objects")]
+    [SerializeField] private GameObject emailListener;
+    [SerializeField] private GameObject essayListener;
+    [SerializeField] private GameObject photoListener;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -43,6 +48,13 @@ public class ActDirector : MonoBehaviour
         }
     }
 
+    public void InitializeObjects()
+    {
+        emailListener.GetComponent<EmailListener>().Initialize();
+        essayListener.GetComponent<EssayListener>().Initialize();
+        photoListener.GetComponent<PhotoListener>().Initialize();
+    }
+    
     public void AllTasksComplete()
     {
         Debug.Log("All Tasks Complete");
@@ -56,14 +68,16 @@ public class ActDirector : MonoBehaviour
 
     public void StartAct()
     {
-        //add 1 to the act number
-        currentAct++;
+        //add 1 to the act number; disabled during the demo
+        //currentAct++;
+        currentAct = 1;
         
         //reset the number of completed tasks
         tasksCompleted.Clear();
         actFinished = false;
 
         dynamicDialogueStarter.StartDialogueByAct();
+        InitializeObjects();
     }
     
     public void ShowDialogue(string context)

@@ -38,6 +38,13 @@ public class EmailListener : MonoBehaviour
         
     }
 
+    public void Initialize()
+    {
+        hasDialogueBeenSeen = false;
+        TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Normal;
+        TransitionScreen.SetActive(false);
+    }
+    
     public void ActivateListeners()
     {
         Debug.Log("Activate Listeners");
