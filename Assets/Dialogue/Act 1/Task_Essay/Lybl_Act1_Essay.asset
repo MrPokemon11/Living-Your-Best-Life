@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
+  m_Name: Lybl_Act1_Essay
+  m_EditorClassIdentifier: 
+  _playerName: Let's see what the requirements are for your essay...
+  _NPCName: LYBL
+  _dialogueType: 0
+  _startDialogue: 0
+  linear:
+    _pharases: []
+    _responses: []
+    _haveResponses: 0
+  branching:
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - 5 pages?!
+    nextStepIndices: 01000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - That'd take a while...
+    nextStepIndices: 02000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Want me to write it for you?
+    nextStepIndices: 03000000
+  - _Question:
+    - Yes please.
+    - I'm good, thanks.
+    _NpcResponses:
+    - Alright, just give me a moment... and done!
+    - You're sure? Well if you say so...
+    nextStepIndices: 0500000004000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Told you that it'd take a while. Anyway...
+    nextStepIndices: 05000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Now that the essay is done, it's time to go submit it!
+    nextStepIndices: 06000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Let's head over to Calvis!
+    nextStepIndices: ffffffff

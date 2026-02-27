@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
-  m_Name: Act 1_Intro_LYBL
+  m_Name: Player_Act1_SubmitEssay
   m_EditorClassIdentifier: 
-  _playerName: You
-  _NPCName: LYBL
+  _playerName: N/A
+  _NPCName: You
   _dialogueType: 1
   _startDialogue: 0
   linear:
     _pharases:
-    - 
-    - Hi, I'm LYBL, the one and only AI assistant that helps YOU live your best life(tm)!
-    - What can I help you with today?
-    - The notepad is a good place to write down what you need to do.
+    - (Click to continue)
+    - (Click to continue)
+    - (Click to continue)
     _responses: []
     _haveResponses: 0
   branching: []
