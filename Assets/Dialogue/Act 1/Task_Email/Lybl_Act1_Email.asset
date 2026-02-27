@@ -27,12 +27,12 @@ MonoBehaviour:
     - Wait...
     nextStepIndices: 01000000
   - _Question:
-    - (Click to continue)
+    - This email doesn't sound very urgent.
     _NpcResponses:
     - This email isn't urgent at all!
     nextStepIndices: 02000000
   - _Question:
-    - This email doesn't sound very urgent.
+    - (Click to continue)
     _NpcResponses:
     - Well, we still need to reply to it. It is one of your tasks after all.
     nextStepIndices: 03000000
@@ -46,8 +46,8 @@ MonoBehaviour:
     - I'll do it.
     _NpcResponses:
     - Alright, just give me a moment... and done!
-    - Oh, okay...
-    nextStepIndices: 050000000a000000
+    - Oh, okay... Let me know when you're done, I guess.
+    nextStepIndices: 050000000b000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
@@ -59,8 +59,8 @@ MonoBehaviour:
     _NpcResponses:
     - Great! I'll go ahead and send the email to your boss, and we can cross this
       off!
-    - 'Oh... '
-    nextStepIndices: ffffffff07000000
+    - Oh... Let me know when you're done, I guess.
+    nextStepIndices: ffffffff08000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
@@ -89,5 +89,5 @@ MonoBehaviour:
   - _Question:
     - (Click to continue)
     _NpcResponses:
-    - Cool. I send this to your boss, and cross it off in the notepad.
+    - Cool. I'll send this to your boss, and cross it off in the notepad.
     nextStepIndices: ffffffff

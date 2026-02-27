@@ -1480,7 +1480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &181704415
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2498,16 +2498,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 340755049}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1332561913}
+  m_Father: {fileID: 763684091}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 289, y: -284}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &340755051
@@ -2524,10 +2524,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DialogueManager: {fileID: 927347896}
   ActManager: {fileID: 633431629}
-  EmailStory: {fileID: 0}
+  EmailStory: {fileID: 11400000, guid: a60246a099000da4f951cfd58ac6b361, type: 2}
   TransitionScreen: {fileID: 1771987761}
-  EmailText: {fileID: 0}
-  ContinueButton: {fileID: 0}
+  EmailText: {fileID: 181704414}
+  ContinueButton: {fileID: 347436585}
   TaskText: {fileID: 1060280602}
 --- !u!1 &342324438
 GameObject:
@@ -6288,6 +6288,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 485941631}
+  - {fileID: 340755050}
   m_Father: {fileID: 1003159144}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -11775,7 +11776,6 @@ RectTransform:
   - {fileID: 2015964496}
   - {fileID: 1761208868}
   - {fileID: 1301977402}
-  - {fileID: 340755050}
   - {fileID: 1711137434}
   - {fileID: 1261567816}
   - {fileID: 342324439}
@@ -12089,7 +12089,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -443, y: 213}
+  m_AnchoredPosition: {x: 24, y: 201}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1429750890
@@ -12112,7 +12112,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DEMO - CONTAINS ONLY ACT 1
+  m_text: 'DEMO - CONTAINS ONLY ACT 1
+
+
+    to reset variables,
+
+    restart the
+    game'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -12145,8 +12151,8 @@ MonoBehaviour:
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 1
-  m_HorizontalAlignment: 1
+  m_fontStyle: 17
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -14748,9 +14754,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1482471516}
+      - m_Target: {fileID: 181704414}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
+        m_MethodName: 
         m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

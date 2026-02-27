@@ -45,7 +45,7 @@ public class EmailListener : MonoBehaviour
         dialogueSystem.DialogueEndEvent.AddListener(MarkComplete);
         if (hasDialogueBeenSeen == false)
         {
-            EssayDialogue();
+            EmailDialogue();
         }
     }
 
@@ -84,10 +84,11 @@ public class EmailListener : MonoBehaviour
     {
         actDirector.MarkTaskAsDone("Email");
         hasDialogueBeenSeen = true; // set this so that dialogue doesn't trigger again
+        MarkTaskDone();
         RemoveListeners();
     }
 
-    void EssayDialogue()
+    void EmailDialogue()
     {
         Debug.Log("Email Dialogue");
         dialogueSystem.StartDialogue(EmailStory);
