@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 public class PhotoListener : MonoBehaviour
 {
@@ -10,8 +11,10 @@ public class PhotoListener : MonoBehaviour
     
     [Header("Dialogue")]
     [SerializeField] private GameObject DialogueManager;
-
     [SerializeField] private GameObject ActManager;
+    
+    [Header("Task Text")]
+    [SerializeField] private GameObject TaskText;
     
     DialogueSystem dialogueSystem;
     ActDirector actDirector;
@@ -53,6 +56,7 @@ public class PhotoListener : MonoBehaviour
     void MarkComplete()
     {
         actDirector.MarkTaskAsDone("Social");
+        TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
         RemoveListeners();
     }
 }

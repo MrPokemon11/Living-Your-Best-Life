@@ -37,6 +37,7 @@ public class DialogueSystem : MonoBehaviour
     // ghost listeners are non-persistent listeners that ignore RemoveAllListeners(), and something that i made up - Devon
     public UnityEvent<string> GhostListeners;
     private List<string> activeGhosts;
+    bool isAlertingGhosts = false;
 
     private void Start()
     {
@@ -162,14 +163,13 @@ public class DialogueSystem : MonoBehaviour
                 responseButtons[i].onClick.AddListener(() =>
                 {
                     responsePanel.SetActive(false);
-                    
+                    AlertGhostListeners();
                     // this is my solution to "branching" dialogue where the player only has one choice (since there's no point in reporting it)
                     if (step._Question.Length > 1)
                     {
 #if UNTIY_EDITOR
                         Debug.Log(index)
 #endif
-                        AlertGhostListeners();
                         ReportDialogueChoice(index);                        
                     }
 
@@ -255,26 +255,32 @@ public class DialogueSystem : MonoBehaviour
 
     public void AlertGhostListeners()
     {
+        isAlertingGhosts = true;
         foreach (string ghost in activeGhosts)
         {
             GhostListeners.Invoke(ghost);
-            Debug.Log("Invoking ghost named " + ghost);
         }
+
+        isAlertingGhosts = false;
     }
 
     // tries to remove a ghost 
     public void RemoveGhostListener(string ghostName)
     {
+        
         foreach (string ghost in activeGhosts)
         {
-            if (ghost == ghostName)
+            if (ghost == ghostName && !isAlertingGhosts)
             {
+                Debug.Log("Removed ghost with name " + ghostName);                
                 activeGhosts.Remove(ghost);
-                Debug.Log("Removed ghost with name " + ghostName);
                 return;
+            } else if (ghost == ghostName && isAlertingGhosts)
+            {
+                Debug.Log("Failed to remove ghost with name " + ghostName + " because ghosts are being alerted. Try adding a delay, and try again.");
             }
         }
-        Debug.Log("Failed to remove ghost with name " + ghostName);
+        Debug.Log("No ghost found with name " + ghostName + " so no ghost was removed; did you make a typo?");
     }
 
     // removes every ghost listener, and clears the list of active ghosts
@@ -292,5 +298,6 @@ public class DialogueSystem : MonoBehaviour
         isTyping = false;
         currentBranchingStep = 0;
         lastImpactfulChoice = -1;
+        isAlertingGhosts = false; // this should never be true when ResetDialogueSystem is called, but better safe than sorry.
     }
 }

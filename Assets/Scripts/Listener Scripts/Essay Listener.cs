@@ -2,6 +2,7 @@ using Dialogue;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 public class EssayListener : MonoBehaviour
 {
@@ -19,6 +20,9 @@ public class EssayListener : MonoBehaviour
     [SerializeField] private GameObject ContinueButton;
     [SerializeField] private GameObject SubmissionIncompleteButton;
     private Button continueButton;
+
+    [Header("Task Text")]
+    [SerializeField] private GameObject TaskText;
 
     private bool hasDialogueBeenSeen = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -69,9 +73,12 @@ public class EssayListener : MonoBehaviour
 
     void transitionScreen(string ghostDetector)
     {
-        TransitionScreen.SetActive(true);   
-        dialogueSystem.GhostListeners.RemoveListener(transitionScreen);
-        dialogueSystem.RemoveGhostListener("Essay");
+        if (ghostDetector == "Essay")
+        {
+           TransitionScreen.SetActive(true);   
+           dialogueSystem.GhostListeners.RemoveListener(transitionScreen);
+        }
+
     }
     
     void MarkComplete()
@@ -85,5 +92,10 @@ public class EssayListener : MonoBehaviour
     {
         Debug.Log("Essay Dialogue");
         dialogueSystem.StartDialogue(EssayStory);
+    }
+
+    public void MarkTaskDone()
+    {
+        TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
     }
 }

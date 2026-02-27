@@ -1,19 +1,36 @@
 using UnityEngine;
+using System.Collections;
+using Dialogue;
+using TMPro;
+using UnityEngine.UI;
 
 public class EmailListener : MonoBehaviour
 {
     [Header("Dialogue")]
     [SerializeField] private GameObject DialogueManager;
     [SerializeField] private GameObject ActManager;
-    
+    [SerializeField] private Story EssayStory;
+
     DialogueSystem dialogueSystem;
-    ActDirector actDirector;
+    ActDirector actDirector;   
     
+    [Header("Relevant Game Objects")] 
+    [SerializeField] private GameObject TransitionScreen;
+    [SerializeField] private GameObject EssayText;
+    [SerializeField] private GameObject ContinueButton;
+    [SerializeField] private GameObject SubmissionIncompleteButton;
+    private Button continueButton;
+
+    [Header("Task Text")]
+    [SerializeField] private GameObject TaskText;
+
+    private bool hasDialogueBeenSeen = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         dialogueSystem = DialogueManager.GetComponent<DialogueSystem>();
         actDirector = ActManager.GetComponent<ActDirector>();
+        continueButton = ContinueButton.GetComponent<Button>();
     }
 
     // Update is called once per frame
@@ -24,8 +41,13 @@ public class EmailListener : MonoBehaviour
 
     public void ActivateListeners()
     {
+        Debug.Log("Activate Listeners");
         dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(WriteEmail);
         dialogueSystem.DialogueEndEvent.AddListener(MarkComplete);
+        if (hasDialogueBeenSeen == false)
+        {
+            EssayDialogue();
+        }
     }
 
     public void RemoveListeners()
@@ -38,17 +60,42 @@ public class EmailListener : MonoBehaviour
     {
         if (isManual == 1)
         {
-            //script for manually writing the email
+            //script for manually writing the essay
+            dialogueSystem.AddGhostListener("Email");
+            dialogueSystem.GhostListeners.AddListener(transitionScreen);
         }
         else
         {
-            // script for LYBL writing the email
+            // script for LYBL writing the essay
+            EssayText.SetActive(true);
         }
     }
 
+    void transitionScreen(string ghostDetector)
+    {
+        if (ghostDetector == "Email")
+        {
+           TransitionScreen.SetActive(true);   
+           dialogueSystem.GhostListeners.RemoveListener(transitionScreen);
+        }
+
+    }
+    
     void MarkComplete()
     {
         actDirector.MarkTaskAsDone("Email");
+        hasDialogueBeenSeen = true; // set this so that dialogue doesn't trigger again
         RemoveListeners();
+    }
+
+    void EssayDialogue()
+    {
+        Debug.Log("Email Dialogue");
+        dialogueSystem.StartDialogue(EssayStory);
+    }
+
+    public void MarkTaskDone()
+    {
+        TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
     }
 }

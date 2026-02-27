@@ -22,6 +22,8 @@ MonoBehaviour:
       continue)
     - (Click to continue)
     - (Click to continue)
+    - I have a bunch of stuff I need to do.
+    - (Click to continue)
     - (Click to continue)
     _responses: []
     _haveResponses: 0
