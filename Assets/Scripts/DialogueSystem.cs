@@ -2,8 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System.Collections;
+using System.Collections.Generic;
+using System.Diagnostics.Tracing;
 using Dialogue;
-using UnityEngine.Events; // added by me
+using UnityEngine.Events; 
 
 // Code by Azukie on Itch; Edits/additions by me (Devon) are labeled
 
@@ -25,24 +27,41 @@ public class DialogueSystem : MonoBehaviour
     private int dialogueIndex = 0;
     private bool isTyping = false;
     private int currentBranchingStep = 0;
+
+    private int lastImpactfulChoice = -1;
     
     // unity events for returning dialogue data to listeners; added by me
     public UnityEvent DialogueEndEvent;
     public UnityEvent<int> DialogueImpactfulChoiceEvent;
+    
+    // ghost listeners are non-persistent listeners that ignore RemoveAllListeners(), and something that i made up - Devon
+    public UnityEvent<string> GhostListeners;
+    private List<string> activeGhosts;
 
     private void Start()
     {
         dialoguePanel.SetActive(false);
         responsePanel.SetActive(false);
 
-        // ensure that the events exist
+        // ensure that the events and lists exist
         if (DialogueEndEvent == null)
         {
             DialogueEndEvent = new UnityEvent();
         }
+        
         if (DialogueImpactfulChoiceEvent == null)
         {
             DialogueImpactfulChoiceEvent = new UnityEvent<int>();
+        }
+        
+        if (GhostListeners == null)
+        {
+            GhostListeners = new UnityEvent<string>();
+        }
+
+        if (activeGhosts == null)
+        {
+            activeGhosts = new List<string>();
         }
     }
 
@@ -61,9 +80,10 @@ public class DialogueSystem : MonoBehaviour
         }
         else
         {
-            ShowBranchingDialogue();
             //extremely hacky solution, but it's not like the player name is used for anything else -Devon
             dialogueText.text = currentStory._playerName;
+            ShowBranchingDialogue();
+
         }
     }
 
@@ -146,6 +166,10 @@ public class DialogueSystem : MonoBehaviour
                     // this is my solution to "branching" dialogue where the player only has one choice (since there's no point in reporting it)
                     if (step._Question.Length > 1)
                     {
+#if UNTIY_EDITOR
+                        Debug.Log(index)
+#endif
+                        AlertGhostListeners();
                         ReportDialogueChoice(index);                        
                     }
 
@@ -200,17 +224,73 @@ public class DialogueSystem : MonoBehaviour
         dialogueIndex = 0;
     }
 
+    /*****************************************************
+    Everything below this line was created by Devon
+    ******************************************************/
+    
     // report the player's choice to anything listening
-    // code by me
     public void ReportDialogueChoice(int choice)
     {
         DialogueImpactfulChoiceEvent.Invoke(choice);
+        lastImpactfulChoice = choice;
+    }
+
+    public int ReportLastImpactfulChoice()
+    {
+        return lastImpactfulChoice;
     }
     
     // report that dialogue has finished, and the result (if any)
-    // code by me
     public void ReportDialogueFinished()
     {
         DialogueEndEvent.Invoke();
+    }
+
+    //
+    public void AddGhostListener(string ghostName)
+    {
+        activeGhosts.Add(ghostName);
+        Debug.Log("Added ghost with name " + ghostName);
+    }
+
+    public void AlertGhostListeners()
+    {
+        foreach (string ghost in activeGhosts)
+        {
+            GhostListeners.Invoke(ghost);
+            Debug.Log("Invoking ghost named " + ghost);
+        }
+    }
+
+    // tries to remove a ghost 
+    public void RemoveGhostListener(string ghostName)
+    {
+        foreach (string ghost in activeGhosts)
+        {
+            if (ghost == ghostName)
+            {
+                activeGhosts.Remove(ghost);
+                Debug.Log("Removed ghost with name " + ghostName);
+                return;
+            }
+        }
+        Debug.Log("Failed to remove ghost with name " + ghostName);
+    }
+
+    // removes every ghost listener, and clears the list of active ghosts
+    public void BustAllGhosts()
+    {
+        GhostListeners.RemoveAllListeners();
+        activeGhosts.Clear();
+        Debug.Log("Ghosts busted.");
+    }
+
+    public void ResetDialogueSystem()
+    {
+        BustAllGhosts();
+        dialogueIndex = 0;
+        isTyping = false;
+        currentBranchingStep = 0;
+        lastImpactfulChoice = -1;
     }
 }

@@ -1,5 +1,4 @@
 using Dialogue;
-using UnityEditor.Events;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -18,9 +17,8 @@ public class EssayListener : MonoBehaviour
     [SerializeField] private GameObject TransitionScreen;
     [SerializeField] private GameObject EssayText;
     [SerializeField] private GameObject ContinueButton;
-    [SerializeField] private GameObject MichaelsoftWord;
+    [SerializeField] private GameObject SubmissionIncompleteButton;
     private Button continueButton;
-    private Button michaelsoftWordButton;
 
     private bool hasDialogueBeenSeen = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -29,7 +27,6 @@ public class EssayListener : MonoBehaviour
         dialogueSystem = DialogueManager.GetComponent<DialogueSystem>();
         actDirector = ActManager.GetComponent<ActDirector>();
         continueButton = ContinueButton.GetComponent<Button>();
-        michaelsoftWordButton = MichaelsoftWord.GetComponent<Button>();
     }
 
     // Update is called once per frame
@@ -40,6 +37,7 @@ public class EssayListener : MonoBehaviour
 
     public void ActivateListeners()
     {
+        Debug.Log("Activate Listeners");
         dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(WriteEmail);
         dialogueSystem.DialogueEndEvent.AddListener(MarkComplete);
         if (hasDialogueBeenSeen == false)
@@ -59,7 +57,8 @@ public class EssayListener : MonoBehaviour
         if (isManual == 1)
         {
             //script for manually writing the essay
-            continueButton.onClick.AddListener(transitionScreen);
+            dialogueSystem.AddGhostListener("Essay");
+            dialogueSystem.GhostListeners.AddListener(transitionScreen);
         }
         else
         {
@@ -68,20 +67,23 @@ public class EssayListener : MonoBehaviour
         }
     }
 
-    void transitionScreen()
+    void transitionScreen(string ghostDetector)
     {
         TransitionScreen.SetActive(true);   
-        continueButton.onClick.RemoveListener(transitionScreen);
+        dialogueSystem.GhostListeners.RemoveListener(transitionScreen);
+        dialogueSystem.RemoveGhostListener("Essay");
     }
     
     void MarkComplete()
     {
+        SubmissionIncompleteButton.SetActive(false);
         hasDialogueBeenSeen = true; // set this so that dialogue doesn't trigger again
         RemoveListeners();
     }
 
     void EssayDialogue()
     {
+        Debug.Log("Essay Dialogue");
         dialogueSystem.StartDialogue(EssayStory);
     }
 }
