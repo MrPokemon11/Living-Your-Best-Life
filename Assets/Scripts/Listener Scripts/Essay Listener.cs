@@ -65,7 +65,7 @@ public class EssayListener : MonoBehaviour
         TransitionScreen.SetActive(false);
     }
     
-    void WriteEmail(int isManual)
+    void WriteEssay(int isManual)
     {
         if (isManual == 1)
         {

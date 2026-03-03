@@ -71,9 +71,8 @@ public class ActDirector : MonoBehaviour
 
     public void StartAct()
     {
-        //add 1 to the act number; disabled during the demo
-        //currentAct++;
-        currentAct = 1;
+        //add 1 to the act number
+        currentAct++;
         
         //reset the number of completed tasks
         tasksCompleted.Clear();
@@ -81,6 +80,8 @@ public class ActDirector : MonoBehaviour
 
         dynamicDialogueStarter.StartDialogueByAct();
         InitializeObjects();
+        
+        lyblDialogueSystem.DialogueImpactfulChoiceEvent.AddListener(AddAIUse);
     }
     
     public void ShowDialogue(string context)
@@ -112,6 +113,7 @@ public class ActDirector : MonoBehaviour
 
     public void AddAIUse(int value)
     {
+        // this number is actually inverted; the less the AI is used, the higher the score
         AIUse += value;
     }
 }
