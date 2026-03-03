@@ -57,4 +57,9 @@ MonoBehaviour:
     - (Click to continue)
     _NpcResponses:
     - Let's head over to Calvis!
+    nextStepIndices: 07000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Good thing you have a shortcut for it in Geggle!
     nextStepIndices: ffffffff

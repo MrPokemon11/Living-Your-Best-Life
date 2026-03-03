@@ -25,6 +25,9 @@ public class ActDirector : MonoBehaviour
     [SerializeField] private GameObject essayListener;
     [SerializeField] private GameObject photoListener;
     
+    //other variables
+    private int AIUse = 0;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -100,5 +103,15 @@ public class ActDirector : MonoBehaviour
             }
         }
         tasksCompleted.Add(task);
+    }
+
+    public int GetAIUse()
+    {
+        return AIUse;
+    }
+
+    public void AddAIUse(int value)
+    {
+        AIUse += value;
     }
 }
