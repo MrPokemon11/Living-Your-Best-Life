@@ -12,6 +12,9 @@ public class PhotoListener : MonoBehaviour
     [Header("Dialogue")]
     [SerializeField] private GameObject DialogueManager;
     [SerializeField] private GameObject ActManager;
+    [SerializeField] private GameObject ChoiceBasedDialogue;
+    
+    ChoiceBasedDialogue ChoiceBasedDialogueScript;
     
     [Header("Task Text")]
     [SerializeField] private GameObject TaskText;
@@ -24,6 +27,7 @@ public class PhotoListener : MonoBehaviour
     {
         dialogueSystem = DialogueManager.GetComponent<DialogueSystem>();
         actDirector = ActManager.GetComponent<ActDirector>();
+        ChoiceBasedDialogueScript = ChoiceBasedDialogue.GetComponent<ChoiceBasedDialogue>();
         Initialize();
     }
 
@@ -66,6 +70,7 @@ public class PhotoListener : MonoBehaviour
     {
         actDirector.MarkTaskAsDone("Social");
         TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+        ChoiceBasedDialogueScript.MarkDialogueSeen();
         RemoveListeners();
     }
 }

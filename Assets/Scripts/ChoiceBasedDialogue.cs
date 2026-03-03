@@ -16,6 +16,8 @@ public class ChoiceBasedDialogue : MonoBehaviour
     [Header("Range Limits")] 
     [SerializeField] private int Act2Limit = 2;
     [SerializeField] private int[] Act3Limits;
+
+    private bool dialogueSeen = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -44,7 +46,21 @@ public class ChoiceBasedDialogue : MonoBehaviour
 
     public void StartCurrentDialogue()
     {
-        dialogueSystem.StartDialogue(GetCurrentDialogue());
+        if (!dialogueSeen)
+        {
+            dialogueSystem.StartDialogue(GetCurrentDialogue());
+        }
+
+    }
+
+    public void MarkDialogueSeen()
+    {
+        dialogueSeen = true;
+    }
+    
+    public void MarkDialogueUnseen()
+    {
+        dialogueSeen = false;
     }
     
     public Story GetCurrentDialogue()

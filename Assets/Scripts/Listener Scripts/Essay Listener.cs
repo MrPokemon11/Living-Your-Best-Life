@@ -10,6 +10,9 @@ public class EssayListener : MonoBehaviour
     [SerializeField] private GameObject DialogueManager;
     [SerializeField] private GameObject ActManager;
     [SerializeField] private Story EssayStory;
+    [SerializeField] private GameObject ChoiceBasedDialogue;
+    
+    ChoiceBasedDialogue ChoiceBasedDialogueScript;
 
     DialogueSystem dialogueSystem;
     ActDirector actDirector;   
@@ -31,6 +34,7 @@ public class EssayListener : MonoBehaviour
         dialogueSystem = DialogueManager.GetComponent<DialogueSystem>();
         actDirector = ActManager.GetComponent<ActDirector>();
         continueButton = ContinueButton.GetComponent<Button>();
+        ChoiceBasedDialogueScript = ChoiceBasedDialogue.GetComponent<ChoiceBasedDialogue>();
         Initialize();
     }
 
@@ -43,17 +47,13 @@ public class EssayListener : MonoBehaviour
     public void ActivateListeners()
     {
         Debug.Log("Activate Listeners");
-        dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(WriteEmail);
+        dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(WriteEssay);
         dialogueSystem.DialogueEndEvent.AddListener(MarkComplete);
-        if (hasDialogueBeenSeen == false)
-        {
-            EssayDialogue();
-        }
     }
 
     public void RemoveListeners()
     {
-        dialogueSystem.DialogueImpactfulChoiceEvent.RemoveListener(WriteEmail);
+        dialogueSystem.DialogueImpactfulChoiceEvent.RemoveListener(WriteEssay);
         dialogueSystem.DialogueEndEvent.RemoveListener(MarkComplete);
     }
 
@@ -93,7 +93,7 @@ public class EssayListener : MonoBehaviour
     void MarkComplete()
     {
         SubmissionIncompleteButton.SetActive(false);
-        hasDialogueBeenSeen = true; // set this so that dialogue doesn't trigger again
+        ChoiceBasedDialogueScript.MarkDialogueSeen(); // set this so that dialogue doesn't trigger again
         RemoveListeners();
     }
 

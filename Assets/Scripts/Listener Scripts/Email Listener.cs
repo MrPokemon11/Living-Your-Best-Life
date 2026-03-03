@@ -10,7 +10,9 @@ public class EmailListener : MonoBehaviour
     [SerializeField] private GameObject DialogueManager;
     [SerializeField] private GameObject ActManager;
     [SerializeField] private Story EmailStory;
-
+    [SerializeField] private GameObject ChoiceBasedDialogue;
+    
+    ChoiceBasedDialogue ChoiceBasedDialogueScript;
     DialogueSystem dialogueSystem;
     ActDirector actDirector;   
     
@@ -30,6 +32,7 @@ public class EmailListener : MonoBehaviour
         dialogueSystem = DialogueManager.GetComponent<DialogueSystem>();
         actDirector = ActManager.GetComponent<ActDirector>();
         continueButton = ContinueButton.GetComponent<Button>();
+        ChoiceBasedDialogueScript = ChoiceBasedDialogue.GetComponent<ChoiceBasedDialogue>();
     }
 
     // Update is called once per frame
@@ -50,10 +53,6 @@ public class EmailListener : MonoBehaviour
         Debug.Log("Activate Listeners");
         dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(WriteEmail);
         dialogueSystem.DialogueEndEvent.AddListener(MarkComplete);
-        if (hasDialogueBeenSeen == false)
-        {
-            EmailDialogue();
-        }
     }
 
     public void RemoveListeners()
@@ -90,7 +89,7 @@ public class EmailListener : MonoBehaviour
     void MarkComplete()
     {
         actDirector.MarkTaskAsDone("Email");
-        hasDialogueBeenSeen = true; // set this so that dialogue doesn't trigger again
+        ChoiceBasedDialogueScript.MarkDialogueSeen();
         MarkTaskDone();
         RemoveListeners();
     }
