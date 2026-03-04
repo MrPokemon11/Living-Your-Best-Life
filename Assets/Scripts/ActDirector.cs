@@ -27,6 +27,7 @@ public class ActDirector : MonoBehaviour
     
     //other variables
     private int AIUse = 0;
+    private int totalAIUse = 0;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -71,6 +72,10 @@ public class ActDirector : MonoBehaviour
 
     public void StartAct()
     {
+        // add the AI use from the previous act to the total, reset the current AI use to 0
+        totalAIUse += AIUse;
+        AIUse = 0;
+        
         //add 1 to the act number
         currentAct++;
         
@@ -108,7 +113,7 @@ public class ActDirector : MonoBehaviour
 
     public int GetAIUse()
     {
-        return AIUse;
+        return totalAIUse;
     }
 
     public void AddAIUse(int value)

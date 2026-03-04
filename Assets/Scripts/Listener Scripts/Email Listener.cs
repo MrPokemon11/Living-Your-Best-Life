@@ -97,7 +97,7 @@ public class EmailListener : MonoBehaviour
     void EmailDialogue()
     {
         Debug.Log("Email Dialogue");
-        dialogueSystem.StartDialogue(EmailStory);
+        //dialogueSystem.StartDialogue(EmailStory);
     }
 
     public void MarkTaskDone()

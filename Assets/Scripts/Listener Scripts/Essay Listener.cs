@@ -100,7 +100,7 @@ public class EssayListener : MonoBehaviour
     void EssayDialogue()
     {
         Debug.Log("Essay Dialogue");
-        dialogueSystem.StartDialogue(EssayStory);
+        //dialogueSystem.StartDialogue(EssayStory);
     }
 
     public void MarkTaskDone()
