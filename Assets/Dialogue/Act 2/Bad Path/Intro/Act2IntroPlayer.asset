@@ -10,18 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
-  m_Name: Act3BridgeLybl
+  m_Name: Act2IntroPlayer
   m_EditorClassIdentifier: 
-  _playerName: You
-  _NPCName: LYBL
+  _playerName: n/a
+  _NPCName: You
   _dialogueType: 1
   _startDialogue: 0
   linear:
     _pharases:
-    - 
-    - 
-    - Oh? What would that be?
-    - 
+    - (Click to continue)
+    - (Click to continue)
+    - (Click to continue)
     _responses: []
     _haveResponses: 0
   branching: []
