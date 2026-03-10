@@ -28,6 +28,7 @@ public class ActDirector : MonoBehaviour
     //other variables
     private int AIUse = 0;
     private int totalAIUse = 0;
+    private bool isGoodRoute = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -65,6 +66,10 @@ public class ActDirector : MonoBehaviour
         
         //mark the act as finished
         actFinished = true;
+        if (AIUse >= 2 && currentAct == 1)
+        {
+            ToggleGoodRoute();
+        }
         
         actFinisher.StartDialogueByAct();
         TransitionManager.GetComponent<EndOfActListener>().ActivateListeners();
@@ -120,5 +125,15 @@ public class ActDirector : MonoBehaviour
     {
         // this number is actually inverted; the less the AI is used, the higher the score
         AIUse += value;
+    }
+
+    public void ToggleGoodRoute()
+    {
+        isGoodRoute = !isGoodRoute;
+    }
+
+    public bool GetIsGoodRoute()
+    {
+        return isGoodRoute;
     }
 }

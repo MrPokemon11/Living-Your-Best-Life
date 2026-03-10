@@ -34,7 +34,7 @@ public class ChoiceBasedDialogue : MonoBehaviour
 
         if (Act3Dialogue == null)
         {
-            Act3Dialogue = new Story[3];
+            Act3Dialogue = new Story[4];
         }
     }
 
@@ -101,16 +101,27 @@ public class ChoiceBasedDialogue : MonoBehaviour
 
     private Story GetDialogueAct3()
     {
-        if (actDirector.GetAIUse() > Act3Limits[1])
+        bool isGoodRoute = actDirector.GetIsGoodRoute();
+        if (isGoodRoute)
         {
-            return Act3Dialogue[0]; //good dialogue
-        } else if (actDirector.GetAIUse() >= Act3Limits[0])
-        {
-            return Act3Dialogue[1]; // neutral dialogue
+            if (actDirector.GetAIUse() > Act3Limits[1])
+            {
+                return Act3Dialogue[0]; //good dialogue
+            } else
+            {
+                return Act3Dialogue[1]; // neutral-good dialogue
+            }            
         }
         else
         {
-            return Act3Dialogue[2]; // bad dialogue
+            if (actDirector.GetAIUse() > Act3Limits[0])
+            {
+                return Act3Dialogue[2]; // neutral-bad dialogue
+            }
+            else
+            {
+                 return Act3Dialogue[3]; // bad dialogue                
+            }
         }
     }
 }
