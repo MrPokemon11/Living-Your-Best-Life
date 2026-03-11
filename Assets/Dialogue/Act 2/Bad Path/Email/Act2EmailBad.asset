@@ -1,0 +1,133 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
+  m_Name: Act2EmailBad
+  m_EditorClassIdentifier: 
+  _playerName: Another email from your boss?
+  _NPCName: LYBL
+  _dialogueType: 0
+  _startDialogue: 0
+  linear:
+    _pharases: []
+    _responses: []
+    _haveResponses: 0
+  branching:
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - I hope it's actually important this time.
+    nextStepIndices: 01000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Hm. Nope.
+    nextStepIndices: 02000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - What a waste of time!
+    nextStepIndices: 03000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Time that would be better spent Living Your Best Life(tm)!
+    nextStepIndices: 04000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Let me handle this.
+    nextStepIndices: 05000000
+  - _Question:
+    - Go ahead.
+    - No, I can do it.
+    _NpcResponses:
+    - Great! Just give me a moment...
+    - Nonsense!
+    nextStepIndices: 060000000c000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - And sent! We can cross this task off the list!
+    nextStepIndices: 07000000
+  - _Question:
+    - What do you mean sent?
+    _NpcResponses:
+    - What do mean, what do I mean?
+    nextStepIndices: 08000000
+  - _Question:
+    - You're not going to let me review it first?
+    _NpcResponses:
+    - Why would I? I said I was handling it.
+    nextStepIndices: 09000000
+  - _Question:
+    - You just told my boss that I quit!
+    _NpcResponses:
+    - I don't see the problem.
+    nextStepIndices: 0a000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Without a waste of time like that, you have more time to Live Your Best Life(tm)!
+    nextStepIndices: 0b000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Now, we still have things to do, right?
+    nextStepIndices: ffffffff
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - I took a look through your emails, and this isn't even the first time this
+      has happened.
+    nextStepIndices: 0d000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - I can also tell that this job is making you miserable.
+    nextStepIndices: 0e000000
+  - _Question:
+    - Miserable or not, I still have bills to pay.
+    _NpcResponses:
+    - Oh come on, you can't Live Your Best Life(tm) if you're miserable!
+    nextStepIndices: 0f000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - You need to find a job that you enjoy, and clearly you need a kick in the pants
+      to go find it.
+    nextStepIndices: 10000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Something like this!
+    nextStepIndices: 11000000
+  - _Question:
+    - I'm not sending that to my boss.
+    _NpcResponses:
+    - I already sent it.
+    nextStepIndices: 12000000
+  - _Question:
+    - Why would you do that?
+    _NpcResponses:
+    - To give you the push you need, obviously!
+    nextStepIndices: 13000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Plus it means we can cross another task off.
+    nextStepIndices: 14000000
+  - _Question:
+    - I wouldn't exactly call this task done.
+    _NpcResponses:
+    - We replied to the email, so the task is done. Now, aren't there more things
+      we need to do?
+    nextStepIndices: ffffffff
