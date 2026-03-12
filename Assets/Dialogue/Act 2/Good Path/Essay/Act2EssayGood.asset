@@ -1,0 +1,165 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
+  m_Name: Act2EssayGood
+  m_EditorClassIdentifier: 
+  _playerName: Another essay? Didn't we write one yesterday?
+  _NPCName: LYBL
+  _dialogueType: 0
+  _startDialogue: 0
+  linear:
+    _pharases: []
+    _responses: []
+    _haveResponses: 0
+  branching:
+  - _Question:
+    - It's for my Latin Language class.
+    _NpcResponses:
+    - Oh I know Latin! Let me write this!
+    nextStepIndices: 01000000
+  - _Question:
+    - Actually, I think I should write it.
+    _NpcResponses:
+    - Please?
+    nextStepIndices: 02000000
+  - _Question:
+    - It's worth 30% of my grade, and it won't take that long.
+    _NpcResponses:
+    - Pretty please?
+    nextStepIndices: 03000000
+  - _Question:
+    - Fine. You can write one, but don't submit it!
+    _NpcResponses:
+    - Yippee! I won't let you down!
+    nextStepIndices: 04000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - This looks good right? I can go submit it?
+    nextStepIndices: 05000000
+  - _Question:
+    - Actually, this looks pretty good.
+    - No, I can see several issues.
+    _NpcResponses:
+    - Woo!
+    - W-what kind of issues?
+    nextStepIndices: 0600000010000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Alright, I've gone ahead and submitted it, so now we can-
+    nextStepIndices: 07000000
+  - _Question:
+    - What? I told you not to.
+    _NpcResponses:
+    - ... oh right. But it's fine right? You said it looked good.
+    nextStepIndices: 08000000
+  - _Question:
+    - I did, but... why is it 111 pages long?
+    _NpcResponses:
+    - Because that's the minimum page count!
+    nextStepIndices: 09000000
+  - _Question:
+    - In Arabic or Roman numerals?
+    _NpcResponses:
+    - What are Roman numerals?
+    nextStepIndices: 0a000000
+  - _Question:
+    - You don't know what Roman numerals are?
+    _NpcResponses:
+    - No, there's nothing about them in my database...
+    nextStepIndices: 0b000000
+  - _Question:
+    - Okay, what did the submission page say exactly?
+    _NpcResponses:
+    - '"Minimum length: III pages"'
+    nextStepIndices: 0c000000
+  - _Question:
+    - Okay, it's only 3 pages. I can rewrite what you wrote, and then resubmit it.
+    _NpcResponses:
+    - It also says that you only get one attempt.
+    nextStepIndices: 0d000000
+  - _Question:
+    - Oh.
+    _NpcResponses:
+    - I'm sure it's fine though! You just... put in extra effort!
+    nextStepIndices: 0e000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - But uh, since it's been submitted, we can cross it off the list!
+    nextStepIndices: 0f000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Anything else that I can help with?
+    nextStepIndices: ffffffff
+  - _Question:
+    - First, I said not to submit it.
+    _NpcResponses:
+    - ...
+    nextStepIndices: 11000000
+  - _Question:
+    - Second, it's all Lorem Ipsum.
+    _NpcResponses:
+    - ...
+    nextStepIndices: 12000000
+  - _Question:
+    - Third, it's 111 pages long!
+    _NpcResponses:
+    - Was that not the requirement?
+    nextStepIndices: 13000000
+  - _Question:
+    - Uh, no? Where did you even get that from?
+    _NpcResponses:
+    - 'The submission page! It says "Minimum length: III pages"!'
+    nextStepIndices: 14000000
+  - _Question:
+    - I think you mean "iii". It's 3 in roman numerals.
+    _NpcResponses:
+    - Ohh that makes more sense. But aside from that it looks good?
+    nextStepIndices: 15000000
+  - _Question:
+    - Well no, it's still just Lorem Ipsum.
+    _NpcResponses:
+    - It's Latin!
+    nextStepIndices: 16000000
+  - _Question:
+    - It's gibberish.
+    _NpcResponses:
+    - It's Latin gibberish!
+    nextStepIndices: 17000000
+  - _Question:
+    - Well the good news is that you didn't submit this.
+    _NpcResponses:
+    - About that...
+    nextStepIndices: 18000000
+  - _Question:
+    - I thought I told you not to.
+    _NpcResponses:
+    - I was so sure that my work was good...
+    nextStepIndices: 19000000
+  - _Question:
+    - Whatever, I'll just write it and do a new submission.
+    _NpcResponses:
+    - About that... we only had the one attempt.
+    nextStepIndices: 1a000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - I'll... I'll do better on the next task, though!
+    nextStepIndices: 1b000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - There is more for me to help with right?
+    nextStepIndices: ffffffff

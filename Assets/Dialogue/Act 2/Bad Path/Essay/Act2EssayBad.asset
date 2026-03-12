@@ -1,0 +1,205 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
+  m_Name: Act2EssayBad
+  m_EditorClassIdentifier: 
+  _playerName: Really? Another essay?
+  _NPCName: LYBL
+  _dialogueType: 0
+  _startDialogue: 0
+  linear:
+    _pharases: []
+    _responses: []
+    _haveResponses: 0
+  branching:
+  - _Question:
+    - It's for my Latin Language class.
+    _NpcResponses:
+    - Fine. Let's see what the requirements are...
+    nextStepIndices: 01000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - 111 pages?!
+    nextStepIndices: 02000000
+  - _Question:
+    - Those are roman numerals, Lybl.
+    _NpcResponses:
+    - This is outrageous!
+    nextStepIndices: 03000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - I'll just write it for you, we'll be here for the next two day otherwise.
+    nextStepIndices: 04000000
+  - _Question:
+    - It's only 3 pages, I can do it in an hour and a half.
+    _NpcResponses:
+    - 
+    nextStepIndices: 05000000
+  - _Question:
+    - Besides, it's worth 30% percent of my grade, so I should put the effort in
+      to make it good.
+    _NpcResponses:
+    - The average person can type 1-2 pages in an hour.
+    nextStepIndices: 06000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Aside from the fact that it'd take you a minimum of 55 hours to write this
+      essay,
+    nextStepIndices: 07000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - why would you want to put in all that time and effort for something that I
+      can do in 30 seconds?
+    nextStepIndices: 08000000
+  - _Question:
+    - Because it's worth 30% of my grade?
+    _NpcResponses:
+    - Fine, I'll double-check my work before submitting it. That sound good?
+    nextStepIndices: 09000000
+  - _Question:
+    - Sounds good.
+    - No, I'm going to write it.
+    _NpcResponses:
+    - Great! Just give me a moment...
+    - ...
+    nextStepIndices: 0a00000016000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - And done!
+    nextStepIndices: 0b000000
+  - _Question:
+    - Lybl this is just Lorem Ispum.
+    _NpcResponses:
+    - No, it's Latin.
+    nextStepIndices: 0c000000
+  - _Question:
+    - Lorem Ipsum is Latin, but it doesn't mean anything!
+    _NpcResponses:
+    - 
+    nextStepIndices: 0d000000
+  - _Question:
+    - Do you even understand Latin?
+    _NpcResponses:
+    - I don't see how that's relevant.
+    nextStepIndices: 0e000000
+  - _Question:
+    - You don't see how know Latin is relevant to a Latin Language class?
+    _NpcResponses:
+    - Nope!
+    nextStepIndices: 0f000000
+  - _Question:
+    - Whatever, I'll just do it myself.
+    _NpcResponses:
+    - No need, I've already submitted the assignment.
+    nextStepIndices: 10000000
+  - _Question:
+    - Are you serious?
+    _NpcResponses:
+    - 
+    nextStepIndices: 11000000
+  - _Question:
+    - I only have one attempt at this assignment, and you went and submitted without
+      my permission?
+    _NpcResponses:
+    - I said I'd double-check my work before submitting it, and you said that sounded
+      good.
+    nextStepIndices: 12000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Sounds like permission to me.
+    nextStepIndices: 13000000
+  - _Question:
+    - Except for the fact that you didn't double-check your work first.
+    _NpcResponses:
+    - Whatever. The essay's been submitted, so we can cross this task off the list.
+    nextStepIndices: 14000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Any other tasks we need to complete?
+    nextStepIndices: ffffffff
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Are you kidding?
+    nextStepIndices: 15000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - It's like you don't trust me.
+    nextStepIndices: 16000000
+  - _Question:
+    - Given that you seem to be hallucinating, I'm not sure I do.
+    _NpcResponses:
+    - Hallucinating? I'm not hallucinating, quit being paranoid.
+    nextStepIndices: 17000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Anyway, I completed the essay for you while you were talking.
+    nextStepIndices: 18000000
+  - _Question:
+    - I told you I was going to write it.
+    _NpcResponses:
+    - And I told you it would take you at least 2 days if you did.
+    nextStepIndices: 19000000
+  - _Question:
+    - And I told you-
+    _NpcResponses:
+    - 
+    nextStepIndices: 1a000000
+  - _Question:
+    - Whatever. Can I at least see it before you submit it?
+    _NpcResponses:
+    - I already submitted it, but sure.
+    nextStepIndices: 1b000000
+  - _Question:
+    - You already-?
+    _NpcResponses:
+    - 
+    nextStepIndices: 1c000000
+  - _Question:
+    - Lybl it's entirely Lorem Ipsum!
+    _NpcResponses:
+    - Looks fine to me.
+    nextStepIndices: 1d000000
+  - _Question:
+    - But it's not fine!
+    _NpcResponses:
+    - 
+    nextStepIndices: 1e000000
+  - _Question:
+    - Whatever, I still have time to write it myself.
+    _NpcResponses:
+    - Don't bother.
+    nextStepIndices: 1f000000
+  - _Question:
+    - What? Why not?
+    _NpcResponses:
+    - Because we only have one attempt for the assignment.
+    nextStepIndices: 20000000
+  - _Question:
+    - (Click to grumble)
+    _NpcResponses:
+    - Anyway, since that's been submitted, we can cross it off the list!
+    nextStepIndices: 21000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Now, there's more stuff to do, yes?
+    nextStepIndices: ffffffff
