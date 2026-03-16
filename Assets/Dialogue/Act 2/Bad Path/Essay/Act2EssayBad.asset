@@ -75,7 +75,7 @@ MonoBehaviour:
     _NpcResponses:
     - Great! Just give me a moment...
     - ...
-    nextStepIndices: 0a00000016000000
+    nextStepIndices: 0a00000015000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
@@ -137,67 +137,67 @@ MonoBehaviour:
     - (Click to continue)
     _NpcResponses:
     - Are you kidding?
-    nextStepIndices: 15000000
+    nextStepIndices: 16000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
     - It's like you don't trust me.
-    nextStepIndices: 16000000
+    nextStepIndices: 17000000
   - _Question:
     - Given that you seem to be hallucinating, I'm not sure I do.
     _NpcResponses:
     - Hallucinating? I'm not hallucinating, quit being paranoid.
-    nextStepIndices: 17000000
+    nextStepIndices: 18000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
     - Anyway, I completed the essay for you while you were talking.
-    nextStepIndices: 18000000
+    nextStepIndices: 19000000
   - _Question:
     - I told you I was going to write it.
     _NpcResponses:
     - And I told you it would take you at least 2 days if you did.
-    nextStepIndices: 19000000
+    nextStepIndices: 1a000000
   - _Question:
     - And I told you-
     _NpcResponses:
     - 
-    nextStepIndices: 1a000000
+    nextStepIndices: 1b000000
   - _Question:
     - Whatever. Can I at least see it before you submit it?
     _NpcResponses:
     - I already submitted it, but sure.
-    nextStepIndices: 1b000000
+    nextStepIndices: 1c000000
   - _Question:
     - You already-?
     _NpcResponses:
     - 
-    nextStepIndices: 1c000000
+    nextStepIndices: 1d000000
   - _Question:
     - Lybl it's entirely Lorem Ipsum!
     _NpcResponses:
     - Looks fine to me.
-    nextStepIndices: 1d000000
+    nextStepIndices: 1e000000
   - _Question:
     - But it's not fine!
     _NpcResponses:
     - 
-    nextStepIndices: 1e000000
+    nextStepIndices: 1f000000
   - _Question:
     - Whatever, I still have time to write it myself.
     _NpcResponses:
     - Don't bother.
-    nextStepIndices: 1f000000
+    nextStepIndices: 20000000
   - _Question:
     - What? Why not?
     _NpcResponses:
     - Because we only have one attempt for the assignment.
-    nextStepIndices: 20000000
+    nextStepIndices: 21000000
   - _Question:
     - (Click to grumble)
     _NpcResponses:
     - Anyway, since that's been submitted, we can cross it off the list!
-    nextStepIndices: 21000000
+    nextStepIndices: 22000000
   - _Question:
     - (Click to continue)
     _NpcResponses:

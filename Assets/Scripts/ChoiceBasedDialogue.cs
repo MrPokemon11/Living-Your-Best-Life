@@ -89,13 +89,13 @@ public class ChoiceBasedDialogue : MonoBehaviour
     private Story GetDialogueAct2()
     {
         // the AI use score is inverted; the less it is used, the higher the player's score
-        if (actDirector.GetAIUse() <= Act2Limit)
+        if (actDirector.GetAIUse() >= Act2Limit)
         {
-            return Act2Dialogue[1]; // bad dialogue
+            return Act2Dialogue[1]; // good dialogue
         }
         else
         {
-            return Act2Dialogue[0]; // good dialogue
+            return Act2Dialogue[0]; // bad dialogue
         }
     }
 

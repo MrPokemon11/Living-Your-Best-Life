@@ -4425,6 +4425,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   photo: {fileID: 843419016}
   photo2: {fileID: 1870694116}
+  photo3: {fileID: 1351516339}
+  photo4: {fileID: 1084074479}
   DialogueManager: {fileID: 927347896}
   ActManager: {fileID: 633431629}
   ChoiceBasedDialogue: {fileID: 1229149507}
@@ -5039,6 +5041,60 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 605934516}
   m_CullTransparentMesh: 1
+--- !u!1 &615700995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 615700997}
+  - component: {fileID: 615700996}
+  m_Layer: 0
+  m_Name: PlayerActFinisher
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &615700996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615700995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7f1bfee2fcd814588c34cb38de4474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Act1Dialogue: {fileID: 11400000, guid: 945626eee62ddaf48ae587c6193bc4d4, type: 2}
+  Act2Dialogue:
+  - {fileID: 11400000, guid: 03dc234f0375b744181d0359ffcd8266, type: 2}
+  - {fileID: 11400000, guid: 2583c85e5d665a44592741498d305f5a, type: 2}
+  Act3Dialogue: []
+  ErrorText: {fileID: 11400000, guid: bb733316e8b562f40b3f6d1825423d59, type: 2}
+  dialogueSystem: {fileID: 1064816145}
+  actDirector: {fileID: 633431631}
+  Act2Limit: 2
+  Act3Limits: 
+--- !u!4 &615700997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 615700995}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1275, y: 361, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &633431629
 GameObject:
   m_ObjectHideFlags: 0
@@ -5084,12 +5140,23 @@ MonoBehaviour:
   dialogueManagers:
   - {fileID: 927347896}
   - {fileID: 1064816143}
-  dynamicDialogueStarterObject: {fileID: 1655102112}
-  actFinisherObject: {fileID: 1743376655}
+  lyblDialogueStarterObject: {fileID: 1655102112}
+  playerDialogueStarterObject: {fileID: 783354111}
+  lyblActFinisherObject: {fileID: 1743376655}
+  playerActFinisherObject: {fileID: 615700995}
   TransitionManager: {fileID: 1783277307}
+  currentAct: 1
   emailListener: {fileID: 340755049}
   essayListener: {fileID: 966344257}
   photoListener: {fileID: 494771491}
+  alertOfEpilogue:
+    m_PersistentCalls:
+      m_Calls: []
+  closeButtons:
+  - {fileID: 731356896}
+  - {fileID: 2015964495}
+  - {fileID: 482977651}
+  MainWindow: {fileID: 2020762909}
 --- !u!4 &633431632
 Transform:
   m_ObjectHideFlags: 0
@@ -5871,7 +5938,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.5698112, g: 0.381666, b: 0.381666, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 0.4792453, g: 0.4792453, b: 0.4792453, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -6557,13 +6624,69 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Act1Dialogue: {fileID: 11400000, guid: a60246a099000da4f951cfd58ac6b361, type: 2}
-  Act2Dialogue: []
+  Act2Dialogue:
+  - {fileID: 11400000, guid: c1560513d4e1af140a21b491e4814797, type: 2}
+  - {fileID: 11400000, guid: eaf204b26667e754983e9b841e9756e3, type: 2}
   Act3Dialogue: []
   ErrorText: {fileID: 11400000, guid: bb733316e8b562f40b3f6d1825423d59, type: 2}
   dialogueSystem: {fileID: 927347897}
   actDirector: {fileID: 633431631}
   Act2Limit: 2
   Act3Limits: 
+--- !u!1 &783354111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 783354113}
+  - component: {fileID: 783354112}
+  m_Layer: 0
+  m_Name: PlayerDialogueStarter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &783354112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783354111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7f1bfee2fcd814588c34cb38de4474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Act1Dialogue: {fileID: 11400000, guid: 0935309e7c42d964a9cf13ec6e0b0d3e, type: 2}
+  Act2Dialogue:
+  - {fileID: 11400000, guid: c5881097dfd05374cb52fa47c1015cde, type: 2}
+  - {fileID: 11400000, guid: 4e60dcd22b96cbe46b38de3133064bef, type: 2}
+  Act3Dialogue: []
+  ErrorText: {fileID: 11400000, guid: bb733316e8b562f40b3f6d1825423d59, type: 2}
+  dialogueSystem: {fileID: 1064816145}
+  actDirector: {fileID: 633431631}
+  Act2Limit: 2
+  Act3Limits: 
+--- !u!4 &783354113
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783354111}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.44}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &796478814
 GameObject:
   m_ObjectHideFlags: 0
@@ -8066,7 +8189,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &874361755
 RectTransform:
   m_ObjectHideFlags: 0
@@ -10623,18 +10746,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 843419016}
-        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-        m_MethodName: SetActive
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 1
-        m_CallState: 2
       - m_Target: {fileID: 1229149509}
         m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
         m_MethodName: set_interactable
@@ -10650,6 +10761,18 @@ MonoBehaviour:
       - m_Target: {fileID: 494771493}
         m_TargetAssemblyTypeName: PhotoListener, Assembly-CSharp
         m_MethodName: ActivateListeners
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 494771493}
+        m_TargetAssemblyTypeName: PhotoListener, Assembly-CSharp
+        m_MethodName: ShowPhotos
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -10710,7 +10833,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Act1Dialogue: {fileID: 11400000, guid: c955847a49b29d542b3a9c7f87916246, type: 2}
-  Act2Dialogue: []
+  Act2Dialogue:
+  - {fileID: 11400000, guid: 2002e3309e5ab0c47a93eb42eef0e247, type: 2}
+  - {fileID: 11400000, guid: 9dff01bab3bbb3d4fb95701faee044fb, type: 2}
   Act3Dialogue: []
   ErrorText: {fileID: 11400000, guid: bb733316e8b562f40b3f6d1825423d59, type: 2}
   dialogueSystem: {fileID: 927347897}
@@ -13767,35 +13892,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1655102114}
-  - component: {fileID: 1655102113}
+  - component: {fileID: 1655102115}
   m_Layer: 0
-  m_Name: Dynamic Dialogue Starter
+  m_Name: Lybl Dialogue Starter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1655102113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1655102112}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58a39f7314461644e87005c5bbb6d28a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerDialogueManager: {fileID: 1064816143}
-  lyblDialogueManager: {fileID: 927347896}
-  actDirector: {fileID: 633431629}
-  dialogueLyblAct1: {fileID: 11400000, guid: cbd1c3c8005f0004e80843403a1ccac7, type: 2}
-  dialoguePlayerAct1: {fileID: 11400000, guid: 0935309e7c42d964a9cf13ec6e0b0d3e, type: 2}
-  dialogueLyblAct2: {fileID: 0}
-  dialoguePlayerAct2: {fileID: 0}
-  dialogueLyblAct3: {fileID: 0}
-  dialoguePlayerAct3: {fileID: 0}
 --- !u!4 &1655102114
 Transform:
   m_ObjectHideFlags: 0
@@ -13811,6 +13915,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1655102115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1655102112}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7f1bfee2fcd814588c34cb38de4474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Act1Dialogue: {fileID: 11400000, guid: cbd1c3c8005f0004e80843403a1ccac7, type: 2}
+  Act2Dialogue:
+  - {fileID: 11400000, guid: 4664b40daa0bb624284bde8174526fdc, type: 2}
+  - {fileID: 11400000, guid: 59d883948b3259549b90278874fe6f05, type: 2}
+  Act3Dialogue: []
+  ErrorText: {fileID: 11400000, guid: bb733316e8b562f40b3f6d1825423d59, type: 2}
+  dialogueSystem: {fileID: 927347897}
+  actDirector: {fileID: 633431631}
+  Act2Limit: 2
+  Act3Limits: 
 --- !u!1 &1663988301
 GameObject:
   m_ObjectHideFlags: 0
@@ -14853,35 +14979,14 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1743376657}
-  - component: {fileID: 1743376656}
+  - component: {fileID: 1743376658}
   m_Layer: 0
-  m_Name: ActFinisher
+  m_Name: LyblActFinisher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1743376656
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1743376655}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 58a39f7314461644e87005c5bbb6d28a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerDialogueManager: {fileID: 1064816143}
-  lyblDialogueManager: {fileID: 927347896}
-  actDirector: {fileID: 633431629}
-  dialogueLyblAct1: {fileID: 11400000, guid: b6e0174a4ee832643ac8fa15a3757852, type: 2}
-  dialoguePlayerAct1: {fileID: 11400000, guid: 945626eee62ddaf48ae587c6193bc4d4, type: 2}
-  dialogueLyblAct2: {fileID: 0}
-  dialoguePlayerAct2: {fileID: 0}
-  dialogueLyblAct3: {fileID: 0}
-  dialoguePlayerAct3: {fileID: 0}
 --- !u!4 &1743376657
 Transform:
   m_ObjectHideFlags: 0
@@ -14897,6 +15002,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1743376658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1743376655}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a7f1bfee2fcd814588c34cb38de4474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Act1Dialogue: {fileID: 11400000, guid: b6e0174a4ee832643ac8fa15a3757852, type: 2}
+  Act2Dialogue:
+  - {fileID: 11400000, guid: 81c2916ef4c3e9a42aa74860f0254217, type: 2}
+  - {fileID: 11400000, guid: d48f509485401fc4daab608378435d47, type: 2}
+  Act3Dialogue: []
+  ErrorText: {fileID: 11400000, guid: 0d6d9ffbfd7a0514996b334836c92cae, type: 2}
+  dialogueSystem: {fileID: 927347897}
+  actDirector: {fileID: 633431631}
+  Act2Limit: 2
+  Act3Limits: 
 --- !u!1 &1747952464
 GameObject:
   m_ObjectHideFlags: 0
@@ -16222,7 +16349,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Act1Dialogue: {fileID: 11400000, guid: a4b68d97d989aef4087b0e0cbf14b88f, type: 2}
-  Act2Dialogue: []
+  Act2Dialogue:
+  - {fileID: 11400000, guid: d9dd553e468454f48b7caadcefc1ee26, type: 2}
+  - {fileID: 11400000, guid: 620b5fbd80494c5499be87150636fd1a, type: 2}
   Act3Dialogue: []
   ErrorText: {fileID: 11400000, guid: bb733316e8b562f40b3f6d1825423d59, type: 2}
   dialogueSystem: {fileID: 927347897}
@@ -17445,7 +17574,9 @@ SceneRoots:
   m_Roots:
   - {fileID: 633431632}
   - {fileID: 1655102114}
+  - {fileID: 783354113}
   - {fileID: 1743376657}
+  - {fileID: 615700997}
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}

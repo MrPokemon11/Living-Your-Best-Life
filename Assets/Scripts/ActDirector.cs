@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ActDirector : MonoBehaviour
 {
@@ -10,13 +11,17 @@ public class ActDirector : MonoBehaviour
     
     [Header("Dialogue Starters")]
     // the act director needs two DynamicDialogueStarters, one for the intro of each act and one for when all 3 tasks are complete
-    [SerializeField] private GameObject dynamicDialogueStarterObject;
-    [SerializeField] private GameObject actFinisherObject;
+    [SerializeField] private GameObject lyblDialogueStarterObject;
+    [SerializeField] private GameObject playerDialogueStarterObject;
+    [SerializeField] private GameObject lyblActFinisherObject;
+    [SerializeField] private GameObject playerActFinisherObject;
     [SerializeField] private GameObject TransitionManager;
-    private DynamicDialogueStarter dynamicDialogueStarter;
-    private DynamicDialogueStarter actFinisher;
+    private ChoiceBasedDialogue lyblDialogueStarter;
+    private ChoiceBasedDialogue playerDialogueStarter;
+    private ChoiceBasedDialogue lyblActFinisher;
+    private ChoiceBasedDialogue playerActFinisher;
     
-    private int currentAct = 0;
+    [SerializeField] private int currentAct = 0;
     private List<string> tasksCompleted;
     private bool actFinished = false;
     
@@ -24,6 +29,12 @@ public class ActDirector : MonoBehaviour
     [SerializeField] private GameObject emailListener;
     [SerializeField] private GameObject essayListener;
     [SerializeField] private GameObject photoListener;
+    
+    [Header("Epilogue Objects")]
+    public UnityEvent alertOfEpilogue;
+
+    [SerializeField] private GameObject[] closeButtons;
+    [SerializeField] private GameObject MainWindow;
     
     //other variables
     private int AIUse = 0;
@@ -35,9 +46,16 @@ public class ActDirector : MonoBehaviour
     {
         lyblDialogueSystem = dialogueManagers[0].GetComponent<DialogueSystem>();
         playerDialogueSystem = dialogueManagers[1].GetComponent<DialogueSystem>();
-        dynamicDialogueStarter = dynamicDialogueStarterObject.GetComponent<DynamicDialogueStarter>();
-        actFinisher = actFinisherObject.GetComponent<DynamicDialogueStarter>();
+        lyblDialogueStarter = lyblDialogueStarterObject.GetComponent<ChoiceBasedDialogue>();
+        playerDialogueStarter = playerDialogueStarterObject.GetComponent<ChoiceBasedDialogue>();
+        lyblActFinisher = lyblActFinisherObject.GetComponent<ChoiceBasedDialogue>();
+        playerActFinisher = playerActFinisherObject.GetComponent<ChoiceBasedDialogue>();
         tasksCompleted = new List<string>();
+
+        if (alertOfEpilogue == null)
+        {
+            alertOfEpilogue = new UnityEvent();
+        }
     }
 
     // Update is called once per frame
@@ -63,6 +81,11 @@ public class ActDirector : MonoBehaviour
     public void AllTasksComplete()
     {
         Debug.Log("All Tasks Complete");
+        alertOfEpilogue.Invoke();
+        foreach (GameObject button in closeButtons)
+        {
+            button.GetComponent<TraverseWindow>().TraverseToWindow(MainWindow);
+        }
         
         //mark the act as finished
         actFinished = true;
@@ -71,7 +94,8 @@ public class ActDirector : MonoBehaviour
             ToggleGoodRoute();
         }
         
-        actFinisher.StartDialogueByAct();
+        lyblActFinisher.StartCurrentDialogue();
+        playerActFinisher.StartCurrentDialogue();
         TransitionManager.GetComponent<EndOfActListener>().ActivateListeners();
     }
 
@@ -88,15 +112,11 @@ public class ActDirector : MonoBehaviour
         tasksCompleted.Clear();
         actFinished = false;
 
-        dynamicDialogueStarter.StartDialogueByAct();
+        lyblDialogueStarter.StartCurrentDialogue();
+        playerDialogueStarter.StartCurrentDialogue();
         InitializeObjects();
         
         lyblDialogueSystem.DialogueImpactfulChoiceEvent.AddListener(AddAIUse);
-    }
-    
-    public void ShowDialogue(string context)
-    {
-        dynamicDialogueStarter.StartDialogueThroughContext(currentAct.ToString(), context);
     }
 
     public int GetCurrentAct()
@@ -125,6 +145,7 @@ public class ActDirector : MonoBehaviour
     {
         // this number is actually inverted; the less the AI is used, the higher the score
         AIUse += value;
+        Debug.Log("Points added: " + value);
     }
 
     public void ToggleGoodRoute()

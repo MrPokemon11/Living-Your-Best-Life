@@ -42,11 +42,6 @@ MonoBehaviour:
     - That's your girlfriend, of course! Now how does the image look?
     nextStepIndices: 04000000
   - _Question:
-    - Who's the woman?
-    _NpcResponses:
-    - That's your girlfriend, of course! Now how does the image look?
-    nextStepIndices: 05000000
-  - _Question:
     - Looks good to me.
     - That's not my girlfriend.
     _NpcResponses:

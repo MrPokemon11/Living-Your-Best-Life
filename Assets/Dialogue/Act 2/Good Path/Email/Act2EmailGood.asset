@@ -43,14 +43,11 @@ MonoBehaviour:
     nextStepIndices: 04000000
   - _Question:
     - Yeah!
-    _NpcResponses:
-    - Alright! Just give me a moment...
-    nextStepIndices: 05000000
-  - _Question:
     - That's not a good idea.
     _NpcResponses:
+    - Alright! Just give me a moment...
     - Oh...
-    nextStepIndices: 0b000000
+    nextStepIndices: 050000000b000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
@@ -106,8 +103,3 @@ MonoBehaviour:
     _NpcResponses:
     - Though do you even want this job..?
     nextStepIndices: 10000000
-  - _Question:
-    - ...
-    _NpcResponses:
-    - Anyway! There's still stuff for me to help with right? Let's go!
-    nextStepIndices: ffffffff

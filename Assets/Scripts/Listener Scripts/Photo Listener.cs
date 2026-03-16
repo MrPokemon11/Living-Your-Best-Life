@@ -8,6 +8,8 @@ public class PhotoListener : MonoBehaviour
     [Header("Photos")]
     [SerializeField] GameObject photo;
     [SerializeField] GameObject photo2;
+    [SerializeField] GameObject photo3;
+    [SerializeField] GameObject photo4;
     
     [Header("Dialogue")]
     [SerializeField] private GameObject DialogueManager;
@@ -57,12 +59,28 @@ public class PhotoListener : MonoBehaviour
         dialogueSystem.DialogueEndEvent.RemoveListener(MarkComplete);
     }
 
+    public void ShowPhotos()
+    {
+        if (actDirector.GetCurrentAct() == 1)
+        {
+            photo.SetActive(true);
+        }
+        else
+        {
+            photo3.SetActive(true);
+        }
+    }
+    
     void SwapPhotos(int doSwap)
     {
-        if (doSwap == 0)
+        if (doSwap == 0 && actDirector.GetCurrentAct() == 1)
         {
             photo.SetActive(false);
             photo2.SetActive(true);
+        } else if (doSwap == 0 && actDirector.GetCurrentAct() == 2)
+        {
+            photo3.SetActive(false);
+            photo4.SetActive(true);
         }
     }
 
