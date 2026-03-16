@@ -1,5 +1,7 @@
 using UnityEngine;
 using Dialogue;
+using TMPro;
+using UnityEngine.UI;
 
 public class BetweenActTransition : MonoBehaviour
 {
@@ -13,6 +15,12 @@ public class BetweenActTransition : MonoBehaviour
     private ChoiceBasedDialogue LyblDialogue;
     private ChoiceBasedDialogue PlayerDialogue;
     
+    [SerializeField] private GameObject DialogueObject;
+    private DialogueSystem dialogueSystem;
+    [SerializeField] private GameObject TalkyBox;
+    [SerializeField] private ChoiceBasedDialogue Act3Dialogue;
+    
+    
     private bool Act2EpilogueSeen = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -21,6 +29,7 @@ public class BetweenActTransition : MonoBehaviour
         actDirector = GameDirector.GetComponent<ActDirector>();
         LyblDialogue = LyblDialogueObject.GetComponent<ChoiceBasedDialogue>();
         PlayerDialogue = PlayerDialogueObject.GetComponent<ChoiceBasedDialogue>();
+        dialogueSystem = DialogueObject.GetComponent<DialogueSystem>();
     }
 
     // Update is called once per frame
@@ -31,11 +40,24 @@ public class BetweenActTransition : MonoBehaviour
 
     public void HandleTransition()
     {
-        if (Act2EpilogueSeen == false && actDirector.GetCurrentAct() == 2)
+        if (Act2EpilogueSeen == false && actDirector.GetCurrentAct() == 3)
         {
             Act2EpilogueSeen = true;
             LyblDialogue.StartCurrentDialogue();
             PlayerDialogue.StartCurrentDialogue();
+            gameObject.GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+            dialogueSystem.DialogueEndEvent.AddListener(act3Dialogue);
+            TalkyBox.GetComponent<Button>().onClick.AddListener(() => {gameObject.SetActive(false);});
         }
+        else if (Act2EpilogueSeen == false)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+
+    private void act3Dialogue()
+    {
+        Act3Dialogue.StartCurrentDialogue();
+        dialogueSystem.DialogueEndEvent.RemoveListener(act3Dialogue);
     }
 }
