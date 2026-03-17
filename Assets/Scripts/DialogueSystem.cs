@@ -33,6 +33,7 @@ public class DialogueSystem : MonoBehaviour
     // unity events for returning dialogue data to listeners; added by me
     public UnityEvent DialogueEndEvent;
     public UnityEvent<int> DialogueImpactfulChoiceEvent;
+    public UnityEvent<int> ReturnDialogueIndex;
     
     // ghost listeners are non-persistent listeners that ignore RemoveAllListeners(), and something that i made up - Devon
     public UnityEvent<string> GhostListeners;
@@ -63,6 +64,11 @@ public class DialogueSystem : MonoBehaviour
         if (activeGhosts == null)
         {
             activeGhosts = new List<string>();
+        }
+
+        if (ReturnDialogueIndex == null)
+        {
+            ReturnDialogueIndex = new UnityEvent<int>();
         }
     }
 
@@ -126,6 +132,7 @@ public class DialogueSystem : MonoBehaviour
                     responseButtons[i].onClick.RemoveAllListeners();
                     responseButtons[i].onClick.AddListener(() =>
                     {
+                        ReportDialogueIndex();
                         responsePanel.SetActive(false);
                         dialogueIndex++;
                         Next();
@@ -173,7 +180,7 @@ public class DialogueSystem : MonoBehaviour
 #endif
                         ReportDialogueChoice(index);                        
                     }
-
+                    ReportDialogueIndex();
                     StopAllCoroutines();
                     StartCoroutine(ShowNpcResponseThenNext(step._NpcResponses[index], step.nextStepIndices[index]));
                 });
@@ -302,5 +309,17 @@ public class DialogueSystem : MonoBehaviour
         currentBranchingStep = 0;
         lastImpactfulChoice = -1;
         isAlertingGhosts = false; 
+    }
+
+    public void ReportDialogueIndex()
+    {
+        if(currentStory._dialogueType == Story.DialogueType.Branching)
+        {
+            ReturnDialogueIndex.Invoke(currentBranchingStep);
+        }
+        else
+        {
+            ReturnDialogueIndex.Invoke(dialogueIndex);
+        }
     }
 }

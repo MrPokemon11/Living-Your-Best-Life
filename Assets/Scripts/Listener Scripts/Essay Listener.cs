@@ -19,6 +19,7 @@ public class EssayListener : MonoBehaviour
     
     [Header("Relevant Game Objects")] 
     [SerializeField] private GameObject TransitionScreen;
+    [SerializeField] private GameObject EssayAct1;
     [SerializeField] private GameObject EssayText;
     [SerializeField] private GameObject ContinueButton;
     [SerializeField] private GameObject SubmissionIncompleteButton;
@@ -48,34 +49,64 @@ public class EssayListener : MonoBehaviour
     {
         Debug.Log("Activate Listeners");
         dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(WriteEssay);
-        dialogueSystem.DialogueEndEvent.AddListener(MarkComplete);
+        if (actDirector.GetCurrentAct() == 1)
+        {
+            dialogueSystem.DialogueEndEvent.AddListener(MarkComplete);        
+        }
+
+        
+        if (actDirector.GetCurrentAct() == 2)
+        {
+            dialogueSystem.DialogueEndEvent.AddListener(MarkTaskDone);
+        }
     }
 
     public void RemoveListeners()
     {
         dialogueSystem.DialogueImpactfulChoiceEvent.RemoveListener(WriteEssay);
-        dialogueSystem.DialogueEndEvent.RemoveListener(MarkComplete);
+
+        if (actDirector.GetCurrentAct() == 1)
+        {
+            dialogueSystem.DialogueEndEvent.RemoveListener(MarkComplete);
+        }
+        
+        if (actDirector.GetCurrentAct() == 2)
+        {
+            dialogueSystem.DialogueEndEvent.RemoveListener(MarkTaskDone);
+        }
     }
 
     public void Initialize()
     {
-        TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Normal;
-        hasDialogueBeenSeen = false;
-        EssayText.SetActive(false);
-        TransitionScreen.SetActive(false);
+        if (actDirector.GetCurrentAct() != 3)
+        {
+            TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Normal;
+            hasDialogueBeenSeen = false;
+            EssayText.SetActive(false);
+            EssayAct1.SetActive(false);
+            TransitionScreen.SetActive(false);
+        }
+
     }
     
     void WriteEssay(int isManual)
     {
-        if (isManual == 1)
+        if (actDirector.GetCurrentAct() == 1)
         {
-            //script for manually writing the essay
-            dialogueSystem.AddGhostListener("Essay");
-            dialogueSystem.GhostListeners.AddListener(transitionScreen);
+            if (isManual == 1)
+            {
+                //script for manually writing the essay
+                dialogueSystem.AddGhostListener("Essay");
+                dialogueSystem.GhostListeners.AddListener(transitionScreen);
+            }
+            else
+            {
+                // script for LYBL writing the essay
+                EssayAct1.SetActive(true);
+            }            
         }
         else
         {
-            // script for LYBL writing the essay
             EssayText.SetActive(true);
         }
     }
@@ -106,5 +137,23 @@ public class EssayListener : MonoBehaviour
     public void MarkTaskDone()
     {
         TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+    }
+
+    private void ShowEssayByPath(int index)
+    {
+        if (actDirector.GetIsGoodRoute())
+        {
+            if (index == 3)
+            {
+                EssayText.SetActive(true);
+            }
+        }
+        else
+        {
+            if (index == 9 || index == 27)
+            {
+                EssayText.SetActive(true);
+            }
+        }
     }
 }

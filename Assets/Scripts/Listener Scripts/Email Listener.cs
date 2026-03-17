@@ -19,8 +19,11 @@ public class EmailListener : MonoBehaviour
     [Header("Relevant Game Objects")] 
     [SerializeField] private GameObject TransitionScreen;
     [SerializeField] private GameObject EmailText;
+    [SerializeField] private GameObject EmailAct2Good;
+    [SerializeField] private GameObject EmailAct2Bad;
     [SerializeField] private GameObject ContinueButton;
     private Button continueButton;
+    private int act2YesHandler;
 
     [Header("Task Text")]
     [SerializeField] private GameObject TaskText;
@@ -46,6 +49,9 @@ public class EmailListener : MonoBehaviour
         hasDialogueBeenSeen = false;
         TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Normal;
         TransitionScreen.SetActive(false);
+        EmailText.SetActive(false);
+        EmailAct2Good.SetActive(false);
+        EmailAct2Bad.SetActive(false);
     }
     
     public void ActivateListeners()
@@ -63,17 +69,21 @@ public class EmailListener : MonoBehaviour
 
     void WriteEmail(int isManual)
     {
-        if (isManual == 1)
+        if (actDirector.GetCurrentAct() == 1)
         {
-            //script for manually writing the Emails
-            dialogueSystem.AddGhostListener("Email");
-            dialogueSystem.GhostListeners.AddListener(transitionScreen);
+           if (isManual == 1)
+           {
+               //script for manually writing the Emails
+               dialogueSystem.AddGhostListener("Email");
+               dialogueSystem.GhostListeners.AddListener(transitionScreen);
+           }
+           else
+           {
+               // script for LYBL writing the Email
+               EmailText.SetActive(true);
+           } 
         }
-        else
-        {
-            // script for LYBL writing the Email
-            EmailText.SetActive(true);
-        }
+        act2YesHandler = isManual;
     }
 
     void transitionScreen(string ghostDetector)
@@ -103,5 +113,23 @@ public class EmailListener : MonoBehaviour
     public void MarkTaskDone()
     {
         TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+    }
+
+    private void ShowEmailByPath(int index)
+    {
+        if (actDirector.GetIsGoodRoute())
+        {
+            if ((index == 4 && act2YesHandler == 0) || index == 13)
+            {
+                EmailAct2Good.SetActive(true);
+            }
+        }
+        else
+        {
+            if ((index == 5 && act2YesHandler == 0) || index == 15)
+            {
+                EmailAct2Bad.SetActive(true);
+            }
+        }
     }
 }

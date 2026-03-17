@@ -99,6 +99,11 @@ public class ActDirector : MonoBehaviour
         TransitionManager.GetComponent<EndOfActListener>().ActivateListeners();
     }
 
+    public int GetCurrentAct()
+    {
+        return currentAct;
+    }
+    
     public void StartAct()
     {
         // add the AI use from the previous act to the total, reset the current AI use to 0
@@ -114,15 +119,18 @@ public class ActDirector : MonoBehaviour
 
         lyblDialogueStarter.StartCurrentDialogue();
         playerDialogueStarter.StartCurrentDialogue();
-        InitializeObjects();
+        
+        //only initialize objects if it isn't act 3, as no tasks are done during act 3
+        if (currentAct != 3)
+        {
+            InitializeObjects();  
+        }
+
         
         lyblDialogueSystem.DialogueImpactfulChoiceEvent.AddListener(AddAIUse);
     }
 
-    public int GetCurrentAct()
-    {
-        return currentAct;
-    }
+
 
     public void MarkTaskAsDone(string task)
     {

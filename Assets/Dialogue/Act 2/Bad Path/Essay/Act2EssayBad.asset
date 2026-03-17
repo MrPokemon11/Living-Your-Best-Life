@@ -97,7 +97,7 @@ MonoBehaviour:
     - I don't see how that's relevant.
     nextStepIndices: 0e000000
   - _Question:
-    - You don't see how know Latin is relevant to a Latin Language class?
+    - You don't see how knowing Latin is relevant to a Latin Language class?
     _NpcResponses:
     - Nope!
     nextStepIndices: 0f000000

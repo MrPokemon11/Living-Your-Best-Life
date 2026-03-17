@@ -30,7 +30,7 @@ public class PhotoListener : MonoBehaviour
         dialogueSystem = DialogueManager.GetComponent<DialogueSystem>();
         actDirector = ActManager.GetComponent<ActDirector>();
         ChoiceBasedDialogueScript = ChoiceBasedDialogue.GetComponent<ChoiceBasedDialogue>();
-        Initialize();
+        
     }
 
     // Update is called once per frame
@@ -45,17 +45,33 @@ public class PhotoListener : MonoBehaviour
         //gameObject.transform.parent.gameObject.SetActive(false);
         photo.SetActive(false);
         photo2.SetActive(false);
+        photo3.SetActive(false);
+        photo4.SetActive(false);
     }
     
     public void ActivateListeners()
     {
-        dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(SwapPhotos);
+        if (actDirector.GetCurrentAct() == 1)
+        {
+           dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(SwapPhotos); 
+        }
+        if (actDirector.GetCurrentAct() == 2)
+        {
+            dialogueSystem.ReturnDialogueIndex.AddListener(Act2Photos);
+        }
         dialogueSystem.DialogueEndEvent.AddListener(MarkComplete);
     }
 
     public void RemoveListeners()
     {
-        dialogueSystem.DialogueImpactfulChoiceEvent.RemoveListener(SwapPhotos);
+        if (actDirector.GetCurrentAct() == 1)
+        {
+            dialogueSystem.DialogueImpactfulChoiceEvent.RemoveListener(SwapPhotos);            
+        }
+        if (actDirector.GetCurrentAct() == 2)
+        {
+            dialogueSystem.ReturnDialogueIndex.RemoveListener(Act2Photos);
+        }
         dialogueSystem.DialogueEndEvent.RemoveListener(MarkComplete);
     }
 
@@ -90,5 +106,13 @@ public class PhotoListener : MonoBehaviour
         TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
         ChoiceBasedDialogueScript.MarkDialogueSeen();
         RemoveListeners();
+    }
+
+    void Act2Photos(int currentLine)
+    {
+        if (currentLine == 1)
+        {
+            SwapPhotos(0);
+        }
     }
 }
