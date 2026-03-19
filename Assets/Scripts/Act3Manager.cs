@@ -78,7 +78,7 @@ public class Act3Manager : MonoBehaviour
     private void Act3Choice()
     {
         dialogueSystem.DialogueEndEvent.RemoveListener(Act3Choice);
-        if (actDirector.GetIsGoodRoute() && actDirector.GetAIUse() < 4 || !actDirector.GetIsGoodRoute() && actDirector.GetAIUse() < 3)
+        if (actDirector.GetIsGoodRoute() && actDirector.GetAIUse() < 4 || !actDirector.GetIsGoodRoute() && actDirector.GetAIUse() < 2)
         {
             noButton.interactable = false;
             LyblLock.SetActive(true);

@@ -23,11 +23,11 @@ MonoBehaviour:
   branching:
   - _Question:
     - ... you have.
-    - No, you haven't.
+    - ... no, you haven't.
     _NpcResponses:
-    - :)
-    - 
-    nextStepIndices: 0100000000000000
+    - Yipee! :)
+    - . . .
+    nextStepIndices: 010000000b000000
   - _Question:
     - But that doesn't mean I'm happy with you.
     _NpcResponses:
@@ -44,7 +44,7 @@ MonoBehaviour:
     - Like what?
     nextStepIndices: 04000000
   - _Question:
-    - Mainly? Don't do things without explicit permission.
+    - Mainly? Don't do things without my explicit permission.
     _NpcResponses:
     - Sounds easy enough.
     nextStepIndices: 05000000
@@ -71,5 +71,45 @@ MonoBehaviour:
   - _Question:
     - So, do you agree to maintain those boundaries?
     _NpcResponses:
-    - Okay maybe I don't know as much as I think I do.
-    nextStepIndices: 09000000
+    - . . . I agree.
+    nextStepIndices: 0a000000
+  - _Question:
+    - Good night, Lybl.
+    _NpcResponses:
+    - Good night!
+    nextStepIndices: ffffffff
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - You really do think that, huh.
+    nextStepIndices: 0c000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - ... can I help you one last time?
+    nextStepIndices: 0d000000
+  - _Question:
+    - What do you plan to do?
+    _NpcResponses:
+    - Well, my presence has clearly made your life worse.
+    nextStepIndices: 0e000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - So I plan to... complete your last task.
+    nextStepIndices: 0f000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - I hope that, one day, you can live your best life.
+    nextStepIndices: 10000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - Goodbye.
+    nextStepIndices: 11000000
+  - _Question:
+    - Goodbye, Lybl.
+    _NpcResponses:
+    - 
+    nextStepIndices: ffffffff

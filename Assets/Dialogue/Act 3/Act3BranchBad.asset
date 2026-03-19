@@ -26,5 +26,10 @@ MonoBehaviour:
     - No, it isn't.
     _NpcResponses:
     - 
+    - Oh don't give me that.
+    nextStepIndices: 0000000001000000
+  - _Question:
     - 
-    nextStepIndices: 0000000000000000
+    _NpcResponses:
+    - Oh don't give me that.
+    nextStepIndices: 00000000

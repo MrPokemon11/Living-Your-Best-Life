@@ -54,5 +54,5 @@ MonoBehaviour:
   - _Question:
     - You've ruined it.
     _NpcResponses:
-    - ... you really think that, don't you.
+    - ... you don't realy think that, right?
     nextStepIndices: ffffffff
