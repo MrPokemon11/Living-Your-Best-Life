@@ -17,14 +17,14 @@ public class Act3Manager : MonoBehaviour
     [SerializeField] private DialogueSystem dialogueSystem;
     [SerializeField] private ActDirector actDirector;
     [SerializeField] private Act3TaskReveal act3TaskReveal;
-
-    [Header("Choice Buttons")] 
+    
+    [Header("UI Elements")]    
     [SerializeField] private Button noButton;
-
-    [Header("UI Elements")]
     [SerializeField] private GameObject LyblLock;
+    [SerializeField] private GameObject finaleScreen;
 
-    [SerializeField] private GameObject FinaleScreen;
+    [Header("Misc.")] 
+    [SerializeField] private GameObject MainCamera;
 
     private bool addedListener;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -104,5 +104,7 @@ public class Act3Manager : MonoBehaviour
     {
         this.GetComponent<TurnOffElectronics>().TurnOff();
         
+        MainCamera.GetComponent<ZoomCamera>().ZoomOut();
+        finaleScreen.GetComponent<FinaleScreen>().FadeIn();
     }
 }

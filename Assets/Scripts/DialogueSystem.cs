@@ -23,9 +23,10 @@ public class DialogueSystem : MonoBehaviour
 
     [Header("Typing Settings")]
     public float typingSpeed = 0.03f;
+    private float lastTypingSpeed = 0.0f;
 
     private int dialogueIndex = 0;
-    private bool isTyping = false;
+    public bool isTyping = false;
     private int currentBranchingStep = 0;
 
     private int lastImpactfulChoice = -1;
@@ -70,6 +71,8 @@ public class DialogueSystem : MonoBehaviour
         {
             ReturnDialogueIndex = new UnityEvent<int>();
         }
+        
+        lastTypingSpeed = typingSpeed;
     }
 
     public void StartDialogue(Story story)
@@ -89,7 +92,7 @@ public class DialogueSystem : MonoBehaviour
         else
         {
             //extremely hacky solution, but it's not like the player name is used for anything else -Devon
-            dialogueText.text = currentStory._playerName;
+            TypeLine(currentStory._playerName);
             ShowBranchingDialogue();
 
         }
@@ -200,9 +203,15 @@ public class DialogueSystem : MonoBehaviour
         dialogueText.text = "";
         foreach (char letter in line.ToCharArray())
         {
+            //allow the player to skip through dialogue
+            if ((Input.GetKeyDown(KeyCode.Space) ||  Input.GetMouseButtonDown(0)) && isTyping)
+            {
+                typingSpeed = 0f;
+            }
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }
+        typingSpeed = lastTypingSpeed;
         isTyping = false;
     }
 

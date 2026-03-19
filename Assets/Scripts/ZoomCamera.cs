@@ -8,6 +8,7 @@ public class ZoomCamera : MonoBehaviour
     private float currentFoV;
     Camera cam;
     bool zoomingIn = false;
+    bool zoomingOut = false;
 
     //do things before other stuff happens
     void Start()
@@ -19,6 +20,11 @@ public class ZoomCamera : MonoBehaviour
     public void StartGameZoom()
     {
         Invoke (nameof(ZoomIn), waitTime);        
+    }
+
+    public void EndGameZoom()
+    {
+        Invoke(nameof(ZoomOut), waitTime);
     }
     
     // Update is called once per frame
@@ -33,6 +39,16 @@ public class ZoomCamera : MonoBehaviour
                 zoomingIn = false;
             }
         }
+
+        if (zoomingOut)
+        {
+            cam.fieldOfView += zoomSpeed * Time.deltaTime;
+            if (cam.fieldOfView >= currentFoV)
+            {
+                cam.fieldOfView = currentFoV;
+                zoomingOut = false;
+            }
+        }
     }
 
     public void ResetFoV()
@@ -44,5 +60,9 @@ public class ZoomCamera : MonoBehaviour
     {
         zoomingIn = true;
     }
-    
+
+    public void ZoomOut()
+    {
+        zoomingOut = true;
+    }
 }
