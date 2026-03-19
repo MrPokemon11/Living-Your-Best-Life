@@ -36,7 +36,7 @@ public class EssayListener : MonoBehaviour
         actDirector = ActManager.GetComponent<ActDirector>();
         continueButton = ContinueButton.GetComponent<Button>();
         ChoiceBasedDialogueScript = ChoiceBasedDialogue.GetComponent<ChoiceBasedDialogue>();
-        Initialize();
+        
     }
 
     // Update is called once per frame
@@ -58,6 +58,7 @@ public class EssayListener : MonoBehaviour
         if (actDirector.GetCurrentAct() == 2)
         {
             dialogueSystem.DialogueEndEvent.AddListener(MarkTaskDone);
+            dialogueSystem.ReturnDialogueIndex.AddListener(ShowEssayByPath);
         }
     }
 
@@ -73,6 +74,7 @@ public class EssayListener : MonoBehaviour
         if (actDirector.GetCurrentAct() == 2)
         {
             dialogueSystem.DialogueEndEvent.RemoveListener(MarkTaskDone);
+            dialogueSystem.ReturnDialogueIndex.RemoveListener(ShowEssayByPath);
         }
     }
 
@@ -105,10 +107,6 @@ public class EssayListener : MonoBehaviour
                 EssayAct1.SetActive(true);
             }            
         }
-        else
-        {
-            EssayText.SetActive(true);
-        }
     }
 
     void transitionScreen(string ghostDetector)
@@ -137,6 +135,7 @@ public class EssayListener : MonoBehaviour
     public void MarkTaskDone()
     {
         TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+        actDirector.MarkTaskAsDone("Essay");
     }
 
     private void ShowEssayByPath(int index)

@@ -47,7 +47,7 @@ MonoBehaviour:
     _NpcResponses:
     - Great! I'll send it off to her, and we can cross this off the list.
     - Yes it is.
-    nextStepIndices: 060000000d000000
+    nextStepIndices: 060000000c000000
   - _Question:
     - (Click to continue)
     _NpcResponses:

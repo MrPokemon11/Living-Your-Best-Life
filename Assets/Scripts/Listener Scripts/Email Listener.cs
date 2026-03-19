@@ -46,12 +46,15 @@ public class EmailListener : MonoBehaviour
 
     public void Initialize()
     {
+        //as a reminder to myself, the act director blocks initialization during act 3
         hasDialogueBeenSeen = false;
         TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Normal;
         TransitionScreen.SetActive(false);
         EmailText.SetActive(false);
         EmailAct2Good.SetActive(false);
-        EmailAct2Bad.SetActive(false);
+        EmailAct2Bad.SetActive(false);            
+        
+
     }
     
     public void ActivateListeners()
@@ -59,12 +62,20 @@ public class EmailListener : MonoBehaviour
         Debug.Log("Activate Listeners");
         dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(WriteEmail);
         dialogueSystem.DialogueEndEvent.AddListener(MarkComplete);
+        if (actDirector.GetCurrentAct() == 2)
+        {
+            dialogueSystem.ReturnDialogueIndex.AddListener(ShowEmailByPath);
+        }
     }
 
     public void RemoveListeners()
     {
         dialogueSystem.DialogueImpactfulChoiceEvent.RemoveListener(WriteEmail);
         dialogueSystem.DialogueEndEvent.RemoveListener(MarkComplete);
+        if (actDirector.GetCurrentAct() == 2)
+        {
+            dialogueSystem.ReturnDialogueIndex.RemoveListener(ShowEmailByPath);
+        }
     }
 
     void WriteEmail(int isManual)

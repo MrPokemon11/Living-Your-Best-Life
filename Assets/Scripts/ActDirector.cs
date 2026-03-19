@@ -21,9 +21,7 @@ public class ActDirector : MonoBehaviour
     private ChoiceBasedDialogue lyblActFinisher;
     private ChoiceBasedDialogue playerActFinisher;
     
-    [SerializeField] private int currentAct = 0;
-    private List<string> tasksCompleted;
-    private bool actFinished = false;
+
     
     [Header("Initializable Objects")]
     [SerializeField] private GameObject emailListener;
@@ -37,9 +35,12 @@ public class ActDirector : MonoBehaviour
     [SerializeField] private GameObject MainWindow;
     
     //other variables
+    [SerializeField] private int currentAct = 0;
+    private List<string> tasksCompleted;
+    private bool actFinished = false;
     private int AIUse = 0;
     private int totalAIUse = 0;
-    private bool isGoodRoute = false;
+    [SerializeField] private bool isGoodRoute = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

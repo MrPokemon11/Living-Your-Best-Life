@@ -29,7 +29,7 @@ MonoBehaviour:
   - _Question:
     - (Click to continue)
     _NpcResponses:
-    - 111 pages?!
+    - III? Wait... 111 pages?!
     nextStepIndices: 02000000
   - _Question:
     - Those are roman numerals, Lybl.
@@ -39,7 +39,7 @@ MonoBehaviour:
   - _Question:
     - (Click to continue)
     _NpcResponses:
-    - I'll just write it for you, we'll be here for the next two day otherwise.
+    - I'll just write it for you, we'll be here for the next two days otherwise.
     nextStepIndices: 04000000
   - _Question:
     - It's only 3 pages, I can do it in an hour and a half.

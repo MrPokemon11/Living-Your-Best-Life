@@ -3131,18 +3131,6 @@ MonoBehaviour:
           m_StringArgument: Calvis opened!
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 633431631}
-        m_TargetAssemblyTypeName: ActDirector, Assembly-CSharp
-        m_MethodName: MarkTaskAsDone
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: Essay
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 974402307}
         m_TargetAssemblyTypeName: DynamicDialogueStarter, Assembly-CSharp
         m_MethodName: StartDialogueByAct
@@ -5429,7 +5417,6 @@ MonoBehaviour:
   lyblActFinisherObject: {fileID: 1743376655}
   playerActFinisherObject: {fileID: 615700995}
   TransitionManager: {fileID: 1783277307}
-  currentAct: 0
   emailListener: {fileID: 340755049}
   essayListener: {fileID: 966344257}
   photoListener: {fileID: 494771491}
@@ -5441,6 +5428,8 @@ MonoBehaviour:
   - {fileID: 2015964495}
   - {fileID: 482977651}
   MainWindow: {fileID: 2020762909}
+  currentAct: 1
+  isGoodRoute: 0
 --- !u!4 &633431632
 Transform:
   m_ObjectHideFlags: 0
@@ -9594,15 +9583,15 @@ MonoBehaviour:
   Act1Dialogue: {fileID: 0}
   Act2Dialogue: []
   Act3Dialogue:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 11400000, guid: 490b1a14b5143314db97f620e8ad1a50, type: 2}
+  - {fileID: 11400000, guid: 490b1a14b5143314db97f620e8ad1a50, type: 2}
+  - {fileID: 11400000, guid: ab70ff20cfb7fed4c8b8398f114d8f3c, type: 2}
+  - {fileID: 11400000, guid: ab70ff20cfb7fed4c8b8398f114d8f3c, type: 2}
   ErrorText: {fileID: 0}
   dialogueSystem: {fileID: 927347897}
   actDirector: {fileID: 633431631}
-  Act2Limit: 2
-  Act3Limits: 
+  Act2Limit: 10
+  Act3Limits: 0a0000000a000000
 --- !u!4 &1024076400
 Transform:
   m_ObjectHideFlags: 0
@@ -12843,7 +12832,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1332561913
 RectTransform:
   m_ObjectHideFlags: 0
@@ -13016,16 +13005,16 @@ MonoBehaviour:
     time. One person also gave feedback that I should include a first-person view,
     and another that I need to pace my shots better as they are a little fast.\r\n\r\nThis
     feedback matters because a large part of the game that I\u2019m basing my cutscene
-    off of, A Short Hike, is how beautiful the game is. Therefore, I should use the
-    cameras to show off my scene more.\n\nThe second theme is related to the environment
-    and its lack of detail. Feedback included that I  should add some voronoi noise
-    to the water to make it stand out more, add some decor to the scene, sharpen
-    the fog a little, and texture the mountain. I also received the feedback that
-    I should add a Smooth Step node to my aurora shader so that it does not cut-off
-    as abruptly, and that the snow particles are under-developed.\r\n\r\nThis feedback
-    matters because, like the previous theme, the original game likes to focus on
-    the view, so it\u2019s important to add a view to look at. Also, not having textures
-    would severely reduce my grade for the final submission.\r\n\r\n"
+    off of is how beautiful the game is. Therefore, I should use the cameras to show
+    off my scene more.\n\nThe second theme is related to the environment and its
+    lack of detail. Feedback included that I  should add some voronoi noise to the
+    water to make it stand out more, add some decor to the scene, sharpen the fog
+    a little, and texture the mountain. I also received the feedback that I should
+    add a Smooth Step node to my aurora shader so that it does not cut-off as abruptly,
+    and that the snow particles are under-developed.\r\n\r\nThis feedback matters
+    because, like the previous theme, the original game likes to focus on the view,
+    so it\u2019s important to add a view to look at. Also, not having textures would
+    severely reduce my grade for the final submission.\r\n\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -14131,6 +14120,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1492585394}
   m_CullTransparentMesh: 1
+--- !u!1 &1558654785
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1558654787}
+  - component: {fileID: 1558654786}
+  m_Layer: 0
+  m_Name: Act3Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1558654786
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558654785}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55aca582baeb9e24dad9f46673494f7f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  badStory: {fileID: 11400000, guid: ab70ff20cfb7fed4c8b8398f114d8f3c, type: 2}
+  goodStory: {fileID: 11400000, guid: 490b1a14b5143314db97f620e8ad1a50, type: 2}
+  choiceBad: {fileID: 11400000, guid: d08b15837a122e04ab1b425357dfc1c1, type: 2}
+  choiceGood: {fileID: 11400000, guid: ba3c10bde11378348aba60273aba1e5d, type: 2}
+  dialogueSystem: {fileID: 927347897}
+  actDirector: {fileID: 633431631}
+  act3TaskReveal: {fileID: 874361756}
+  noButton: {fileID: 712028234}
+--- !u!4 &1558654787
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1558654785}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -1.5683575, y: -0.14559317, z: 8.149782}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1559362189
 GameObject:
   m_ObjectHideFlags: 0
@@ -18364,3 +18405,4 @@ SceneRoots:
   - {fileID: 1783277309}
   - {fileID: 32176830}
   - {fileID: 1024076400}
+  - {fileID: 1558654787}

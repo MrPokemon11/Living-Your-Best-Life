@@ -41,12 +41,15 @@ public class PhotoListener : MonoBehaviour
 
     public void Initialize()
     {
+        //as a reminder to myself, the act director blocks initialization during act 3
         TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Normal;
         //gameObject.transform.parent.gameObject.SetActive(false);
         photo.SetActive(false);
         photo2.SetActive(false);
         photo3.SetActive(false);
-        photo4.SetActive(false);
+        photo4.SetActive(false);            
+        
+
     }
     
     public void ActivateListeners()
