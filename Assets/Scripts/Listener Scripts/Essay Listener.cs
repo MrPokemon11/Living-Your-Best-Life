@@ -143,14 +143,14 @@ public class EssayListener : MonoBehaviour
     {
         if (actDirector.GetIsGoodRoute())
         {
-            if (index == 3)
+            if (index == 4)
             {
                 EssayText.SetActive(true);
             }
         }
         else
         {
-            if (index == 9 || index == 27)
+            if (index == 10 || index == 28)
             {
                 EssayText.SetActive(true);
             }

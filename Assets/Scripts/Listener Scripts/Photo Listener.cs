@@ -110,7 +110,7 @@ public class PhotoListener : MonoBehaviour
 
     void Act2Photos(int currentLine)
     {
-        if (currentLine == 1)
+        if (currentLine == 2)
         {
             SwapPhotos(0);
         }

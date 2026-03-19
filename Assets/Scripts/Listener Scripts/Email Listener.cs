@@ -24,7 +24,7 @@ public class EmailListener : MonoBehaviour
     [SerializeField] private GameObject ContinueButton;
     private Button continueButton;
     private int act2YesHandler;
-
+    
     [Header("Task Text")]
     [SerializeField] private GameObject TaskText;
 
@@ -119,14 +119,14 @@ public class EmailListener : MonoBehaviour
     {
         if (actDirector.GetIsGoodRoute())
         {
-            if ((index == 4 && act2YesHandler == 0) || index == 13)
+            if ((index == 5 && act2YesHandler == 0) || index == 14)
             {
                 EmailAct2Good.SetActive(true);
             }
         }
         else
         {
-            if ((index == 5 && act2YesHandler == 0) || index == 15)
+            if ((index == 6 && act2YesHandler == 0) || index == 16)
             {
                 EmailAct2Bad.SetActive(true);
             }
