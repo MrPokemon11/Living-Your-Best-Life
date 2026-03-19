@@ -97,10 +97,10 @@ public class ActDirector : MonoBehaviour
         {
             ToggleGoodRoute();
         }
-        
+        TransitionManager.GetComponent<EndOfActListener>().ActivateListeners();        
         lyblActFinisher.StartCurrentDialogue();
         playerActFinisher.StartCurrentDialogue();
-        TransitionManager.GetComponent<EndOfActListener>().ActivateListeners();
+
     }
 
     public int GetCurrentAct()

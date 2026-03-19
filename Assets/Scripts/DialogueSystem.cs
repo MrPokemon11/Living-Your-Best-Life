@@ -27,6 +27,7 @@ public class DialogueSystem : MonoBehaviour
 
     private int dialogueIndex = 0;
     public bool isTyping = false;
+    private bool preventLooping = false;
     private int currentBranchingStep = 0;
 
     private int lastImpactfulChoice = -1;
@@ -92,7 +93,10 @@ public class DialogueSystem : MonoBehaviour
         else
         {
             //extremely hacky solution, but it's not like the player name is used for anything else -Devon
-            TypeLine(currentStory._playerName);
+            //also figure out how to get the first line typed, the TypeLine coroutine works but causes problems if the player goes too fast through dialogue
+            //StartCoroutine(TypeLine(currentStory._playerName));
+            
+            dialogueText.text = currentStory._playerName;
             ShowBranchingDialogue();
 
         }
@@ -116,10 +120,17 @@ public class DialogueSystem : MonoBehaviour
 
     void ShowLinearDialogue()
     {
+        //fast dialogue (Doesn't work properly, can cause desyncs)
+        //if (isTyping)
+        //{
+        //    typingSpeed = 0.0f;
+        //    return;
+        //}        
         responsePanel.SetActive(false);
         StopAllCoroutines();
         string phrase = currentStory.linear._pharases[dialogueIndex];
         StartCoroutine(TypeLine(phrase));
+        
 
        
         if (currentStory.linear._haveResponses && dialogueIndex < currentStory.linear._responses.Length)
@@ -156,8 +167,13 @@ public class DialogueSystem : MonoBehaviour
 
     void ShowBranchingDialogue()
     {
+        // fast dialogue (doesn't work, causes the rest to not run)
+        //if (isTyping)
+        //{
+        //    typingSpeed = 0.0f;
+        //    return;
+        //}
         responsePanel.SetActive(true);
-        
         nameText.text = currentStory._NPCName;
 
         var step = currentStory.branching[currentBranchingStep];
@@ -201,13 +217,9 @@ public class DialogueSystem : MonoBehaviour
     {
         isTyping = true;
         dialogueText.text = "";
+        typingSpeed = lastTypingSpeed;
         foreach (char letter in line.ToCharArray())
         {
-            //allow the player to skip through dialogue
-            if ((Input.GetKeyDown(KeyCode.Space) ||  Input.GetMouseButtonDown(0)) && isTyping)
-            {
-                typingSpeed = 0f;
-            }
             dialogueText.text += letter;
             yield return new WaitForSeconds(typingSpeed);
         }

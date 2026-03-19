@@ -8,6 +8,12 @@ public class KeyboardControl : MonoBehaviour
     [SerializeField] private DialogueSystem PlayerDialogueSystem;
     [SerializeField] private Button leftButton;
     [SerializeField] private Button rightButton;
+    [SerializeField] private Button linearButton;
+
+    [SerializeField] private Button transitionScreen;
+    [SerializeField] private Button fiftenminsscreen;
+    [SerializeField] private Button threehoursscreen;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,12 +25,27 @@ public class KeyboardControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (LyblDialogueSystem.currentStory._dialogueType == Story.DialogueType.Linear &&
-                !LyblDialogueSystem.isTyping && !PlayerDialogueSystem.isTyping)
+            if (fiftenminsscreen.gameObject.activeSelf)
             {
-                LyblDialogueSystem.Next();
-                PlayerDialogueSystem.Next();
-            } 
+                fiftenminsscreen.onClick.Invoke();
+                return;
+            }
+
+            if (threehoursscreen.gameObject.activeSelf)
+            {
+                threehoursscreen.onClick.Invoke();
+                return;
+            }
+            
+            if (LyblDialogueSystem.currentStory._dialogueType == Story.DialogueType.Linear)
+            {
+                linearButton.onClick.Invoke();
+            }
+            
+            if (transitionScreen.gameObject.activeSelf)
+            {
+                transitionScreen.onClick.Invoke();
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))

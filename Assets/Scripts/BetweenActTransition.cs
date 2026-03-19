@@ -18,7 +18,7 @@ public class BetweenActTransition : MonoBehaviour
     [SerializeField] private GameObject DialogueObject;
     private DialogueSystem dialogueSystem;
     [SerializeField] private GameObject TalkyBox;
-    [SerializeField] private ChoiceBasedDialogue Act3Dialogue;
+    [SerializeField] private Act3Manager act3Manager;
     
     
     private bool Act2EpilogueSeen = false;
@@ -57,7 +57,7 @@ public class BetweenActTransition : MonoBehaviour
 
     private void act3Dialogue()
     {
-        Act3Dialogue.StartCurrentDialogue();
-        dialogueSystem.DialogueEndEvent.RemoveListener(act3Dialogue);
+        //Act3Dialogue.StartCurrentDialogue();
+        //dialogueSystem.DialogueEndEvent.RemoveListener(act3Dialogue);
     }
 }

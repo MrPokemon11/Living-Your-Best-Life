@@ -47,37 +47,37 @@ MonoBehaviour:
     _NpcResponses:
     - Great! I'll send it off to her, and we can cross this off the list.
     - Yes it is.
-    nextStepIndices: 060000000c000000
+    nextStepIndices: 050000000c000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
     - ... she says it's over.
-    nextStepIndices: 07000000
+    nextStepIndices: 06000000
   - _Question:
     - What?
     _NpcResponses:
     - She wants to break up. Apparently that wasn't her in the picture.
-    nextStepIndices: 08000000
+    nextStepIndices: 07000000
   - _Question:
     - It wasn't?
     _NpcResponses:
     - I wouldn't worry about it.
-    nextStepIndices: 09000000
+    nextStepIndices: 08000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
     - If she's that insecure that she's willing to break up over one photo,
-    nextStepIndices: 0a000000
+    nextStepIndices: 09000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
     - clearly your relationship wasn't the best.
-    nextStepIndices: 0b000000
+    nextStepIndices: 0a000000
   - _Question:
     - Let me talk to her.
     _NpcResponses:
     - Why? She was only holding you back from Living Your Best Life(tm).
-    nextStepIndices: 0c000000
+    nextStepIndices: 0b000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
@@ -87,43 +87,43 @@ MonoBehaviour:
     - No, it isn't.
     _NpcResponses:
     - Yes, it is, and I can prove it.
-    nextStepIndices: 0e000000
+    nextStepIndices: 0d000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
     - I'll send this off to your girlfriend, and tell her how good the two of you
       look together!
-    nextStepIndices: 0f000000
+    nextStepIndices: 0e000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
     - That way we can cross this task off the list, and I can prove that I'm right!
-    nextStepIndices: 10000000
+    nextStepIndices: 0f000000
   - _Question:
     - Lybl wait-
     _NpcResponses:
     - She wants to know who you meant to send this to.
-    nextStepIndices: 11000000
+    nextStepIndices: 10000000
   - _Question:
     - Lybl I told you to wait.
     _NpcResponses:
     - She- wow she's really upset.
-    nextStepIndices: 12000000
+    nextStepIndices: 11000000
   - _Question:
     - Let me talk to her.
     _NpcResponses:
     - I don't think that's a good idea.
-    nextStepIndices: 13000000
+    nextStepIndices: 12000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
     - I calculate a 50% drop in life quality from reading the messages alone...
-    nextStepIndices: 14000000
+    nextStepIndices: 13000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
     - And that's no way to Live Your Best Life(tm)!
-    nextStepIndices: 15000000
+    nextStepIndices: 14000000
   - _Question:
     - (Click to continue)
     _NpcResponses:

@@ -30,7 +30,7 @@ public class Act3Manager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        LyblLock.SetActive(false);
     }
     
     // Update is called once per frame
@@ -50,7 +50,7 @@ public class Act3Manager : MonoBehaviour
         noButton.interactable = true;
     }
 
-    private void StartAct3()
+    public void StartAct3()
     {
         if (actDirector.GetCurrentAct() != 3)
         {
