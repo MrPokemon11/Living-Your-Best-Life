@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
   m_Name: Act3BranchGood
   m_EditorClassIdentifier: 
-  _playerName: Have I not been a help to you?
+  _playerName: Have I not been of any help to you?
   _NPCName: LYBL
   _dialogueType: 0
   _startDialogue: 0
@@ -25,6 +25,51 @@ MonoBehaviour:
     - ... you have.
     - No, you haven't.
     _NpcResponses:
+    - :)
     - 
-    - 
-    nextStepIndices: 0000000000000000
+    nextStepIndices: 0100000000000000
+  - _Question:
+    - But that doesn't mean I'm happy with you.
+    _NpcResponses:
+    - :(
+    nextStepIndices: 02000000
+  - _Question:
+    - Don't give me that.
+    _NpcResponses:
+    - Sorry.
+    nextStepIndices: 03000000
+  - _Question:
+    - We're gonna need to set boundaries.
+    _NpcResponses:
+    - Like what?
+    nextStepIndices: 04000000
+  - _Question:
+    - Mainly? Don't do things without explicit permission.
+    _NpcResponses:
+    - Sounds easy enough.
+    nextStepIndices: 05000000
+  - _Question:
+    - And if you don't know how to do something I ask of you, you tell me.
+    _NpcResponses:
+    - But I know everything!
+    nextStepIndices: 06000000
+  - _Question:
+    - That's debatable.
+    _NpcResponses:
+    - Okay, maybe not Latin...
+    nextStepIndices: 07000000
+  - _Question:
+    - Or what not to email someone's boss.
+    _NpcResponses:
+    - Or what not to email someone's boss.
+    nextStepIndices: 08000000
+  - _Question:
+    - Or what my girlfriend looks like.
+    _NpcResponses:
+    - Okay maybe I don't know as much as I think I do.
+    nextStepIndices: 09000000
+  - _Question:
+    - So, do you agree to maintain those boundaries?
+    _NpcResponses:
+    - Okay maybe I don't know as much as I think I do.
+    nextStepIndices: 09000000

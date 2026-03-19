@@ -28,9 +28,11 @@ public class ActDirector : MonoBehaviour
     [SerializeField] private GameObject essayListener;
     [SerializeField] private GameObject photoListener;
     
-    [Header("Epilogue Objects")]
+    [Header("Events")]
     public UnityEvent alertOfEpilogue;
+    public UnityEvent StartInitializing;
 
+    [Header("Act Epilogue Objects")]
     [SerializeField] private GameObject[] closeButtons;
     [SerializeField] private GameObject MainWindow;
     
@@ -77,6 +79,7 @@ public class ActDirector : MonoBehaviour
         emailListener.GetComponent<EmailListener>().Initialize();
         essayListener.GetComponent<EssayListener>().Initialize();
         photoListener.GetComponent<PhotoListener>().Initialize();
+        StartInitializing.Invoke();
     }
     
     public void AllTasksComplete()

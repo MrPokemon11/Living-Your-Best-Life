@@ -21,7 +21,10 @@ public class Act3Manager : MonoBehaviour
     [Header("Choice Buttons")] 
     [SerializeField] private Button noButton;
 
+    [Header("UI Elements")]
     [SerializeField] private GameObject LyblLock;
+
+    [SerializeField] private GameObject FinaleScreen;
 
     private bool addedListener;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -74,10 +77,32 @@ public class Act3Manager : MonoBehaviour
 
     private void Act3Choice()
     {
+        dialogueSystem.DialogueEndEvent.RemoveListener(Act3Choice);
         if (actDirector.GetIsGoodRoute() && actDirector.GetAIUse() < 4 || !actDirector.GetIsGoodRoute() && actDirector.GetAIUse() < 3)
         {
             noButton.interactable = false;
             LyblLock.SetActive(true);
         }
+        dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(Act3Outcome);
+        if (actDirector.GetIsGoodRoute())
+        {
+            dialogueSystem.StartDialogue(choiceGood);
+        }
+        else
+        {
+            dialogueSystem.StartDialogue(choiceBad);
+        }
+    }
+
+    private void Act3Outcome(int choice)
+    {
+        bool doesLyblGetDeleted = choice == 1; // weird looking code JetBrains, but ok
+        
+    }
+
+    private void GoodNight()
+    {
+        this.GetComponent<TurnOffElectronics>().TurnOff();
+        
     }
 }
