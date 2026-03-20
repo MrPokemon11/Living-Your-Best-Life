@@ -48,14 +48,11 @@ MonoBehaviour:
     nextStepIndices: 05000000
   - _Question:
     - Actually, this looks pretty good.
-    _NpcResponses:
-    - Woo!
-    nextStepIndices: 06000000
-  - _Question:
     - No, I can see several issues.
     _NpcResponses:
+    - Woo!
     - W-what kind of issues?
-    nextStepIndices: 10000000
+    nextStepIndices: 0600000010000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
