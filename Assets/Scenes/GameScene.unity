@@ -2715,7 +2715,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -391, y: 166}
+  m_AnchoredPosition: {x: -354.6, y: 166}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &322858775
@@ -7787,6 +7787,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1558654786}
+        m_TargetAssemblyTypeName: Act3Manager, Assembly-CSharp
+        m_MethodName: undoDeletion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 633431631}
+        m_TargetAssemblyTypeName: ActDirector, Assembly-CSharp
+        m_MethodName: resetVars
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &784515887
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8506,7 +8530,7 @@ MonoBehaviour:
   PlayerDialogueObject: {fileID: 831411855}
   DialogueObject: {fileID: 927347896}
   TalkyBox: {fileID: 1474516964}
-  act3Manager: {fileID: 0}
+  act3Manager: {fileID: 1558654786}
 --- !u!1 &821481584
 GameObject:
   m_ObjectHideFlags: 0
@@ -15537,7 +15561,7 @@ MonoBehaviour:
   noButton: {fileID: 712028234}
   LyblLock: {fileID: 1524402794}
   finaleScreen: {fileID: 1216220788}
-  LyblIcon: {fileID: 0}
+  LyblIcon: {fileID: 1306811405}
   LyblWindow: {fileID: 420102801}
   LyblDialogue: {fileID: 668626874}
   normalFont: {fileID: 11400000, guid: bbb5f8f3e24f69945a5449b35e6e95a0, type: 2}

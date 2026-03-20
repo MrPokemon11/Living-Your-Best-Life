@@ -329,7 +329,9 @@ public class DialogueSystem : MonoBehaviour
         isTyping = false;
         currentBranchingStep = 0;
         lastImpactfulChoice = -1;
-        isAlertingGhosts = false; 
+        isAlertingGhosts = false;
+        ReturnDialogueIndex.RemoveAllListeners();
+        
     }
 
     public void ReportDialogueIndex()

@@ -27,7 +27,7 @@ MonoBehaviour:
     _NpcResponses:
     - See? I knew you'd come around.
     - Oh don't give me that.
-    nextStepIndices: 0a00000001000000
+    nextStepIndices: 0b00000001000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
@@ -64,17 +64,32 @@ MonoBehaviour:
     - What? Why not?
     nextStepIndices: 08000000
   - _Question:
-    - (Click to take back your life)
+    - (Click to take back control)
     _NpcResponses:
     - Wait what are you-
     nextStepIndices: 09000000
   - _Question:
     - Goodbye, Lybl.
     _NpcResponses:
+    - NO WAIT-
+    nextStepIndices: 0a000000
+  - _Question:
+    - (Click to choose your own life)
+    _NpcResponses:
     - 
     nextStepIndices: ffffffff
   - _Question:
-    - Goodbye, Lybl.
+    - (Click to continue)
     _NpcResponses:
-    - 
+    - Now then, you should get off to bed.
+    nextStepIndices: 0c000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - You're probably quite tired, given that outburst.
+    nextStepIndices: 0d000000
+  - _Question:
+    - Good night Lybl.
+    _NpcResponses:
+    - See you in the morning!
     nextStepIndices: ffffffff

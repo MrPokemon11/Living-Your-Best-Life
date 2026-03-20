@@ -1,3 +1,4 @@
+using System.Security;
 using UnityEngine;
 using Dialogue;
 using TMPro;
@@ -14,6 +15,7 @@ public class BetweenActTransition : MonoBehaviour
     [SerializeField] private GameObject PlayerDialogueObject;
     private ChoiceBasedDialogue LyblDialogue;
     private ChoiceBasedDialogue PlayerDialogue;
+    [SerializeField] private TextMeshProUGUI transitionText;
     
     [SerializeField] private GameObject DialogueObject;
     private DialogueSystem dialogueSystem;
@@ -40,18 +42,14 @@ public class BetweenActTransition : MonoBehaviour
 
     public void HandleTransition()
     {
-        if (Act2EpilogueSeen == false && actDirector.GetCurrentAct() == 3)
+        if (transitionText.fontStyle == FontStyles.Normal && actDirector.GetCurrentAct() == 3)
         {
-            Act2EpilogueSeen = true;
-            LyblDialogue.StartCurrentDialogue();
-            PlayerDialogue.StartCurrentDialogue();
-            gameObject.GetComponentInChildren<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
-            dialogueSystem.DialogueEndEvent.AddListener(act3Dialogue);
-            TalkyBox.GetComponent<Button>().onClick.AddListener(() => {gameObject.SetActive(false);});
+            transitionText.fontStyle = FontStyles.Strikethrough;
         }
-        else if (Act2EpilogueSeen == false)
+        else
         {
             gameObject.SetActive(false);
+            transitionText.fontStyle = FontStyles.Normal;
         }
     }
 

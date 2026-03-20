@@ -7,7 +7,12 @@ using TMPro;
 
 public class Act3Manager : MonoBehaviour
 {
-    [Header("Story Objects")]
+    [Header("Story Objects")] 
+    [SerializeField] private Story GoodBridgeLybl;
+    [SerializeField] private Story BadBridgeLybl;
+    [SerializeField] private Story GoodBridgePlayer;
+    [SerializeField] private Story BadBridgePlayer;
+    
     [SerializeField] private Story badStory;
     [SerializeField] private Story goodStory;
 
@@ -16,6 +21,7 @@ public class Act3Manager : MonoBehaviour
     
     [Header("Dialogue Systems")]
     [SerializeField] private DialogueSystem dialogueSystem;
+    [SerializeField] private DialogueSystem playerDialogueSystem;
     [SerializeField] private ActDirector actDirector;
     [SerializeField] private Act3TaskReveal act3TaskReveal;
     
@@ -40,7 +46,7 @@ public class Act3Manager : MonoBehaviour
     void Start()
     {
         LyblLock.SetActive(false);
-        lyblWindowMaterial = LyblWindow.GetComponent<Renderer>().material;
+        lyblWindowMaterial = LyblWindow.GetComponent<Image>().material;
     }
     
     // Update is called once per frame
@@ -66,6 +72,17 @@ public class Act3Manager : MonoBehaviour
         {
             return;
         }
+        if(actDirector.GetIsGoodRoute())
+        {
+            dialogueSystem.StartDialogue(GoodBridgeLybl);
+            playerDialogueSystem.StartDialogue(GoodBridgePlayer);
+        }
+        else
+        {
+            dialogueSystem.StartDialogue(BadBridgeLybl);
+            playerDialogueSystem.StartDialogue(BadBridgePlayer);
+        }
+        
         dialogueSystem.DialogueEndEvent.AddListener(Act3Reveal);
         Debug.Log("Act 3 listener added");
     }
@@ -107,7 +124,7 @@ public class Act3Manager : MonoBehaviour
     private void Act3Outcome(int choice)
     {
         bool doesLyblGetDeleted = choice == 1; // weird looking code JetBrains, but ok
-        
+        LyblLock.SetActive(false);
         
         
         //delete LYBL if the story calls for it
@@ -118,37 +135,55 @@ public class Act3Manager : MonoBehaviour
             dialogueSystem.ReturnDialogueIndex.AddListener(glitchWindow);
             
         }
-        else
-        {
-            
-        }
+        
+        dialogueSystem.DialogueEndEvent.AddListener(GoodNight);
     }
 
     private void GoodNight()
     {
+        dialogueSystem.DialogueEndEvent.RemoveListener(GoodNight);
         this.GetComponent<TurnOffElectronics>().TurnOff();
-        
         MainCamera.GetComponent<ZoomCamera>().ZoomOut();
         finaleScreen.GetComponent<FinaleScreen>().FadeIn();
     }
 
     private void hideIcon(int when)
     {
-        LyblIcon.SetActive(false);
-        dialogueSystem.ReturnDialogueIndex.RemoveListener(hideIcon);
+        if (actDirector.GetIsGoodRoute() && when == 17)
+        {
+            LyblIcon.SetActive(false);
+            dialogueSystem.ReturnDialogueIndex.RemoveListener(hideIcon);            
+        } else if (!actDirector.GetIsGoodRoute() && when == 9)
+        {
+            LyblIcon.SetActive(false);
+            dialogueSystem.ReturnDialogueIndex.RemoveListener(hideIcon);
+        }
+
     }
 
     private void hideWindow(int when)
     {
-        LyblWindow.gameObject.transform.parent.gameObject.SetActive(false);
-        dialogueSystem.ReturnDialogueIndex.RemoveListener(hideWindow);
+        if (actDirector.GetIsGoodRoute() && when == 17)
+        {
+            LyblWindow.gameObject.transform.parent.gameObject.SetActive(false);
+            dialogueSystem.ReturnDialogueIndex.RemoveListener(hideWindow);            
+        } else if (!actDirector.GetIsGoodRoute() && when == 10)
+        {
+            LyblWindow.gameObject.transform.parent.gameObject.SetActive(false);
+            dialogueSystem.ReturnDialogueIndex.RemoveListener(hideWindow);                  
+        }
+
     }
 
     private void glitchWindow(int when)
     {
-        lyblWindowMaterial.SetFloat("_Shear_Intensity", 0.03f);
-        LyblDialogue.GetComponent<TextMeshProUGUI>().font = glitchFont;
-        dialogueSystem.ReturnDialogueIndex.RemoveListener(glitchWindow);
+        if (!actDirector.GetIsGoodRoute() && when == 9)
+        {
+            lyblWindowMaterial.SetFloat("_Shear_Intensity", 0.03f);
+            LyblDialogue.GetComponent<TextMeshProUGUI>().font = glitchFont;
+            dialogueSystem.ReturnDialogueIndex.RemoveListener(glitchWindow);        
+        }
+        
     }
 
     public void undoDeletion()

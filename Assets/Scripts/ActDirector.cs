@@ -169,4 +169,13 @@ public class ActDirector : MonoBehaviour
     {
         return isGoodRoute;
     }
+
+    public void resetVars()
+    {
+        isGoodRoute = false;
+        AIUse = 0;
+        currentAct = 0;
+        tasksCompleted.Clear();
+        actFinished = false;
+    }
 }
