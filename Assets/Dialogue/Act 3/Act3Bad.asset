@@ -59,38 +59,33 @@ MonoBehaviour:
   - _Question:
     - (Click to continue)
     _NpcResponses:
-    - '"Ruined your life"?'
-    nextStepIndices: 08000000
-  - _Question:
-    - (Click to continue)
-    _NpcResponses:
     - You're actively Living Your Best Life(tm)!
-    nextStepIndices: 09000000
+    nextStepIndices: 08000000
   - _Question:
     - Seriously? How is this my "best life"?
     _NpcResponses:
     - You downloaded me because you had too much stuff to do, right?
-    nextStepIndices: 0a000000
+    nextStepIndices: 09000000
   - _Question:
-    - Seriously? How is this my "best life"?
+    - (Click to continue)
     _NpcResponses:
     - You said so yourself!
-    nextStepIndices: 0b000000
+    nextStepIndices: 0a000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
     - And I fixed that!
-    nextStepIndices: 0c000000
+    nextStepIndices: 0b000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
     - Now you don't need to worry about all those tasks.
-    nextStepIndices: 0d000000
+    nextStepIndices: 0c000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
     - About all those people who were holding you back.
-    nextStepIndices: 0e000000
+    nextStepIndices: 0d000000
   - _Question:
     - (Click to continue)
     _NpcResponses:

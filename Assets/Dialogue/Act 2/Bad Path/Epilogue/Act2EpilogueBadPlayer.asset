@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Act2EpilogueBadPlayer
   m_EditorClassIdentifier: 
   _playerName: 
-  _NPCName: 
+  _NPCName: You
   _dialogueType: 1
   _startDialogue: 0
   linear:

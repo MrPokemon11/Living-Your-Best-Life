@@ -21,9 +21,9 @@ public class BetweenActTransition : MonoBehaviour
     private DialogueSystem dialogueSystem;
     [SerializeField] private GameObject TalkyBox;
     [SerializeField] private Act3Manager act3Manager;
-    
-    
-    private bool Act2EpilogueSeen = false;
+
+
+    private bool doesTriggerExist = false;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -37,7 +37,10 @@ public class BetweenActTransition : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!doesTriggerExist)
+        {
+            actDirector.StartInitializing.AddListener(ResetVars);
+        }
     }
 
     public void HandleTransition()
@@ -45,6 +48,8 @@ public class BetweenActTransition : MonoBehaviour
         if (transitionText.fontStyle == FontStyles.Normal && actDirector.GetCurrentAct() == 3)
         {
             transitionText.fontStyle = FontStyles.Strikethrough;
+            GetComponent<Button>().interactable = false;
+            TalkyBox.GetComponent<Button>().onClick.AddListener(() => {gameObject.SetActive(false);});
         }
         else
         {
@@ -57,5 +62,11 @@ public class BetweenActTransition : MonoBehaviour
     {
         //Act3Dialogue.StartCurrentDialogue();
         //dialogueSystem.DialogueEndEvent.RemoveListener(act3Dialogue);
+    }
+
+    void ResetVars()
+    {
+        GetComponent<Button>().interactable = true;
+        transitionText.fontStyle = FontStyles.Normal;
     }
 }

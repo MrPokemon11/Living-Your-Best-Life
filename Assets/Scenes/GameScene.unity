@@ -3859,6 +3859,7 @@ GameObject:
   - component: {fileID: 420102802}
   - component: {fileID: 420102804}
   - component: {fileID: 420102803}
+  - component: {fileID: 420102805}
   m_Layer: 6
   m_Name: LyblImage
   m_TagString: Untagged
@@ -3923,6 +3924,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 420102801}
   m_CullTransparentMesh: 1
+--- !u!114 &420102805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 420102801}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29388150649f6544085743a2b4eed25c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &431264582
 GameObject:
   m_ObjectHideFlags: 0
@@ -5941,6 +5954,7 @@ MonoBehaviour:
   lyblActFinisherObject: {fileID: 1743376655}
   playerActFinisherObject: {fileID: 615700995}
   TransitionManager: {fileID: 1783277307}
+  act3Manager: {fileID: 1558654786}
   emailListener: {fileID: 340755049}
   essayListener: {fileID: 966344257}
   photoListener: {fileID: 494771491}
@@ -6075,7 +6089,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1482471516}
+      - m_Target: {fileID: 1364323516}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -7605,7 +7619,11 @@ MonoBehaviour:
   Act2Dialogue:
   - {fileID: 11400000, guid: c1560513d4e1af140a21b491e4814797, type: 2}
   - {fileID: 11400000, guid: eaf204b26667e754983e9b841e9756e3, type: 2}
-  Act3Dialogue: []
+  Act3Dialogue:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ErrorText: {fileID: 11400000, guid: bb733316e8b562f40b3f6d1825423d59, type: 2}
   dialogueSystem: {fileID: 927347897}
   actDirector: {fileID: 633431631}
@@ -8528,6 +8546,7 @@ MonoBehaviour:
   GameDirector: {fileID: 633431629}
   LyblDialogueObject: {fileID: 307908845}
   PlayerDialogueObject: {fileID: 831411855}
+  transitionText: {fileID: 1564293706}
   DialogueObject: {fileID: 927347896}
   TalkyBox: {fileID: 1474516964}
   act3Manager: {fileID: 1558654786}
@@ -11004,6 +11023,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 420102805}
+        m_TargetAssemblyTypeName: resetShear, Assembly-CSharp
+        m_MethodName: ResetShear
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1080799806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11897,6 +11928,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9792f9728c154d14a98080d888dbf16a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finaleScreen: {fileID: 1216220788}
+  fadeSpeed: 10
   toggleKids:
     m_PersistentCalls:
       m_Calls: []
@@ -12408,7 +12441,11 @@ MonoBehaviour:
   Act2Dialogue:
   - {fileID: 11400000, guid: 9dff01bab3bbb3d4fb95701faee044fb, type: 2}
   - {fileID: 11400000, guid: 2002e3309e5ab0c47a93eb42eef0e247, type: 2}
-  Act3Dialogue: []
+  Act3Dialogue:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ErrorText: {fileID: 11400000, guid: bb733316e8b562f40b3f6d1825423d59, type: 2}
   dialogueSystem: {fileID: 927347897}
   actDirector: {fileID: 633431631}
@@ -15551,11 +15588,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55aca582baeb9e24dad9f46673494f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GoodBridgeLybl: {fileID: 11400000, guid: 1094c3a3dfe7c1849a6066e3751b499e, type: 2}
+  BadBridgeLybl: {fileID: 11400000, guid: 459ecbe184d0bbf479b7b220cf28d188, type: 2}
+  GoodBridgePlayer: {fileID: 11400000, guid: 1dad37028100de24b96ce77283d0880e, type: 2}
+  BadBridgePlayer: {fileID: 11400000, guid: eaf2d80d56ab94a46a2e204e85bfb51f, type: 2}
   badStory: {fileID: 11400000, guid: ab70ff20cfb7fed4c8b8398f114d8f3c, type: 2}
   goodStory: {fileID: 11400000, guid: 490b1a14b5143314db97f620e8ad1a50, type: 2}
   choiceBad: {fileID: 11400000, guid: d08b15837a122e04ab1b425357dfc1c1, type: 2}
   choiceGood: {fileID: 11400000, guid: ba3c10bde11378348aba60273aba1e5d, type: 2}
   dialogueSystem: {fileID: 927347897}
+  playerDialogueSystem: {fileID: 1064816145}
   actDirector: {fileID: 633431631}
   act3TaskReveal: {fileID: 874361756}
   noButton: {fileID: 712028234}
@@ -15566,6 +15608,12 @@ MonoBehaviour:
   LyblDialogue: {fileID: 668626874}
   normalFont: {fileID: 11400000, guid: bbb5f8f3e24f69945a5449b35e6e95a0, type: 2}
   glitchFont: {fileID: 11400000, guid: 9fdb4e5f41a251e4c866fe290bc9f361, type: 2}
+  endingText: {fileID: 1112874960}
+  endings:
+  - 'Ending A: Just say no (Best Ending)'
+  - 'Ending B: Lay boundaries (Good Ending)'
+  - 'Ending C: Get rid of it (Neutral Ending)'
+  - 'Ending D: Accept fate (Bad Ending)'
   MainCamera: {fileID: 330585543}
 --- !u!4 &1558654787
 Transform:
@@ -18544,7 +18592,11 @@ MonoBehaviour:
   Act2Dialogue:
   - {fileID: 11400000, guid: d9dd553e468454f48b7caadcefc1ee26, type: 2}
   - {fileID: 11400000, guid: 620b5fbd80494c5499be87150636fd1a, type: 2}
-  Act3Dialogue: []
+  Act3Dialogue:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   ErrorText: {fileID: 11400000, guid: bb733316e8b562f40b3f6d1825423d59, type: 2}
   dialogueSystem: {fileID: 927347897}
   actDirector: {fileID: 633431631}
@@ -19592,7 +19644,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 821, y: -806}
+  m_AnchoredPosition: {x: 821, y: -175}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &2091640272

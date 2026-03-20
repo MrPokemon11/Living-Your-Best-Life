@@ -4,9 +4,10 @@ using UnityEngine.Events;
 
 public class FinaleScreen : MonoBehaviour
 {
+    [SerializeField] private GameObject finaleScreen;
     private Image screen;
     bool fading = false;
-    float fadeSpeed = 5f;
+    public float fadeSpeed = 5f;
 
     public UnityEvent toggleKids;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -16,8 +17,8 @@ public class FinaleScreen : MonoBehaviour
         {
             toggleKids = new UnityEvent();
         }
-        screen = GetComponent<Image>();
-        screen.gameObject.SetActive(false);
+        screen = finaleScreen.GetComponent<Image>();
+        finaleScreen.SetActive(false);
     }
 
     // Update is called once per frame
@@ -25,25 +26,25 @@ public class FinaleScreen : MonoBehaviour
     {
         if (fading)
         {
-            screen.gameObject.SetActive(true);
-            screen.color += new Color(0.0f, 0.0f, 0.0f, 1f * Time.deltaTime * fadeSpeed);
+            screen.color += new Color(0.0f, 0.0f, 0.0f, fadeSpeed);
             if (screen.color.a >= 100f)
             {
                 fading = false;
-                toggleKids.Invoke();
+                //toggleKids.Invoke();
             }
         }
     }
 
     public void FadeIn()
     {
+        finaleScreen.SetActive(true);
         fading = true;
     }
 
     public void GoAway()
     {
         screen.color = new Color(0f, 0f, 0f, 0f);
-        screen.gameObject.SetActive(false);
-        toggleKids.Invoke();
+        finaleScreen.SetActive(false);
+        //toggleKids.Invoke();
     }
 }

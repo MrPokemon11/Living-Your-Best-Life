@@ -38,6 +38,10 @@ public class Act3Manager : MonoBehaviour
     [SerializeField] private TMP_FontAsset normalFont;
     [SerializeField] private TMP_FontAsset glitchFont;
 
+    [Header("Ending text")]
+    [SerializeField] private TextMeshProUGUI endingText;
+    [SerializeField] private string[] endings;
+    
     [Header("Misc.")] 
     [SerializeField] private GameObject MainCamera;
 
@@ -52,7 +56,12 @@ public class Act3Manager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        #if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            StartAct3();
+        }
+        #endif
     }
 
     public void Initialize()
@@ -72,6 +81,8 @@ public class Act3Manager : MonoBehaviour
         {
             return;
         }
+        dialogueSystem.DialogueEndEvent.AddListener(Act3Reveal);
+        Debug.Log("Act 3 listener added");        
         if(actDirector.GetIsGoodRoute())
         {
             dialogueSystem.StartDialogue(GoodBridgeLybl);
@@ -82,50 +93,78 @@ public class Act3Manager : MonoBehaviour
             dialogueSystem.StartDialogue(BadBridgeLybl);
             playerDialogueSystem.StartDialogue(BadBridgePlayer);
         }
-        
-        dialogueSystem.DialogueEndEvent.AddListener(Act3Reveal);
-        Debug.Log("Act 3 listener added");
+
     }
 
     private void Act3Reveal()
     {
         dialogueSystem.DialogueEndEvent.RemoveListener(Act3Reveal);
+        dialogueSystem.DialogueEndEvent.AddListener(Act3Choice);
         act3TaskReveal.RevealTaskText();
+        
         if (actDirector.GetIsGoodRoute())
         {
-            dialogueSystem.StartDialogue(goodStory);
+           Invoke("playGood", 1f);
         }
         else
         {
-            dialogueSystem.StartDialogue(badStory);
+            Invoke("playBad", 1f);
         }
-        dialogueSystem.DialogueEndEvent.AddListener(Act3Choice);
+        
+    }
+
+    void playGood()
+    {
+        dialogueSystem.StartDialogue(goodStory);
+    }
+
+    void playBad()
+    {
+        dialogueSystem.StartDialogue(badStory);
     }
 
     private void Act3Choice()
     {
         dialogueSystem.DialogueEndEvent.RemoveListener(Act3Choice);
+        dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(Act3Outcome);        
         if (actDirector.GetIsGoodRoute() && actDirector.GetAIUse() < 4 || !actDirector.GetIsGoodRoute() && actDirector.GetAIUse() < 2)
         {
             noButton.interactable = false;
             LyblLock.SetActive(true);
         }
-        dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(Act3Outcome);
         if (actDirector.GetIsGoodRoute())
         {
-            dialogueSystem.StartDialogue(choiceGood);
+            Invoke("playChoiceGood", 0.25f);
         }
         else
         {
-            dialogueSystem.StartDialogue(choiceBad);
+            Invoke("playChoiceBad", 0.25f);
         }
+    }
+
+    void playChoiceBad()
+    {
+        dialogueSystem.StartDialogue(choiceBad);
+    }
+
+    void playChoiceGood()
+    {
+        dialogueSystem.StartDialogue(choiceGood);
     }
 
     private void Act3Outcome(int choice)
     {
         bool doesLyblGetDeleted = choice == 1; // weird looking code JetBrains, but ok
         LyblLock.SetActive(false);
-        
+
+        if (actDirector.GetIsGoodRoute())
+        {
+            endingText.text = endings[0];
+        }
+        else
+        {
+            endingText.text = endings[3];
+        }
         
         //delete LYBL if the story calls for it
         if (doesLyblGetDeleted)
@@ -133,7 +172,14 @@ public class Act3Manager : MonoBehaviour
             dialogueSystem.ReturnDialogueIndex.AddListener(hideIcon);
             dialogueSystem.ReturnDialogueIndex.AddListener(hideWindow);
             dialogueSystem.ReturnDialogueIndex.AddListener(glitchWindow);
-            
+            if (actDirector.GetIsGoodRoute())
+            {
+                endingText.text = endings[1];
+            }
+            else
+            {
+                endingText.text = endings[2];
+            }
         }
         
         dialogueSystem.DialogueEndEvent.AddListener(GoodNight);
@@ -167,12 +213,17 @@ public class Act3Manager : MonoBehaviour
         {
             LyblWindow.gameObject.transform.parent.gameObject.SetActive(false);
             dialogueSystem.ReturnDialogueIndex.RemoveListener(hideWindow);            
-        } else if (!actDirector.GetIsGoodRoute() && when == 10)
+        } else if (!actDirector.GetIsGoodRoute() && when == 9)
         {
-            LyblWindow.gameObject.transform.parent.gameObject.SetActive(false);
-            dialogueSystem.ReturnDialogueIndex.RemoveListener(hideWindow);                  
+              Invoke("hideWindowBadRoute", 3f);
         }
 
+    }
+
+    void hideWindowBadRoute()
+    {
+        LyblWindow.gameObject.transform.parent.gameObject.SetActive(false);
+        dialogueSystem.ReturnDialogueIndex.RemoveListener(hideWindow);    
     }
 
     private void glitchWindow(int when)

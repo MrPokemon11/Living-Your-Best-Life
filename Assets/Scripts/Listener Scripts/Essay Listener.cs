@@ -140,9 +140,9 @@ public class EssayListener : MonoBehaviour
 
     private void ShowEssayByPath(int index)
     {
-        if (actDirector.GetIsGoodRoute())
+        if (actDirector.GetIsGoodRoute() || actDirector.GetCurrentAct() == 1)
         {
-            if (index == 4)
+            if (index == 4 || actDirector.GetCurrentAct() == 1)
             {
                 EssayText.SetActive(true);
             }

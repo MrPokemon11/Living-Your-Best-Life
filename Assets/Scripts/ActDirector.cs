@@ -20,7 +20,7 @@ public class ActDirector : MonoBehaviour
     private ChoiceBasedDialogue playerDialogueStarter;
     private ChoiceBasedDialogue lyblActFinisher;
     private ChoiceBasedDialogue playerActFinisher;
-    
+    [SerializeField] private Act3Manager act3Manager;
 
     
     [Header("Initializable Objects")]
@@ -121,8 +121,16 @@ public class ActDirector : MonoBehaviour
         tasksCompleted.Clear();
         actFinished = false;
 
-        lyblDialogueStarter.StartCurrentDialogue();
-        playerDialogueStarter.StartCurrentDialogue();
+        if (currentAct != 3)
+        {
+            lyblDialogueStarter.StartCurrentDialogue();
+            playerDialogueStarter.StartCurrentDialogue();
+        }
+        else
+        {
+            
+        }
+
         
         //only initialize objects if it isn't act 3, as no tasks are done during act 3
         if (currentAct != 3)
