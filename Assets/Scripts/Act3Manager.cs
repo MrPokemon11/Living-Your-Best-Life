@@ -3,6 +3,7 @@ using Dialogue;
 using Unity.VisualScripting;
 using UnityEngine.UI;
 using UnityEngine.Events;
+using TMPro;
 
 public class Act3Manager : MonoBehaviour
 {
@@ -22,6 +23,14 @@ public class Act3Manager : MonoBehaviour
     [SerializeField] private Button noButton;
     [SerializeField] private GameObject LyblLock;
     [SerializeField] private GameObject finaleScreen;
+    
+    [Header("Lybl Objects")]
+    [SerializeField] private GameObject LyblIcon;
+    [SerializeField] private GameObject LyblWindow;
+    private Material lyblWindowMaterial;
+    [SerializeField] private GameObject LyblDialogue;
+    [SerializeField] private TMP_FontAsset normalFont;
+    [SerializeField] private TMP_FontAsset glitchFont;
 
     [Header("Misc.")] 
     [SerializeField] private GameObject MainCamera;
@@ -31,6 +40,7 @@ public class Act3Manager : MonoBehaviour
     void Start()
     {
         LyblLock.SetActive(false);
+        lyblWindowMaterial = LyblWindow.GetComponent<Renderer>().material;
     }
     
     // Update is called once per frame
@@ -98,6 +108,20 @@ public class Act3Manager : MonoBehaviour
     {
         bool doesLyblGetDeleted = choice == 1; // weird looking code JetBrains, but ok
         
+        
+        
+        //delete LYBL if the story calls for it
+        if (doesLyblGetDeleted)
+        {
+            dialogueSystem.ReturnDialogueIndex.AddListener(hideIcon);
+            dialogueSystem.ReturnDialogueIndex.AddListener(hideWindow);
+            dialogueSystem.ReturnDialogueIndex.AddListener(glitchWindow);
+            
+        }
+        else
+        {
+            
+        }
     }
 
     private void GoodNight()
@@ -106,5 +130,32 @@ public class Act3Manager : MonoBehaviour
         
         MainCamera.GetComponent<ZoomCamera>().ZoomOut();
         finaleScreen.GetComponent<FinaleScreen>().FadeIn();
+    }
+
+    private void hideIcon(int when)
+    {
+        LyblIcon.SetActive(false);
+        dialogueSystem.ReturnDialogueIndex.RemoveListener(hideIcon);
+    }
+
+    private void hideWindow(int when)
+    {
+        LyblWindow.gameObject.transform.parent.gameObject.SetActive(false);
+        dialogueSystem.ReturnDialogueIndex.RemoveListener(hideWindow);
+    }
+
+    private void glitchWindow(int when)
+    {
+        lyblWindowMaterial.SetFloat("_Shear_Intensity", 0.03f);
+        LyblDialogue.GetComponent<TextMeshProUGUI>().font = glitchFont;
+        dialogueSystem.ReturnDialogueIndex.RemoveListener(glitchWindow);
+    }
+
+    public void undoDeletion()
+    {
+        LyblIcon.SetActive(true);
+        lyblWindowMaterial.SetFloat("_Shear_Intensity", 0.0f);
+        LyblDialogue.GetComponent<TextMeshProUGUI>().font = normalFont;
+        LyblWindow.gameObject.transform.parent.gameObject.SetActive(true);
     }
 }

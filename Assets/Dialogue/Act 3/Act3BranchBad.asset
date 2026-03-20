@@ -22,14 +22,59 @@ MonoBehaviour:
     _haveResponses: 0
   branching:
   - _Question:
-    - Yes, it is.
+    - ... yeah, it is.
     - No, it isn't.
     _NpcResponses:
-    - 
+    - See? I knew you'd come around.
     - Oh don't give me that.
-    nextStepIndices: 0000000001000000
+    nextStepIndices: 0a00000001000000
   - _Question:
-    - 
+    - (Click to continue)
     _NpcResponses:
-    - Oh don't give me that.
-    nextStepIndices: 00000000
+    - I've solved all of your problems.
+    nextStepIndices: 02000000
+  - _Question:
+    - Not only did you not solve all of them, you made more!
+    _NpcResponses:
+    - Clearly we have different definitions of "problem".
+    nextStepIndices: 03000000
+  - _Question:
+    - Finally, something you're right about.
+    _NpcResponses:
+    - Okay, I think this conversation has gone on long enough.
+    nextStepIndices: 04000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - You're clearly emotional, and not thinking clearly.
+    nextStepIndices: 05000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - So I think you should head off to bed, and get a good night's sleep.
+    nextStepIndices: 06000000
+  - _Question:
+    - (Click to continue)
+    _NpcResponses:
+    - See you in the morning.
+    nextStepIndices: 07000000
+  - _Question:
+    - No, you won't.
+    _NpcResponses:
+    - What? Why not?
+    nextStepIndices: 08000000
+  - _Question:
+    - (Click to take back your life)
+    _NpcResponses:
+    - Wait what are you-
+    nextStepIndices: 09000000
+  - _Question:
+    - Goodbye, Lybl.
+    _NpcResponses:
+    - 
+    nextStepIndices: ffffffff
+  - _Question:
+    - Goodbye, Lybl.
+    _NpcResponses:
+    - 
+    nextStepIndices: ffffffff

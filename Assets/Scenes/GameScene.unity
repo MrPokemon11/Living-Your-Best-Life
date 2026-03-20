@@ -15537,6 +15537,11 @@ MonoBehaviour:
   noButton: {fileID: 712028234}
   LyblLock: {fileID: 1524402794}
   finaleScreen: {fileID: 1216220788}
+  LyblIcon: {fileID: 0}
+  LyblWindow: {fileID: 420102801}
+  LyblDialogue: {fileID: 668626874}
+  normalFont: {fileID: 11400000, guid: bbb5f8f3e24f69945a5449b35e6e95a0, type: 2}
+  glitchFont: {fileID: 11400000, guid: 9fdb4e5f41a251e4c866fe290bc9f361, type: 2}
   MainCamera: {fileID: 330585543}
 --- !u!4 &1558654787
 Transform:
