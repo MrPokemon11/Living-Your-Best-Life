@@ -215,7 +215,7 @@ public class Act3Manager : MonoBehaviour
             dialogueSystem.ReturnDialogueIndex.RemoveListener(hideWindow);            
         } else if (!actDirector.GetIsGoodRoute() && when == 9)
         {
-              Invoke("hideWindowBadRoute", 3f);
+              Invoke("hideWindowBadRoute", 1f);
         }
 
     }

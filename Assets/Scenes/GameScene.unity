@@ -5969,7 +5969,7 @@ MonoBehaviour:
   - {fileID: 2015964495}
   - {fileID: 482977651}
   MainWindow: {fileID: 2020762909}
-  currentAct: 0
+  currentAct: 2
   isGoodRoute: 0
 --- !u!4 &633431632
 Transform:
