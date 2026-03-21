@@ -605,7 +605,7 @@ MonoBehaviour:
     anger about prior email being considered non-urgent, and reiterating its urgency
     here]'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -671,7 +671,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -106.03763}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &78191730
@@ -1071,8 +1071,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Close
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
+  m_sharedMaterial: {fileID: -48024927519161833, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1137,7 +1137,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -35.00743}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &118360856
@@ -1228,7 +1228,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Click here to search...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &141851891
@@ -1710,7 +1710,7 @@ MonoBehaviour:
     [Email
     expressing dismay at receiving a non-urgent email labeled as "urgent"].'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1776,7 +1776,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -152.5951, w: -253.2692}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &181704417
@@ -3298,6 +3298,7 @@ GameObject:
   - component: {fileID: 350083648}
   - component: {fileID: 350083647}
   - component: {fileID: 350083646}
+  - component: {fileID: 350083650}
   m_Layer: 6
   m_Name: Calvis
   m_TagString: Untagged
@@ -3407,7 +3408,19 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 966344259}
         m_TargetAssemblyTypeName: EssayListener, Assembly-CSharp
-        m_MethodName: MarkTaskDone
+        m_MethodName: delayedEssayCompletion
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 350083650}
+        m_TargetAssemblyTypeName: HandleButtonsDuringTasks, Assembly-CSharp
+        m_MethodName: disableButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3455,6 +3468,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 350083644}
   m_CullTransparentMesh: 0
+--- !u!114 &350083650
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350083644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac423ee3e2aac743a7cf9a12dda9673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actDirector: {fileID: 633431631}
+  dialogueSystem: {fileID: 927347897}
+  buttons:
+  - {fileID: 731356899}
+  - {fileID: 1788987969}
 --- !u!1 &356425788
 GameObject:
   m_ObjectHideFlags: 0
@@ -4095,7 +4125,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 52.75
+  m_fontSize: 52.15
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -4133,7 +4163,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 3, y: 3, z: 3, w: 3}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -4617,7 +4647,7 @@ GameObject:
   - component: {fileID: 482977654}
   - component: {fileID: 482977653}
   m_Layer: 6
-  m_Name: Close
+  m_Name: CloseSlapchat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4797,7 +4827,7 @@ GameObject:
   - component: {fileID: 485941633}
   - component: {fileID: 485941632}
   m_Layer: 6
-  m_Name: Text (TMP)
+  m_Name: BossEmailText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5118,7 +5148,7 @@ GameObject:
   - component: {fileID: 513744053}
   - component: {fileID: 513744052}
   m_Layer: 6
-  m_Name: Back
+  m_Name: BackMail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5968,6 +5998,7 @@ MonoBehaviour:
   - {fileID: 731356896}
   - {fileID: 2015964495}
   - {fileID: 482977651}
+  - {fileID: 1321085277}
   MainWindow: {fileID: 2020762909}
   currentAct: 2
   isGoodRoute: 0
@@ -6285,7 +6316,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 3, y: 3, z: 3, w: 3}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -6360,7 +6391,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6426,7 +6457,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -35.00743}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &706173337
@@ -6743,7 +6774,7 @@ MonoBehaviour:
     [Email
     expressing anger at the boss, and that You are quitting effective immediately].'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -6809,7 +6840,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -152.5951, w: -253.2692}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &713548104
@@ -6854,7 +6885,7 @@ GameObject:
   - component: {fileID: 731356898}
   - component: {fileID: 731356902}
   m_Layer: 6
-  m_Name: Close
+  m_Name: CloseGeggle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7409,6 +7440,7 @@ GameObject:
   - component: {fileID: 763684092}
   - component: {fileID: 763684097}
   - component: {fileID: 763684098}
+  - component: {fileID: 763684099}
   m_Layer: 6
   m_Name: Email_Task
   m_TagString: Untagged
@@ -7428,8 +7460,8 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 485941631}
   - {fileID: 340755050}
+  - {fileID: 485941631}
   m_Father: {fileID: 1003159144}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
@@ -7553,9 +7585,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 763684098}
-        m_TargetAssemblyTypeName: HandleBossEmail, Assembly-CSharp
-        m_MethodName: SendEmail
+      - m_Target: {fileID: 763684099}
+        m_TargetAssemblyTypeName: HandleButtonsDuringTasks, Assembly-CSharp
+        m_MethodName: disableButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7644,6 +7676,24 @@ MonoBehaviour:
   actDirector: {fileID: 633431631}
   act1email: {fileID: 1060556899}
   act2email: {fileID: 78191727}
+  EmailText: {fileID: 485941632}
+--- !u!114 &763684099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763684090}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac423ee3e2aac743a7cf9a12dda9673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actDirector: {fileID: 633431631}
+  dialogueSystem: {fileID: 927347897}
+  buttons:
+  - {fileID: 1761208871}
+  - {fileID: 2015964499}
 --- !u!1 &783354111
 GameObject:
   m_ObjectHideFlags: 0
@@ -9012,7 +9062,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Close
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -9078,7 +9128,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -35.00743}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &858799430
@@ -9398,7 +9448,7 @@ MonoBehaviour:
     [Email
     expressing expressing that the boss is a jerk, as well as more colorful names].'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -9464,7 +9514,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -152.5951, w: -253.2692}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &899354713
@@ -10699,10 +10749,12 @@ MonoBehaviour:
 
     ---
 
-    [Insert non-urgent
-    sounding email here]. Respond asap.'
+    Dear [FirstName]
+    [LastName],
+
+    [Insert non-urgent sounding email here]. Respond asap.'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -10768,7 +10820,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -106.03763}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1060556902
@@ -12178,7 +12230,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -12244,7 +12296,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -35.00743}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1227861480
@@ -12268,6 +12320,7 @@ GameObject:
   - component: {fileID: 1229149510}
   - component: {fileID: 1229149509}
   - component: {fileID: 1229149512}
+  - component: {fileID: 1229149513}
   m_Layer: 6
   m_Name: TakePhotoButton
   m_TagString: Untagged
@@ -12387,6 +12440,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1229149513}
+        m_TargetAssemblyTypeName: HandleButtonsDuringTasks, Assembly-CSharp
+        m_MethodName: disableButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1229149510
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12449,8 +12514,24 @@ MonoBehaviour:
   ErrorText: {fileID: 11400000, guid: bb733316e8b562f40b3f6d1825423d59, type: 2}
   dialogueSystem: {fileID: 927347897}
   actDirector: {fileID: 633431631}
-  Act2Limit: 0
+  Act2Limit: 2
   Act3Limits: 
+--- !u!114 &1229149513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1229149507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac423ee3e2aac743a7cf9a12dda9673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actDirector: {fileID: 633431631}
+  dialogueSystem: {fileID: 927347897}
+  buttons:
+  - {fileID: 482977655}
 --- !u!1 &1244955974
 GameObject:
   m_ObjectHideFlags: 0
@@ -13040,7 +13121,7 @@ GameObject:
   - component: {fileID: 1278693938}
   - component: {fileID: 1278693937}
   m_Layer: 6
-  m_Name: Close
+  m_Name: CloseGeggleMail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13672,7 +13753,7 @@ GameObject:
   - component: {fileID: 1321085280}
   - component: {fileID: 1321085279}
   m_Layer: 6
-  m_Name: Close
+  m_Name: CloseMichaelsoft
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -14090,7 +14171,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 3, y: 3, z: 3, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -15085,7 +15166,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 3, y: 3, z: 3, w: 3}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -15371,7 +15452,7 @@ MonoBehaviour:
   m_wordSpacing: 0
   m_lineSpacing: 0
   m_lineSpacingMax: 0
-  m_paragraphSpacing: 0
+  m_paragraphSpacing: -75
   m_charWidthMaxAdj: 0
   m_TextWrappingMode: 1
   m_wordWrappingRatios: 0.4
@@ -15395,7 +15476,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 5, y: 5, z: 5, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -15744,7 +15825,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The next day...
+  m_text: 'The next day...
+
+    (Click to continue)'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -16621,7 +16704,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Take photo
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -16687,7 +16770,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1686199492
@@ -17031,8 +17114,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -422, y: 330}
-  m_SizeDelta: {x: 970, y: 1100}
+  m_AnchoredPosition: {x: -440, y: 336}
+  m_SizeDelta: {x: 1000, y: 1100}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1725257924
 MonoBehaviour:
@@ -17490,7 +17573,7 @@ GameObject:
   - component: {fileID: 1761208870}
   - component: {fileID: 1761208869}
   m_Layer: 6
-  m_Name: Back
+  m_Name: BackEmail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -17972,6 +18055,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 763684098}
+        m_TargetAssemblyTypeName: HandleBossEmail, Assembly-CSharp
+        m_MethodName: SendEmail
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1788987970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18395,6 +18490,7 @@ GameObject:
   - component: {fileID: 1896425714}
   - component: {fileID: 1896425710}
   - component: {fileID: 1896425715}
+  - component: {fileID: 1896425716}
   m_Layer: 6
   m_Name: Michaelsoft Word
   m_TagString: Untagged
@@ -18527,6 +18623,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1896425716}
+        m_TargetAssemblyTypeName: HandleButtonsDuringTasks, Assembly-CSharp
+        m_MethodName: disableButtons
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1896425712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18603,6 +18711,22 @@ MonoBehaviour:
   actDirector: {fileID: 633431631}
   Act2Limit: 2
   Act3Limits: 
+--- !u!114 &1896425716
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1896425708}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac423ee3e2aac743a7cf9a12dda9673, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  actDirector: {fileID: 633431631}
+  dialogueSystem: {fileID: 927347897}
+  buttons:
+  - {fileID: 1321085281}
 --- !u!1 &1914912952
 GameObject:
   m_ObjectHideFlags: 0
@@ -18637,7 +18761,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -615, y: -305}
+  m_AnchoredPosition: {x: -387, y: 601}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1914912954
@@ -18932,7 +19056,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 56.1
+  m_fontSize: 55.45
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -18970,7 +19094,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 3, y: 3, z: 3, w: 3}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -19255,7 +19379,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 3, y: 3, z: 3, w: 3}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -19456,7 +19580,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Close
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -19522,7 +19646,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -35.00743}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2004125583
@@ -19548,7 +19672,7 @@ GameObject:
   - component: {fileID: 2015964498}
   - component: {fileID: 2015964497}
   m_Layer: 6
-  m_Name: Close
+  m_Name: CloseGeggleEmail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

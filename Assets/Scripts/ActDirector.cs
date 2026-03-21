@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class ActDirector : MonoBehaviour
 {
@@ -88,6 +89,7 @@ public class ActDirector : MonoBehaviour
         alertOfEpilogue.Invoke();
         foreach (GameObject button in closeButtons)
         {
+            button.GetComponent<Button>().interactable = true;
             button.GetComponent<TraverseWindow>().TraverseToWindow(MainWindow);
         }
         

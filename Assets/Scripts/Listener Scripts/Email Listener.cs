@@ -130,7 +130,7 @@ public class EmailListener : MonoBehaviour
     {
         if (actDirector.GetIsGoodRoute())
         {
-            if ((index == 5 && act2YesHandler == 0) || index == 14)
+            if ((index == 5 && act2YesHandler == 0) || index == 13)
             {
                 EmailAct2Good.SetActive(true);
             }

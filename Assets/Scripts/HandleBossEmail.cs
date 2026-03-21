@@ -1,4 +1,5 @@
 using UnityEngine;
+using TMPro;
 
 public class HandleBossEmail : MonoBehaviour
 {
@@ -6,6 +7,8 @@ public class HandleBossEmail : MonoBehaviour
 
     [SerializeField] private GameObject act1email;
     [SerializeField] private GameObject act2email;
+    [SerializeField] private TextMeshProUGUI EmailText;
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -29,6 +32,15 @@ public class HandleBossEmail : MonoBehaviour
         {
             act1email.SetActive(false);
             act2email.SetActive(true);
+        }
+
+        if (actDirector.GetCurrentAct() == 1)
+        {
+            EmailText.text = "Sender: Boss\nSubject: URGENT\n[Click to read more]";
+        }
+        else
+        {
+            EmailText.text = "Sender: Boss\nSubject: Re: Re: URGENT\n[Click to read more]";
         }
     }
 }

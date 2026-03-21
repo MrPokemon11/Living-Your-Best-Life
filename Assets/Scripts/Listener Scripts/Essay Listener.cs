@@ -155,4 +155,9 @@ public class EssayListener : MonoBehaviour
             }
         }
     }
+
+    public void delayedEssayCompletion()
+    {
+        dialogueSystem.DialogueEndEvent.AddListener(MarkTaskDone);
+    }
 }

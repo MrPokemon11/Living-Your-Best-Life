@@ -159,7 +159,7 @@ public class Act3Manager : MonoBehaviour
 
         if (actDirector.GetIsGoodRoute())
         {
-            endingText.text = endings[0];
+            endingText.text = endings[1];
         }
         else
         {
@@ -174,7 +174,7 @@ public class Act3Manager : MonoBehaviour
             dialogueSystem.ReturnDialogueIndex.AddListener(glitchWindow);
             if (actDirector.GetIsGoodRoute())
             {
-                endingText.text = endings[1];
+                endingText.text = endings[0];
             }
             else
             {
