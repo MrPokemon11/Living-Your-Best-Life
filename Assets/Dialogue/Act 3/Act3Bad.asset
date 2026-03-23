@@ -91,3 +91,33 @@ MonoBehaviour:
     _NpcResponses:
     - You can focus on Living Your Best Life(tm)!
     nextStepIndices: ffffffff
+  voiceClips:
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  branchingFirstClip: {fileID: 0}

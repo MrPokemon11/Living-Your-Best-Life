@@ -37,7 +37,7 @@ MonoBehaviour:
     - Pretty please?
     nextStepIndices: 03000000
   - _Question:
-    - Fine. You can write one, but don't submit it!
+    - You can write one if you want, but don't submit it!
     _NpcResponses:
     - Yippee! I won't let you down!
     nextStepIndices: 04000000
@@ -163,3 +163,62 @@ MonoBehaviour:
     _NpcResponses:
     - There is more for me to help with right?
     nextStepIndices: ffffffff
+  voiceClips:
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  branchingFirstClip: {fileID: 0}

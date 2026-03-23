@@ -131,3 +131,48 @@ MonoBehaviour:
     - We replied to the email, so the task is done. Now, aren't there more things
       we need to do?
     nextStepIndices: ffffffff
+  voiceClips:
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  branchingFirstClip: {fileID: 0}

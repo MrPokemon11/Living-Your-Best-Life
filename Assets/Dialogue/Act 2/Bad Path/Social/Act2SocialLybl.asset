@@ -129,3 +129,48 @@ MonoBehaviour:
     _NpcResponses:
     - Anyway, aren't there more tasks we need to complete?
     nextStepIndices: ffffffff
+  voiceClips:
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  branchingFirstClip: {fileID: 0}

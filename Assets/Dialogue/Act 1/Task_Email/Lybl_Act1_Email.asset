@@ -91,3 +91,33 @@ MonoBehaviour:
     _NpcResponses:
     - Cool. I'll send this to your boss, and cross it off in the notepad.
     nextStepIndices: ffffffff
+  voiceClips:
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  branchingFirstClip: {fileID: 0}

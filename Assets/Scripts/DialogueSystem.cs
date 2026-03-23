@@ -143,7 +143,15 @@ public class DialogueSystem : MonoBehaviour
         responsePanel.SetActive(false);
         StopAllCoroutines();
         string phrase = currentStory.linear._pharases[dialogueIndex];
-        StartCoroutine(TypeLine(phrase));
+        if (currentStory.voiceClips[dialogueIndex] != null)
+        {
+            StartCoroutine(TypeLine(phrase, currentStory.voiceClips[dialogueIndex].voiceLines[0]));
+        }
+        else
+        {
+            StartCoroutine(TypeLine(phrase));
+        }
+        
         
 
        

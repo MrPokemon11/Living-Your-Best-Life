@@ -6000,7 +6000,7 @@ MonoBehaviour:
   - {fileID: 482977651}
   - {fileID: 1321085277}
   MainWindow: {fileID: 2020762909}
-  currentAct: 2
+  currentAct: 0
   isGoodRoute: 0
 --- !u!4 &633431632
 Transform:
@@ -9781,8 +9781,8 @@ MonoBehaviour:
   GhostListeners:
     m_PersistentCalls:
       m_Calls: []
-  audioSource: {fileID: 0}
-  audioVolume: 0
+  audioSource: {fileID: 1299002164}
+  audioVolume: 1
   audioMute: 0
 --- !u!4 &927347898
 Transform:
@@ -10948,8 +10948,8 @@ MonoBehaviour:
   GhostListeners:
     m_PersistentCalls:
       m_Calls: []
-  audioSource: {fileID: 0}
-  audioVolume: 0
+  audioSource: {fileID: 1299002164}
+  audioVolume: 1
   audioMute: 0
 --- !u!1 &1076657808
 GameObject:

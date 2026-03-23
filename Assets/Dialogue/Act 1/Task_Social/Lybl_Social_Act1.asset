@@ -48,3 +48,16 @@ MonoBehaviour:
     _NpcResponses:
     - I'll send the photo to your girlfriend for you, and let you know what she says!
     nextStepIndices: 05000000
+  voiceClips:
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  branchingFirstClip: {fileID: 0}
