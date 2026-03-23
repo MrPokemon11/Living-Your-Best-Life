@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
   m_Name: Lybl_Act1_Email
   m_EditorClassIdentifier: 
-  _playerName: An email labeled as "urgent?" It must be important...
+  _playerName: An email labeled as "urgent"? It must be important...
   _NPCName: LYBL
   _dialogueType: 0
   _startDialogue: 0

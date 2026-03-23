@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
+using TMPro;
 
 public class ActDirector : MonoBehaviour
 {
@@ -37,7 +38,12 @@ public class ActDirector : MonoBehaviour
     [SerializeField] private GameObject[] closeButtons;
     [SerializeField] private GameObject MainWindow;
     
+    [Header("Notepad Objects")]
+    [SerializeField] private GameObject notepad;
+    [SerializeField] private TextMeshProUGUI notepadEssayText;
+    
     //other variables
+    [Header("Misc. Variables")]
     [SerializeField] private int currentAct = 0;
     private List<string> tasksCompleted;
     private bool actFinished = false;
@@ -125,14 +131,19 @@ public class ActDirector : MonoBehaviour
 
         if (currentAct != 3)
         {
+            notepad.SetActive(false);
             lyblDialogueStarter.StartCurrentDialogue();
             playerDialogueStarter.StartCurrentDialogue();
-        }
-        else
-        {
             
         }
 
+        if (currentAct == 1)
+        {
+            notepadEssayText.text = "- Submit Essay";
+        } else if (currentAct == 2)
+        {
+            notepadEssayText.text = "- Submit Latin Essay";
+        }
         
         //only initialize objects if it isn't act 3, as no tasks are done during act 3
         if (currentAct != 3)

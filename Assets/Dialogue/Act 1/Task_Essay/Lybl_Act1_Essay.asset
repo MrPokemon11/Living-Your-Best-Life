@@ -51,7 +51,7 @@ MonoBehaviour:
   - _Question:
     - (Click to continue)
     _NpcResponses:
-    - Now that the essay is done, it's time to go submit it!
+    - Now that the essay is done, it's time to go submit it.
     nextStepIndices: 06000000
   - _Question:
     - (Click to continue)

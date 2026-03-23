@@ -23,7 +23,7 @@ MonoBehaviour:
     - What can I help you with today?
     - 
     - Sure, I can help with that. Let's start by writing down what you need to do.
-    - The notepad is a good place to write things down!
+    - The notepad is a convenient place to write things down!
     _responses: []
     _haveResponses: 0
   branching: []
