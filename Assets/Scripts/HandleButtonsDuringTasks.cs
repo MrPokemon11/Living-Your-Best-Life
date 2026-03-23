@@ -34,6 +34,6 @@ public class HandleButtonsDuringTasks : MonoBehaviour
         {
             button.interactable = true;
         }
-        dialogueSystem.DialogueEndEvent.RemoveListener(disableButtons);
+        dialogueSystem.DialogueEndEvent.RemoveListener(enableButtons);
     }
 }
