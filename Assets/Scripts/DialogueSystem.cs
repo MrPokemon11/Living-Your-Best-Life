@@ -32,6 +32,7 @@ public class DialogueSystem : MonoBehaviour
 
     private int lastImpactfulChoice = -1;
     
+    [Header("Events")]
     // unity events for returning dialogue data to listeners; added by me
     public UnityEvent DialogueEndEvent;
     public UnityEvent<int> DialogueImpactfulChoiceEvent;
@@ -41,6 +42,11 @@ public class DialogueSystem : MonoBehaviour
     public UnityEvent<string> GhostListeners;
     private List<string> activeGhosts;
     bool isAlertingGhosts = false;
+    
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] public float audioVolume;
+    [SerializeField] public bool audioMute = false;
 
     private void Start()
     {
@@ -72,7 +78,11 @@ public class DialogueSystem : MonoBehaviour
         {
             ReturnDialogueIndex = new UnityEvent<int>();
         }
-        
+
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
+        }
         lastTypingSpeed = typingSpeed;
     }
 
@@ -97,6 +107,10 @@ public class DialogueSystem : MonoBehaviour
             //StartCoroutine(TypeLine(currentStory._playerName));
             
             dialogueText.text = currentStory._playerName;
+            if (!audioMute && currentStory.branchingFirstClip != null)
+            {
+                audioSource.PlayOneShot(currentStory.branchingFirstClip, audioVolume);
+            }
             ShowBranchingDialogue();
 
         }
@@ -177,6 +191,7 @@ public class DialogueSystem : MonoBehaviour
         nameText.text = currentStory._NPCName;
 
         var step = currentStory.branching[currentBranchingStep];
+        var audioStep = currentStory.voiceClips[currentBranchingStep];
 
         for (int i = 0; i < responseButtons.Length; i++)
         {
@@ -201,7 +216,7 @@ public class DialogueSystem : MonoBehaviour
                     }
                     ReportDialogueIndex();
                     StopAllCoroutines();
-                    StartCoroutine(ShowNpcResponseThenNext(step._NpcResponses[index], step.nextStepIndices[index]));
+                    StartCoroutine(ShowNpcResponseThenNext(step._NpcResponses[index], step.nextStepIndices[index], audioStep.voiceLines[index]));
                 });
             }
             else
@@ -210,9 +225,7 @@ public class DialogueSystem : MonoBehaviour
             }
         }
     }
-
-
-
+    
     IEnumerator TypeLine(string line)
     {
         isTyping = true;
@@ -226,11 +239,44 @@ public class DialogueSystem : MonoBehaviour
         typingSpeed = lastTypingSpeed;
         isTyping = false;
     }
-
-    IEnumerator ShowNpcResponseThenNext(string npcResponse, int nextIndex)
+    
+    // variant of TypeLine that also activates voice lines.
+    IEnumerator TypeLine(string line, AudioClip clip)
     {
-        yield return StartCoroutine(TypeLine(npcResponse));
+        isTyping = true;
+        dialogueText.text = "";
+        typingSpeed = lastTypingSpeed;
+        audioSource.Stop();
+        if (clip != null && !audioMute)
+        {
+            audioSource.PlayOneShot(clip, audioVolume);            
+        }
+        foreach (char letter in line.ToCharArray())
+        {
+            dialogueText.text += letter;
+            yield return new WaitForSeconds(typingSpeed);
+        }
+        //wait for the voice clip to finish playing (unless muted)
+        while (audioSource.isPlaying)
+        {
+            yield return null;
+        }
+        typingSpeed = lastTypingSpeed;
+        isTyping = false;
+    }
 
+    IEnumerator ShowNpcResponseThenNext(string npcResponse, int nextIndex, AudioClip clip = null)
+    {
+        if (clip is not null)
+        {
+            yield return StartCoroutine(TypeLine(npcResponse, clip));
+            
+        }
+        else
+        {
+            yield return StartCoroutine(TypeLine(npcResponse));
+        }
+        
         yield return new WaitForSeconds(1f);
 
         if (nextIndex >= 0 && nextIndex < currentStory.branching.Length)

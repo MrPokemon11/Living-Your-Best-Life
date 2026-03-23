@@ -17,6 +17,8 @@ namespace Dialogue
         [SerializeField] public LinearDialogue linear;
         [SerializeField] public BranchingDialogue[] branching;
         
+        [SerializeField] public VoiceClips[] voiceClips;
+        [SerializeField] public AudioClip branchingFirstClip;
     }
 
     [Serializable]
@@ -33,5 +35,11 @@ namespace Dialogue
         [SerializeField] public string[] _Question;
         [SerializeField] public string[] _NpcResponses;
         [SerializeField] public int[] nextStepIndices;
+    }
+
+    [Serializable]
+    public class VoiceClips
+    {
+        [SerializeField] public AudioClip[] voiceLines;
     }
 }
