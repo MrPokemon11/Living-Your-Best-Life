@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
   m_Name: Act2EmailBad
   m_EditorClassIdentifier: 
-  _playerName: Another email from your boss?
+  _playerName: Oh, your boss replied to your email.
   _NPCName: LYBL
   _dialogueType: 0
   _startDialogue: 0
@@ -24,7 +24,7 @@ MonoBehaviour:
   - _Question:
     - (Click to continue)
     _NpcResponses:
-    - I hope it's actually important this time.
+    - Let's see if this one is important.
     nextStepIndices: 01000000
   - _Question:
     - (Click to continue)
@@ -50,7 +50,7 @@ MonoBehaviour:
     - Go ahead.
     - No, I can do it.
     _NpcResponses:
-    - Great! Just give me a moment...
+    - Give me a moment...
     - Nonsense!
     nextStepIndices: 060000000c000000
   - _Question:
@@ -118,7 +118,7 @@ MonoBehaviour:
   - _Question:
     - Why would you do that?
     _NpcResponses:
-    - To give you the push you need, obviously!
+    - To give you the push you need, obviously.
     nextStepIndices: 13000000
   - _Question:
     - (Click to continue)

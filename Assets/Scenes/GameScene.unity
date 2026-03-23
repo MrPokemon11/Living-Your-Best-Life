@@ -5585,7 +5585,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -148.69475, w: 7.425226}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &592737198
@@ -6000,6 +6000,8 @@ MonoBehaviour:
   - {fileID: 482977651}
   - {fileID: 1321085277}
   MainWindow: {fileID: 2020762909}
+  notepad: {fileID: 0}
+  notepadEssayText: {fileID: 0}
   currentAct: 0
   isGoodRoute: 0
 --- !u!4 &633431632
@@ -8393,7 +8395,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -148.69475, w: 7.425226}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &806398201
@@ -9405,7 +9407,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &874361755
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9700,7 +9702,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -148.69475, w: 7.425226}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &900331886
@@ -10724,7 +10726,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -148.69475, w: 7.425226}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1060280605
@@ -16707,7 +16709,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -148.69475, w: 7.425226}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1665192568

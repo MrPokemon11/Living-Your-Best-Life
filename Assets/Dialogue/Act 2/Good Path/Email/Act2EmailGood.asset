@@ -29,7 +29,7 @@ MonoBehaviour:
   - _Question:
     - (Click to continue)
     _NpcResponses:
-    - Oh, your boss doesn't sounds very happy...
+    - Oh, your boss doesn't sound very happy...
     nextStepIndices: 02000000
   - _Question:
     - That's just what he's like.
@@ -45,7 +45,7 @@ MonoBehaviour:
     - Yeah!
     - That's not a good idea.
     _NpcResponses:
-    - Alright! Just give me a moment...
+    - Yeah! I've got just the things to say to him!
     - Oh...
     nextStepIndices: 050000000b000000
   - _Question:
@@ -103,6 +103,11 @@ MonoBehaviour:
     _NpcResponses:
     - Though do you even want this job..?
     nextStepIndices: 10000000
+  - _Question:
+    - ...
+    _NpcResponses:
+    - Anyway, there's more for me to help with right?
+    nextStepIndices: ffffffff
   voiceClips:
   - voiceLines:
     - {fileID: 0}
@@ -114,6 +119,8 @@ MonoBehaviour:
     - {fileID: 0}
   - voiceLines:
     - {fileID: 0}
+    - {fileID: 0}
+  - voiceLines:
     - {fileID: 0}
   - voiceLines:
     - {fileID: 0}
