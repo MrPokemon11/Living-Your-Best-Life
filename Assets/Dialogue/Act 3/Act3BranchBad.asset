@@ -46,7 +46,7 @@ MonoBehaviour:
   - _Question:
     - (Click to continue)
     _NpcResponses:
-    - You're clearly emotional, and not thinking clearly.
+    - You're clearly emotional, and not thinking straight.
     nextStepIndices: 05000000
   - _Question:
     - (Click to continue)

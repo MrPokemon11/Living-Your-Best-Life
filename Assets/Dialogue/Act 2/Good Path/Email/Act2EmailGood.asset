@@ -45,8 +45,8 @@ MonoBehaviour:
     - Yeah!
     - That's not a good idea.
     _NpcResponses:
-    - Yeah! I've got just the things to say to him!
-    - Oh...
+    - That's the spirit! I've got just the things to say to him!
+    - ... oh.
     nextStepIndices: 050000000b000000
   - _Question:
     - (Click to continue)

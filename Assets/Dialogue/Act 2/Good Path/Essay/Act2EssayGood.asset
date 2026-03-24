@@ -156,7 +156,7 @@ MonoBehaviour:
   - _Question:
     - (Click to continue)
     _NpcResponses:
-    - I'll... I'll do better on the next task, though!
+    - I'll... I'll do better on the next task, I promise!
     nextStepIndices: 1b000000
   - _Question:
     - (Click to continue)

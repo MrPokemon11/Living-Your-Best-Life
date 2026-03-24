@@ -20,7 +20,7 @@ MonoBehaviour:
     _pharases:
     - Welcome back!
     - Ready for another day of Living Your Best Life(tm)?
-    - Add your tasks to the notepad, and we can get started!
+    - Add your tasks to the notepad so we can get started!
     _responses: []
     _haveResponses: 0
   branching: []

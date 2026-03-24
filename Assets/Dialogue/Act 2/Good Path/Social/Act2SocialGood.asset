@@ -39,7 +39,7 @@ MonoBehaviour:
   - _Question:
     - Who's the woman?
     _NpcResponses:
-    - It's your girlfriend! Isn't she beautiful?
+    - That's your girlfriend! Isn't she beautiful?
     nextStepIndices: 04000000
   - _Question:
     - (Click to continue)
