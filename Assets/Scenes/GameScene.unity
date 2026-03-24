@@ -1229,7 +1229,7 @@ MonoBehaviour:
   m_text: Click here to search...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -48024927519161833, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1294,7 +1294,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &141851891
@@ -1365,7 +1365,7 @@ MonoBehaviour:
   m_text: "\u200B"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -48024927519161833, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &155825989
@@ -1676,7 +1676,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -594, y: -69}
+  m_AnchoredPosition: {x: -594, y: -90}
   m_SizeDelta: {x: 1000, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &181704416
@@ -1711,7 +1711,7 @@ MonoBehaviour:
     expressing dismay at receiving a non-urgent email labeled as "urgent"].'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -48024927519161833, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1776,7 +1776,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: -152.5951, w: -253.2692}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &181704417
@@ -3062,7 +3062,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -483, y: 33}
+  m_AnchoredPosition: {x: -483, y: -7}
   m_SizeDelta: {x: 400, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &342324440
@@ -3430,6 +3430,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 350083647}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &350083648
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3545,7 +3557,7 @@ MonoBehaviour:
   m_text: Calvis
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -48024927519161833, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -3610,7 +3622,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -35.00743}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &356425791
@@ -4237,7 +4249,7 @@ MonoBehaviour:
   m_text: Calvis
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -48024927519161833, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4302,7 +4314,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -35.00743}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &436517470
@@ -6000,8 +6012,8 @@ MonoBehaviour:
   - {fileID: 482977651}
   - {fileID: 1321085277}
   MainWindow: {fileID: 2020762909}
-  notepad: {fileID: 0}
-  notepadEssayText: {fileID: 0}
+  notepad: {fileID: 874361754}
+  notepadEssayText: {fileID: 281667615}
   currentAct: 0
   isGoodRoute: 0
 --- !u!4 &633431632
@@ -6395,7 +6407,7 @@ MonoBehaviour:
 '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -48024927519161833, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6460,7 +6472,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -35.00743}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &706173337
@@ -6531,7 +6543,7 @@ MonoBehaviour:
   m_text: Close
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -48024927519161833, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -6596,7 +6608,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -35.00743}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &711487823
@@ -6870,7 +6882,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -594, y: -69}
+  m_AnchoredPosition: {x: -594, y: -90}
   m_SizeDelta: {x: 1000, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &731356896
@@ -9592,7 +9604,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -594, y: -69}
+  m_AnchoredPosition: {x: -594, y: -90}
   m_SizeDelta: {x: 1000, y: 200}
   m_Pivot: {x: 0, y: 1}
 --- !u!1 &900331884
@@ -10809,7 +10821,7 @@ MonoBehaviour:
     [Insert non-urgent sounding email here]. Respond asap.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -48024927519161833, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -10874,7 +10886,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -106.03763}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1060556902
@@ -11136,6 +11148,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: resetShear, Assembly-CSharp
         m_MethodName: ResetShear
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 350083647}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Selectable, UnityEngine.UI
+        m_MethodName: set_interactable
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -12561,8 +12585,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Act1Dialogue: {fileID: 11400000, guid: c955847a49b29d542b3a9c7f87916246, type: 2}
   Act2Dialogue:
-  - {fileID: 11400000, guid: 9dff01bab3bbb3d4fb95701faee044fb, type: 2}
   - {fileID: 11400000, guid: 2002e3309e5ab0c47a93eb42eef0e247, type: 2}
+  - {fileID: 11400000, guid: 9dff01bab3bbb3d4fb95701faee044fb, type: 2}
   Act3Dialogue:
   - {fileID: 0}
   - {fileID: 0}
@@ -12951,7 +12975,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -629, y: -50}
+  m_AnchoredPosition: {x: -629, y: -75}
   m_SizeDelta: {x: 1200, y: 500}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1261567817
@@ -16978,7 +17002,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: -629, y: 380}
-  m_SizeDelta: {x: 1200, y: 350}
+  m_SizeDelta: {x: 1200, y: 390}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1711137435
 MonoBehaviour:
@@ -19743,7 +19767,7 @@ MonoBehaviour:
   m_text: Close
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -48024927519161833, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -19808,7 +19832,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -35.00743}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2004125583
@@ -20360,7 +20384,7 @@ MonoBehaviour:
     Mail'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: -48024927519161833, guid: 3f5b480d18d22594bb31bffddfe8c554, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -20425,7 +20449,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: -68.324036}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &2111192061

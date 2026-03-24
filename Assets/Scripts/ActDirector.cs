@@ -140,9 +140,11 @@ public class ActDirector : MonoBehaviour
         if (currentAct == 1)
         {
             notepadEssayText.text = "- Submit Essay";
+            notepadEssayText.fontStyle = FontStyles.Normal;
         } else if (currentAct == 2)
         {
             notepadEssayText.text = "- Submit Latin Essay";
+            notepadEssayText.fontStyle = FontStyles.Normal;
         }
         
         //only initialize objects if it isn't act 3, as no tasks are done during act 3
