@@ -13,6 +13,7 @@ public class KeyboardControl : MonoBehaviour
     [SerializeField] private Button transitionScreen;
     [SerializeField] private Button fiftenminsscreen;
     [SerializeField] private Button threehoursscreen;
+    [SerializeField] private AudioSource audioSource;
     
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -35,6 +36,11 @@ public class KeyboardControl : MonoBehaviour
             {
                 threehoursscreen.onClick.Invoke();
                 return;
+            }
+
+            if (audioSource.isPlaying) // allows the player to skip spoken dialogue
+            {
+                audioSource.Stop();
             }
             
             if (LyblDialogueSystem.currentStory._dialogueType == Story.DialogueType.Linear)

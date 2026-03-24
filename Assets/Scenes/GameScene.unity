@@ -6039,6 +6039,7 @@ MonoBehaviour:
   transitionScreen: {fileID: 806694617}
   fiftenminsscreen: {fileID: 1771987763}
   threehoursscreen: {fileID: 640861612}
+  audioSource: {fileID: 1299002164}
 --- !u!1 &640861610
 GameObject:
   m_ObjectHideFlags: 0
