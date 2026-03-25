@@ -26,9 +26,9 @@ MonoBehaviour:
   branching: []
   voiceClips:
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: b36d9355cfb723f4483f1e1ef3ef4c98, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 62c71fc696832bb4393519814ec8a9e3, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 597fd1b203abac44fa8b0225c7071757, type: 3}
   branchingFirstClip: {fileID: 0}

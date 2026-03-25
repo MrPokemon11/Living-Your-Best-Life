@@ -221,4 +221,4 @@ MonoBehaviour:
     - {fileID: 0}
   - voiceLines:
     - {fileID: 0}
-  branchingFirstClip: {fileID: 0}
+  branchingFirstClip: {fileID: 8300000, guid: 375832d1594198d4a8cba71a6ce346d0, type: 3}

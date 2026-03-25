@@ -112,36 +112,36 @@ MonoBehaviour:
   - voiceLines:
     - {fileID: 0}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: f1090d8b1160e544cbbb87575b2b1b94, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: f2f0b6b149f374049b622d35ba4871f4, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 83593da31cefcfe499939613a53e3cf3, type: 3}
   - voiceLines:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 440e85e39c0c8e4438a9fb84758c9cb8, type: 3}
+    - {fileID: 8300000, guid: 20cf75a7e80784e4390e2692481f0b6d, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 5135af3ab0107df42bebe52b6da54273, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 661c9c48cbc5f8c48aa5f601c74741e1, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: d5fa9d428b8896e40a4d906cce7437c0, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 3767e97074d896e4298bcc66fdcf06dd, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: edefc21f05de38240905b13eb941cf15, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: bdc30057e7c989742baf1a9daf6ce59d, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: f8d181b405482d746a70306d01ed0f2f, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 9a755951ee94e804f8cee094565e3ef1, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: d399b87951bffcf4282ce1e5896e79da, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 3c9722a151b9f9a40960ccbbe22b6ef2, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 1cd8b48fab2614c4c82ebd7a2ce0075d, type: 3}
   - voiceLines:
-    - {fileID: 0}
-  branchingFirstClip: {fileID: 0}
+    - {fileID: 8300000, guid: 229d84233107ff64d815d4ae3a7ffdae, type: 3}
+  branchingFirstClip: {fileID: 8300000, guid: f013c506f0f54b6489df3766ac343ebe, type: 3}

@@ -114,7 +114,7 @@ MonoBehaviour:
   - voiceLines:
     - {fileID: 0}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 262313488bd1916459f33b1e3a814dcf, type: 3}
   - voiceLines:
     - {fileID: 0}
   - voiceLines:
