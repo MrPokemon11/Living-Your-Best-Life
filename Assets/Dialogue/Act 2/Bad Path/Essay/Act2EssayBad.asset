@@ -39,7 +39,7 @@ MonoBehaviour:
   - _Question:
     - (Click to continue)
     _NpcResponses:
-    - I'll just write it for you, we'll be here for the next two days otherwise.
+    - I'll just write it for you, otherwise we'll be here for the next two days.
     nextStepIndices: 04000000
   - _Question:
     - It's only 3 pages, I can do it in an hour and a half.
@@ -205,7 +205,59 @@ MonoBehaviour:
     nextStepIndices: ffffffff
   voiceClips:
   - voiceLines:
+    - {fileID: 8300000, guid: 75b889e67ec1bbd449d5573072f32f63, type: 3}
+  - voiceLines:
     - {fileID: 0}
+  - voiceLines:
+    - {fileID: 8300000, guid: 2c18b7e28c7813f42848d7d652174231, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: f52bfa2e0502dce4abe74e529b3c6344, type: 3}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 8300000, guid: e6673f79b13607f43b6b3f8727c75a4c, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: b707bf8610b432c4795eabf4b0fa72f8, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: 536386b432dc8b94780b396938446a80, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: ff80c25d86e894a4ca268ba231c1edbd, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: 6bd274b9e1e53654e9611cd6d8509322, type: 3}
+    - {fileID: 8300000, guid: f8ea70d5f74e93143a2221e9ed8f347d, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: 796dfee60240f2543b15495c7d163f45, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: 677ed49f768845447a4aec12fdfd7fe8, type: 3}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 8300000, guid: 6a39c815c3fffac45aebd661a01ac700, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: b3720fe38a7a3f84e95017ff13689680, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: fc72a1ac76866604c8d1ed3b5f6c5c32, type: 3}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 8300000, guid: a67748236d7c8a14fb0d1ce6fd5433ee, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: b97c76604a9b12b41936478f250e1f5b, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: 3cfec88db3566b546bddd6b3e14b194e, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: 5b8cef1daf09dac49a5af24f24225cc3, type: 3}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
+    - {fileID: 0}
+  - voiceLines: []
+  - voiceLines:
+    - {fileID: 8300000, guid: a212a94a591face48aa656ff5fe9d38d, type: 3}
   - voiceLines:
     - {fileID: 0}
   - voiceLines:
@@ -222,57 +274,4 @@ MonoBehaviour:
     - {fileID: 0}
   - voiceLines:
     - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
-  branchingFirstClip: {fileID: 0}
+  branchingFirstClip: {fileID: 8300000, guid: a212a94a591face48aa656ff5fe9d38d, type: 3}
