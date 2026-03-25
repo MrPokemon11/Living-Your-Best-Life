@@ -106,13 +106,16 @@ public class DialogueSystem : MonoBehaviour
             //also figure out how to get the first line typed, the TypeLine coroutine works but causes problems if the player goes too fast through dialogue
             //StartCoroutine(TypeLine(currentStory._playerName));
             
-            dialogueText.text = currentStory._playerName;
-            if (!audioMute && currentStory.branchingFirstClip != null)
-            {
-                audioSource.PlayOneShot(currentStory.branchingFirstClip, audioVolume);
-            }
-            ShowBranchingDialogue();
+            //dialogueText.text = currentStory._playerName;
+            //if (!audioMute && currentStory.branchingFirstClip != null)
+            //{
+            //    audioSource.PlayOneShot(currentStory.branchingFirstClip, audioVolume);
+            //}
+            //ShowBranchingDialogue();
 
+            // behold: the slightly less hacky solution (it still uses the player name as the first line, but now it gets types out!)
+            StopAllCoroutines();
+            StartCoroutine(HandleBranchingFirstLine());
         }
     }
 
@@ -398,5 +401,21 @@ public class DialogueSystem : MonoBehaviour
         {
             ReturnDialogueIndex.Invoke(dialogueIndex);
         }
+    }
+
+    private IEnumerator HandleBranchingFirstLine()
+    {
+        if (!audioMute && currentStory.branchingFirstClip != null)
+        {
+            yield return StartCoroutine(TypeLine(currentStory._playerName, currentStory.branchingFirstClip));
+        }
+        else
+        {
+            yield return StartCoroutine(TypeLine(currentStory._playerName));
+        }
+
+        yield return new WaitForSeconds(1f);
+        
+        ShowBranchingDialogue();
     }
 }

@@ -24,12 +24,12 @@ MonoBehaviour:
   - _Question:
     - (Click to continue)
     _NpcResponses:
-    - Have I not done enough for you?
+    - What have I done wrong?
     nextStepIndices: 01000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
-    - Have I not helped you Live Your Best Life(tm)?
+    - Haven't I helped you Live Your Best Life(tm)?
     nextStepIndices: 02000000
   - _Question:
     - You sent a picture to my girlfriend of "me" with another woman.
