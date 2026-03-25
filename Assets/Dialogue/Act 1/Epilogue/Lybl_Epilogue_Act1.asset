@@ -28,13 +28,13 @@ MonoBehaviour:
   branching: []
   voiceClips:
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 875f860910b7d394a94cfe7231b81230, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: 4d6a9ec63e159ed47b5e4707042a2db0, type: 3}
   - voiceLines:
     - {fileID: 0}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: ee7b2c88509871f40ac62d89e70f066b, type: 3}
   - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 1c3f34954f4249c4db3d7eae66182dcf, type: 3}
   branchingFirstClip: {fileID: 0}

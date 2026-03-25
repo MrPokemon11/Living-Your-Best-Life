@@ -65,21 +65,20 @@ MonoBehaviour:
     nextStepIndices: ffffffff
   voiceClips:
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 5a9ba0dc59d88f64da9dac369f0f5c96, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: c221c650c6ac603419a014368c01e09a, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: f9e6b4dfc44426543a1e056ea72b6967, type: 3}
   - voiceLines:
-    - {fileID: 0}
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: f81ad3868c7a42143a28d5ef815a2082, type: 3}
+    - {fileID: 8300000, guid: f63b1ba801016ed4d93edfbd19af7b80, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 309c0f30cf70b6f4ab30844fd7e45a6b, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 58467e55350449f43a3fcc37e6b9f0eb, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: a61cf6124d9f5cf4f8a96dcf301317be, type: 3}
   - voiceLines:
-    - {fileID: 0}
-  branchingFirstClip: {fileID: 0}
+    - {fileID: 8300000, guid: 5f4d93bfa159b9f4aadb9ae30ba965a8, type: 3}
+  branchingFirstClip: {fileID: 8300000, guid: 6944a0a08aab15148a1e235531e17d5f, type: 3}

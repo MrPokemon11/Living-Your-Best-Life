@@ -50,14 +50,14 @@ MonoBehaviour:
     nextStepIndices: 05000000
   voiceClips:
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 3967a59102567254292c859cd465f2d5, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: f293d0e8512c19c449f9d71d6c44d5a5, type: 3}
   - voiceLines:
-    - {fileID: 0}
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 2b3fa67a740681d4e80326fef718dd29, type: 3}
+    - {fileID: 8300000, guid: 9be102cdd11bd984581343fe2e3d335c, type: 3}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 6034833571bdb0245adc039d8deb4d32, type: 3}
   - voiceLines:
-    - {fileID: 0}
-  branchingFirstClip: {fileID: 0}
+    - {fileID: 8300000, guid: 0d68b35f589e873408fdc52299ad5e25, type: 3}
+  branchingFirstClip: {fileID: 8300000, guid: aa4aa207e52d65347989292a3f934f39, type: 3}

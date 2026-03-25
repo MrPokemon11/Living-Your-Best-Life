@@ -31,13 +31,13 @@ MonoBehaviour:
   - voiceLines:
     - {fileID: 0}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 657cc7689703a874da8fd055ab8be05a, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: d909e87cc5c66734a988460f8b2ffbde, type: 3}
   - voiceLines:
     - {fileID: 0}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 63542eb9177bac84b95a435470576bb1, type: 3}
   - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: c8a6d7ed483549c40b90681aa88a0409, type: 3}
   branchingFirstClip: {fileID: 0}

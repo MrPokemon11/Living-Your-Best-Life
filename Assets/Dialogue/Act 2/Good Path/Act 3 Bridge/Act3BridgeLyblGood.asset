@@ -33,17 +33,17 @@ MonoBehaviour:
   - voiceLines:
     - {fileID: 0}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 487a450904ad3aa439993d89124c4071, type: 3}
   - voiceLines:
     - {fileID: 0}
   - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 2e43c5b79f733ce4798a02b2f90362ea, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: 239ad1f38a2c49f419df05524469ac7a, type: 3}
   - voiceLines:
     - {fileID: 0}
   - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
+    - {fileID: 8300000, guid: 4f74d222780218f458a489b6b3012157, type: 3}
   - voiceLines:
     - {fileID: 0}
   branchingFirstClip: {fileID: 0}

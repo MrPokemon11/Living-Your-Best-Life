@@ -46,6 +46,4 @@ MonoBehaviour:
     - {fileID: 0}
   - voiceLines:
     - {fileID: 0}
-  - voiceLines:
-    - {fileID: 0}
   branchingFirstClip: {fileID: 0}
