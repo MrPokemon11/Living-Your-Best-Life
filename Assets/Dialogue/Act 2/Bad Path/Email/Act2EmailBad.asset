@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e315d43931fb3f1438a0ee31ac85c604, type: 3}
   m_Name: Act2EmailBad
   m_EditorClassIdentifier: 
-  _playerName: Oh, your boss replied to your email.
+  _playerName: Seems like your boss replied to your email.
   _NPCName: LYBL
   _dialogueType: 0
   _startDialogue: 0
@@ -152,17 +152,17 @@ MonoBehaviour:
   - voiceLines:
     - {fileID: 8300000, guid: 53d452246a8c5054a877b504c18b2620, type: 3}
   - voiceLines:
-    - {fileID: 8300000, guid: 53d452246a8c5054a877b504c18b2620, type: 3}
-  - voiceLines:
     - {fileID: 8300000, guid: 854c17f2c82abbf47ae877ef0e389dfd, type: 3}
   - voiceLines:
     - {fileID: 8300000, guid: 83b386d03d07d4c4c9bf057c6067453e, type: 3}
+  - voiceLines:
+    - {fileID: 8300000, guid: c886967115729e949b0f68dd14c849f2, type: 3}
   - voiceLines:
     - {fileID: 8300000, guid: b9c154abe4660334b82b9248d7efacf9, type: 3}
   - voiceLines:
     - {fileID: 8300000, guid: eda090f85e03f6f4c9a29a41e144cae6, type: 3}
   - voiceLines:
-    - {fileID: 8300000, guid: b02e85724b3aa844781097c753c356c9, type: 3}
+    - {fileID: 8300000, guid: 918b25d047417fd4cacd3093eb2f9bbc, type: 3}
   - voiceLines:
     - {fileID: 8300000, guid: ef7f1d8bd4f28fc418c85edcf37c870d, type: 3}
   - voiceLines:

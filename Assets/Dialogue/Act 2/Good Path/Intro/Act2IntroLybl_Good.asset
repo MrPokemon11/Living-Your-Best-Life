@@ -33,11 +33,11 @@ MonoBehaviour:
   - voiceLines:
     - {fileID: 8300000, guid: 279d4dbac5a6fb04abc015fe048883b6, type: 3}
   - voiceLines:
+    - {fileID: 0}
+  - voiceLines:
     - {fileID: 8300000, guid: 739cadc352feb7f40915ed530f267da9, type: 3}
   - voiceLines:
     - {fileID: 8300000, guid: 57061847095a46449b8d39bb074fe037, type: 3}
-  - voiceLines:
-    - {fileID: 0}
   - voiceLines:
     - {fileID: 0}
   branchingFirstClip: {fileID: 0}

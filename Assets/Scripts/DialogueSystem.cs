@@ -418,4 +418,9 @@ public class DialogueSystem : MonoBehaviour
         
         ShowBranchingDialogue();
     }
+
+    public int GetBranchIndex()
+    {
+        return currentBranchingStep;
+    }
 }

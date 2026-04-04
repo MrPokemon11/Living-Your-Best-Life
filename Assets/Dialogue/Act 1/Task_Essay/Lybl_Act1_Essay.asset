@@ -74,7 +74,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: f81ad3868c7a42143a28d5ef815a2082, type: 3}
     - {fileID: 8300000, guid: f63b1ba801016ed4d93edfbd19af7b80, type: 3}
   - voiceLines:
-    - {fileID: 8300000, guid: 309c0f30cf70b6f4ab30844fd7e45a6b, type: 3}
+    - {fileID: 0}
   - voiceLines:
     - {fileID: 8300000, guid: 58467e55350449f43a3fcc37e6b9f0eb, type: 3}
   - voiceLines:

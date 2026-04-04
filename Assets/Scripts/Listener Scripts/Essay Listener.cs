@@ -80,9 +80,18 @@ public class EssayListener : MonoBehaviour
 
     public void Initialize()
     {
+        TextMeshProUGUI TaskTextText = TaskText.GetComponent<TextMeshProUGUI>();
         if (actDirector.GetCurrentAct() != 3)
         {
-            TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Normal;
+            if (actDirector.GetCurrentAct() == 1)
+            {
+                TaskTextText.text = "- Submit Essay";
+            }
+            else
+            {
+                TaskTextText.text = "- Submit Latin Essay";
+            }
+            TaskTextText.fontStyle = FontStyles.Normal;
             hasDialogueBeenSeen = false;
             EssayText.SetActive(false);
             EssayAct1.SetActive(false);
