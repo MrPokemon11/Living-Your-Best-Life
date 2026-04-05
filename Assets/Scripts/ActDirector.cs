@@ -71,10 +71,6 @@ public class ActDirector : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Debug.Log(tasksCompleted.Count);
-        }
         if (tasksCompleted.Count >= 3 && !actFinished)
         {
             AllTasksComplete();
@@ -118,16 +114,16 @@ public class ActDirector : MonoBehaviour
     
     public void StartAct()
     {
+        //reset the number of completed tasks
+        tasksCompleted.Clear();
+        actFinished = false;        
+        
         // add the AI use from the previous act to the total, reset the current AI use to 0
         totalAIUse += AIUse;
         AIUse = 0;
         
         //add 1 to the act number
         currentAct++;
-        
-        //reset the number of completed tasks
-        tasksCompleted.Clear();
-        actFinished = false;
 
         if (currentAct != 3)
         {
