@@ -27,6 +27,7 @@ public class EssayListener : MonoBehaviour
 
     [Header("Task Text")]
     [SerializeField] private GameObject TaskText;
+    private TextMeshProUGUI TaskTextText;
 
     private bool hasDialogueBeenSeen = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,7 +37,7 @@ public class EssayListener : MonoBehaviour
         actDirector = ActManager.GetComponent<ActDirector>();
         continueButton = ContinueButton.GetComponent<Button>();
         ChoiceBasedDialogueScript = ChoiceBasedDialogue.GetComponent<ChoiceBasedDialogue>();
-        
+        TaskTextText = TaskText.GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
@@ -80,7 +81,6 @@ public class EssayListener : MonoBehaviour
 
     public void Initialize()
     {
-        TextMeshProUGUI TaskTextText = TaskText.GetComponent<TextMeshProUGUI>();
         if (actDirector.GetCurrentAct() != 3)
         {
             if (actDirector.GetCurrentAct() == 1)

@@ -6014,7 +6014,7 @@ MonoBehaviour:
   MainWindow: {fileID: 2020762909}
   notepad: {fileID: 874361754}
   notepadEssayText: {fileID: 281667615}
-  currentAct: 1
+  currentAct: 0
   isGoodRoute: 0
 --- !u!4 &633431632
 Transform:
@@ -17939,6 +17939,7 @@ GameObject:
   - component: {fileID: 1771987765}
   - component: {fileID: 1771987764}
   - component: {fileID: 1771987763}
+  - component: {fileID: 1771987766}
   m_Layer: 5
   m_Name: 15 Minutes Later Screen
   m_TagString: Untagged
@@ -18046,6 +18047,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1771987766}
+        m_TargetAssemblyTypeName: Act1HandleEmailDialogue, Assembly-CSharp
+        m_MethodName: PlayAudio
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1771987764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18084,6 +18097,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1771987761}
   m_CullTransparentMesh: 1
+--- !u!114 &1771987766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1771987761}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9ec19273df529e4a9d5636404b6361d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 927347897}
+  audioSource: {fileID: 1299002164}
+  audioClipNo: {fileID: 8300000, guid: 968e714949347fd48858c85180815313, type: 3}
+  audioClipYesNo: {fileID: 8300000, guid: 31b174efa9b69e14291fc1ced076566d, type: 3}
 --- !u!1 &1783277307
 GameObject:
   m_ObjectHideFlags: 0

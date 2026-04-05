@@ -111,13 +111,13 @@ MonoBehaviour:
   - voiceLines:
     - {fileID: 0}
   - voiceLines:
-    - {fileID: 8300000, guid: 31b174efa9b69e14291fc1ced076566d, type: 3}
+    - {fileID: 0}
   - voiceLines:
     - {fileID: 8300000, guid: 7c12a642a18a18e4b8065fb864bfc437, type: 3}
   - voiceLines:
     - {fileID: 0}
   - voiceLines:
-    - {fileID: 8300000, guid: 968e714949347fd48858c85180815313, type: 3}
+    - {fileID: 0}
   - voiceLines:
     - {fileID: 8300000, guid: 4d1b1d5a2617e574cad6992cbb2c0a7e, type: 3}
   branchingFirstClip: {fileID: 8300000, guid: f458bcd59766a3a449606f0678d0d249, type: 3}
