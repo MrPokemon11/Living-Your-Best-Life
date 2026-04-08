@@ -145,6 +145,10 @@ public class EssayListener : MonoBehaviour
     {
         TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
         actDirector.MarkTaskAsDone("Essay");
+        if (actDirector.GetAIUse() > 4)
+        {
+            actDirector.AddAIUse(4 - actDirector.GetAIUse());
+        }
     }
 
     private void ShowEssayByPath(int index)

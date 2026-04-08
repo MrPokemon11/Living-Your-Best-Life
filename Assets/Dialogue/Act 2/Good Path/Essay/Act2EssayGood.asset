@@ -38,9 +38,11 @@ MonoBehaviour:
     nextStepIndices: 03000000
   - _Question:
     - You can write one if you want, but don't submit it!
+    - No.
     _NpcResponses:
     - Yippee! I won't let you down!
-    nextStepIndices: 04000000
+    - Pretty please?
+    nextStepIndices: 0400000003000000
   - _Question:
     - (Click to continue)
     _NpcResponses:
@@ -172,6 +174,7 @@ MonoBehaviour:
     - {fileID: 8300000, guid: 82a3292ac52a3c647a8f07c3ef41406d, type: 3}
   - voiceLines:
     - {fileID: 8300000, guid: a2e87cb7c5659ad47bea441ab9993704, type: 3}
+    - {fileID: 8300000, guid: 82a3292ac52a3c647a8f07c3ef41406d, type: 3}
   - voiceLines:
     - {fileID: 8300000, guid: db3fda5856806c148ab0242ce8e11418, type: 3}
   - voiceLines:
