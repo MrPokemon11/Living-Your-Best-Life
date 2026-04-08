@@ -58,11 +58,11 @@ MonoBehaviour:
     nextStepIndices: ffffffff
   voiceClips:
   - voiceLines:
-    - {fileID: 0}
-  - voiceLines:
     - {fileID: 8300000, guid: d872ba2e819a3a1419f1b664d5433cc3, type: 3}
   - voiceLines:
     - {fileID: 8300000, guid: cbdbfe738bf8800499447dcdd8ca6ff8, type: 3}
+  - voiceLines:
+    - {fileID: 0}
   - voiceLines:
     - {fileID: 0}
   - voiceLines:

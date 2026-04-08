@@ -125,18 +125,18 @@ public class ActDirector : MonoBehaviour
         //add 1 to the act number
         currentAct++;
 
+        //only initialize objects if it isn't act 3, as no tasks are done during act 3
+        if (currentAct != 3)
+        {
+            InitializeObjects();  
+        }
+        
         if (currentAct != 3)
         {
             notepad.SetActive(false);
             lyblDialogueStarter.StartCurrentDialogue();
             playerDialogueStarter.StartCurrentDialogue();
             
-        }
-        
-        //only initialize objects if it isn't act 3, as no tasks are done during act 3
-        if (currentAct != 3)
-        {
-            InitializeObjects();  
         }
 
         

@@ -58,7 +58,8 @@ MonoBehaviour:
   - _Question:
     - (Click to continue)
     _NpcResponses:
-    - Alright, I've gone ahead and submitted it, so now we can-
+    - Alright, I've gone ahead and submitted it, so now we can go cross it off the
+      list!
     nextStepIndices: 07000000
   - _Question:
     - What? I told you not to.
@@ -185,6 +186,8 @@ MonoBehaviour:
   - voiceLines:
     - {fileID: 8300000, guid: bd2d5ca3a88444a4890ba6d24626f3b1, type: 3}
   - voiceLines:
+    - {fileID: 8300000, guid: 6244f9ca81482b14db06ca4b0e514cdb, type: 3}
+  - voiceLines:
     - {fileID: 8300000, guid: 29926d6914b38974e9bd4ed61b865401, type: 3}
   - voiceLines:
     - {fileID: 8300000, guid: 8c6f48fabc8fbc540a314c9b07268a09, type: 3}
@@ -198,8 +201,6 @@ MonoBehaviour:
     - {fileID: 8300000, guid: d78e1f7368e3f2c4291b3e88c7f468c1, type: 3}
   - voiceLines:
     - {fileID: 8300000, guid: 90e4a2407982f57498e194c02b1f5af2, type: 3}
-  - voiceLines:
-    - {fileID: 0}
   - voiceLines:
     - {fileID: 0}
   - voiceLines:
