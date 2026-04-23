@@ -2,7 +2,7 @@
 
 Why live your life when it can be lived for you?
 
-
+If you wish to play the game for yourself, you can find it here: https://mrpokemon11.itch.io/living-your-best-life
 
 Asset attributions:
 
