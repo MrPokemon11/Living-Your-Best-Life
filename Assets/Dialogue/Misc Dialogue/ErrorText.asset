@@ -22,3 +22,6 @@ MonoBehaviour:
     _responses: []
     _haveResponses: 0
   branching: []
+  voiceClips:
+  - voiceLines: []
+  branchingFirstClip: {fileID: 0}

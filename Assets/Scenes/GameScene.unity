@@ -10091,6 +10091,7 @@ MonoBehaviour:
   EssayText: {fileID: 1482471516}
   ContinueButton: {fileID: 347436585}
   SubmissionIncompleteButton: {fileID: 1424314715}
+  CloseButton: {fileID: 1321085281}
   TaskText: {fileID: 281667613}
 --- !u!1 &974402305
 GameObject:
@@ -14227,6 +14228,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 2020762909}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 966344259}
+        m_TargetAssemblyTypeName: EssayListener, Assembly-CSharp
+        m_MethodName: RemoveListeners
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -19292,18 +19305,6 @@ MonoBehaviour:
       - m_Target: {fileID: 1896425715}
         m_TargetAssemblyTypeName: ChoiceBasedDialogue, Assembly-CSharp
         m_MethodName: StartCurrentDialogue
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1896425716}
-        m_TargetAssemblyTypeName: HandleButtonsDuringTasks, Assembly-CSharp
-        m_MethodName: disableButtons
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

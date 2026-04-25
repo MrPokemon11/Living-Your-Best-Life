@@ -23,6 +23,7 @@ public class EssayListener : MonoBehaviour
     [SerializeField] private GameObject EssayText;
     [SerializeField] private GameObject ContinueButton;
     [SerializeField] private GameObject SubmissionIncompleteButton;
+    [SerializeField] private Button CloseButton;
     private Button continueButton;
 
     [Header("Task Text")]
@@ -48,19 +49,26 @@ public class EssayListener : MonoBehaviour
 
     public void ActivateListeners()
     {
-        Debug.Log("Activate Listeners");
-        dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(WriteEssay);
-        if (actDirector.GetCurrentAct() == 1)
+        if (!hasDialogueBeenSeen)
         {
-            dialogueSystem.DialogueEndEvent.AddListener(MarkComplete);        
-        }
+            Debug.Log("Activate Listeners");
+
+            CloseButton.interactable = false;
+
+            dialogueSystem.DialogueImpactfulChoiceEvent.AddListener(WriteEssay);
+            if (actDirector.GetCurrentAct() == 1)
+            {
+                dialogueSystem.DialogueEndEvent.AddListener(MarkComplete);        
+            }
 
         
-        if (actDirector.GetCurrentAct() == 2)
-        {
-            dialogueSystem.DialogueEndEvent.AddListener(MarkTaskDone);
-            dialogueSystem.ReturnDialogueIndex.AddListener(ShowEssayByPath);
+            if (actDirector.GetCurrentAct() == 2)
+            {
+                dialogueSystem.DialogueEndEvent.AddListener(MarkTaskDone);
+                dialogueSystem.ReturnDialogueIndex.AddListener(ShowEssayByPath);
+            }
         }
+
     }
 
     public void RemoveListeners()
@@ -131,6 +139,8 @@ public class EssayListener : MonoBehaviour
     void MarkComplete()
     {
         SubmissionIncompleteButton.SetActive(false);
+        CloseButton.interactable = true;
+        hasDialogueBeenSeen = true;
         ChoiceBasedDialogueScript.MarkDialogueSeen(); // set this so that dialogue doesn't trigger again
         RemoveListeners();
     }
@@ -144,6 +154,14 @@ public class EssayListener : MonoBehaviour
     public void MarkTaskDone()
     {
         TaskText.GetComponent<TextMeshProUGUI>().fontStyle = FontStyles.Strikethrough;
+        // the below is done again because Acts 1 and 2 handle the essay differently
+        if(actDirector.GetCurrentAct() == 2)
+        {
+            CloseButton.interactable = true;
+            hasDialogueBeenSeen = true;
+            ChoiceBasedDialogueScript.MarkDialogueSeen();
+        }
+
         actDirector.MarkTaskAsDone("Essay");
         dialogueSystem.DialogueEndEvent.RemoveListener(MarkTaskDone);
         if (actDirector.GetAIUse() > 4)
