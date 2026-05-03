@@ -18,7 +18,7 @@ MonoBehaviour:
   _startDialogue: 0
   linear:
     _pharases:
-    - Ugh, I have so much stuff I need to do... I need some help. (Click here or
+    - Ugh, I have so much stuff I need to do... I need some help. \n(Click here or
       press space to continue)
     - (Click to continue)
     - (Click to continue)

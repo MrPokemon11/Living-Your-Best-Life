@@ -240,11 +240,17 @@ public class DialogueSystem : MonoBehaviour
     IEnumerator TypeLine(string line)
     {
         isTyping = true;
-        dialogueText.text = "";
+
+        //dialogueText.text = "";
+        dialogueText.maxVisibleCharacters = 0;
+        dialogueText.text = line;
+
         typingSpeed = lastTypingSpeed;
         foreach (char letter in line.ToCharArray())
         {
-            dialogueText.text += letter;
+            //dialogueText.text += letter;
+            dialogueText.maxVisibleCharacters += 1;
+
             yield return new WaitForSeconds(typingSpeed);
         }
         typingSpeed = lastTypingSpeed;
@@ -255,7 +261,11 @@ public class DialogueSystem : MonoBehaviour
     IEnumerator TypeLine(string line, AudioClip clip)
     {
         isTyping = true;
-        dialogueText.text = "";
+
+        //dialogueText.text = "";
+        dialogueText.maxVisibleCharacters = 0;
+        dialogueText.text = line;
+
         typingSpeed = lastTypingSpeed;
         audioSource.Stop();
         if (clip != null && !audioMute)
@@ -264,7 +274,9 @@ public class DialogueSystem : MonoBehaviour
         }
         foreach (char letter in line.ToCharArray())
         {
-            dialogueText.text += letter;
+            //dialogueText.text += letter;
+            dialogueText.maxVisibleCharacters += 1;
+
             yield return new WaitForSeconds(typingSpeed);
         }
         //wait for the voice clip to finish playing (unless muted)
