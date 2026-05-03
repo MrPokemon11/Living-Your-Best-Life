@@ -14,17 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_GroupName: Default Local Group
   m_GUID: 8535ef3f9a17469438a3ee8f12031292
-  m_SerializeEntries:
-  - m_GUID: 0935309e7c42d964a9cf13ec6e0b0d3e
-    m_Address: Assets/Dialogue/Act 1/Intro/Act 1_Intro_Player.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: cbd1c3c8005f0004e80843403a1ccac7
-    m_Address: Assets/Dialogue/Act 1/Intro/Act 1_Intro_LYBL.asset
-    m_ReadOnly: 0
-    m_SerializedLabels: []
-    FlaggedDuringContentUpdateRestriction: 0
+  m_SerializeEntries: []
   m_ReadOnly: 0
   m_Settings: {fileID: 11400000, guid: 9c79aec14d93bcc46a5fab9430e1490a, type: 2}
   m_SchemaSet:
